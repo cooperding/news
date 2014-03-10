@@ -1,0 +1,747 @@
+[ 2014-03-10T10:39:14+08:00 ] ::1 /qiuyun/dogocms32/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002423s ]
+
+[ 2014-03-10T10:39:14+08:00 ] ::1 /qiuyun/dogocms32/admin/Passport
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/PassportAction.class.php 第 32 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027768s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027832s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000668s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000700s ]
+
+[ 2014-03-10T10:39:14+08:00 ] ::1 /qiuyun/dogocms32/admin/Passport/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000744s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000445s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000503s ]
+
+[ 2014-03-10T10:39:22+08:00 ] ::1 /qiuyun/dogocms32/admin/Passport/dologin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000193s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+NOTIC: [8192] mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead. /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Db/Driver/Mysql.class.php 第 330 行.
+SQL: SELECT `username`,`creat_time`,`id`,`password` FROM `ding_operators` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.011115s ]
+NOTIC: [8] Undefined index: status /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/PassportAction.class.php 第 61 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008254s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008299s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000110s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000136s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000498s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000538s ]
+
+[ 2014-03-10T10:39:23+08:00 ] ::1 /qiuyun/dogocms32/admin/Passport/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+
+[ 2014-03-10T10:39:24+08:00 ] ::1 /qiuyun/dogocms32/admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.007614s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.002697s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.004122s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.001482s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.001531s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000263s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+NOTIC: [8] Undefined index: rel /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/2a2941ad95610dd8ebc15beef3e540c8.php 第 107 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015389s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015422s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000105s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000301s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000330s ]
+
+[ 2014-03-10T10:39:38+08:00 ] ::1 /qiuyun/dogocms32/admin/Account/perinfo?_=1394419164072
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001020s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.001177s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.001149s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.001008s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000212s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+SQL: SELECT * FROM `ding_operators` WHERE ( `id` = '1' ) LIMIT 1   [ RunTime:0.000252s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010570s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010620s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000458s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000505s ]
+
+[ 2014-03-10T10:39:42+08:00 ] ::1 /qiuyun/dogocms32/admin/Account/changepwd?_=1394419164073
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.007252s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000289s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.000991s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000233s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.000995s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000243s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012035s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012095s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000140s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000318s ]
+
+[ 2014-03-10T10:39:44+08:00 ] ::1 /qiuyun/dogocms32/admin/Operators/index?_=1394419164074
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000235s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.001687s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000695s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.002722s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.000911s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000206s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000087s ]
+NOTIC: [8] Undefined variable: id /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/5c5bd0d8b059164fcc291c39b24347c7.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008154s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008190s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000312s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000335s ]
+
+[ 2014-03-10T10:39:45+08:00 ] ::1 /qiuyun/dogocms32/admin/Operators/listJsonId.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.001135s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000236s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.001171s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000343s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.002601s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000684s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+NOTIC: [8] Undefined variable: condition /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/OperatorsAction.class.php 第 188 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_operators` LIMIT 1   [ RunTime:0.000261s ]
+NOTIC: [8] Undefined variable: condition /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/OperatorsAction.class.php 第 191 行.
+SQL: SELECT * FROM `ding_operators` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000251s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000323s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000355s ]
+
+[ 2014-03-10T10:39:46+08:00 ] ::1 /qiuyun/dogocms32/admin/Members/index?_=1394419164075
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.000965s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.000786s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000183s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.000740s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000157s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000059s ]
+NOTIC: [8] Undefined variable: id /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/ccaf3741448c5c76458d9a865ead30ea.php 第 9 行.
+NOTIC: [8] Undefined variable: id /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Admin/ccaf3741448c5c76458d9a865ead30ea.php 第 12 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008208s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008256s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000465s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000508s ]
+
+[ 2014-03-10T10:39:46+08:00 ] ::1 /qiuyun/dogocms32/admin/Members/listJsonId.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000949s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.001135s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000237s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.001137s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000338s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.001237s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000288s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+NOTIC: [8] Undefined index: title /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/MembersAction.class.php 第 222 行.
+NOTIC: [8] Undefined variable: condition /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/MembersAction.class.php 第 226 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_members` LIMIT 1   [ RunTime:0.002172s ]
+NOTIC: [8] Undefined variable: condition /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/MembersAction.class.php 第 229 行.
+SQL: SELECT * FROM `ding_members` ORDER BY id desc LIMIT 0,10   [ RunTime:0.001822s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2014-03-10T11:02:01+08:00 ] ::1 /qiuyun/dogocms32/admin/www.baidu.com?_=1394419164076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000895s ]
+ERR: 无法加载控制器:Www.baidu.com
+
+[ 2014-03-10T11:29:56+08:00 ] ::1 /qiuyun/dogocms32/admin/Members/edit.html?id=11&_=1394419164077
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002052s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.001325s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000260s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.001110s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000274s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.001024s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000233s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+SQL: SELECT * FROM `ding_members` WHERE ( `id` = '11' ) LIMIT 1   [ RunTime:0.001428s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: separator /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Html.class.php 第 208 行.
+NOTIC: [8] Undefined index: separator /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Html.class.php 第 208 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008570s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008602s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000103s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000125s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000312s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000336s ]
+
+[ 2014-03-10T11:54:32+08:00 ] ::1 /qiuyun/dogocms32/admin/Links/index?_=1394419164078
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001617s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.001137s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000247s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.000954s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.000696s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000172s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009971s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000588s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000618s ]
+
+[ 2014-03-10T11:54:32+08:00 ] ::1 /qiuyun/dogocms32/admin/Links/jsonList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.001239s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000288s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.001098s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000226s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.000967s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000233s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/LinksAction.class.php 第 348 行.
+NOTIC: [8] Undefined variable: condition /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/LinksAction.class.php 第 352 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_links` LIMIT 1   [ RunTime:0.001492s ]
+NOTIC: [8] Undefined variable: condition /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/LinksAction.class.php 第 355 行.
+SQL: SELECT * FROM `ding_links` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000733s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000289s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000325s ]
+
+[ 2014-03-10T11:54:32+08:00 ] ::1 /qiuyun/dogocms32/admin/Links/jsonList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001136s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.001280s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000269s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.001138s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000415s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.003317s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000310s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/LinksAction.class.php 第 348 行.
+NOTIC: [8] Undefined variable: condition /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/LinksAction.class.php 第 352 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_links` LIMIT 1   [ RunTime:0.000782s ]
+NOTIC: [8] Undefined variable: condition /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/LinksAction.class.php 第 355 行.
+SQL: SELECT * FROM `ding_links` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000421s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000340s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000371s ]
+
+[ 2014-03-10T11:54:34+08:00 ] ::1 /qiuyun/dogocms32/admin/Links/edit.html?id=2&_=1394419164079
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001021s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.001166s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000308s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.001198s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000239s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.000954s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000189s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+SQL: SELECT * FROM `ding_links` WHERE ( `id` = '2' ) LIMIT 1   [ RunTime:0.000367s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: separator /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Html.class.php 第 208 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Html.class.php 第 212 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010171s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010217s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000127s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000411s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000446s ]
+
+[ 2014-03-10T11:54:34+08:00 ] ::1 /qiuyun/dogocms32/admin/Links/jsonTree.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000799s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.001080s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000226s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.000921s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.000823s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000264s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+SQL: SELECT `id`,`ename` AS `text` FROM `ding_links_sort`  [ RunTime:0.001592s ]
+NOTIC: [8] Undefined index: parent_id /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Org/Util/Qiuyun.class.php 第 35 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000347s ]
+
+[ 2014-03-10T11:55:45+08:00 ] ::1 /qiuyun/dogocms32/admin/Links/edit.html?id=2&_=1394419164080
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000945s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.007630s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000250s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.000868s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000229s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.001110s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000208s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+SQL: SELECT * FROM `ding_links` WHERE ( `id` = '2' ) LIMIT 1   [ RunTime:0.000363s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: separator /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Html.class.php 第 208 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009664s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009704s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000165s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000408s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000445s ]
+
+[ 2014-03-10T11:55:45+08:00 ] ::1 /qiuyun/dogocms32/admin/Links/jsonTree.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000966s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.001176s ]
+SQL: SELECT `rules` FROM ding_auth_group_access a INNER JOIN ding_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.001348s ]
+SQL: SHOW COLUMNS FROM `ding_auth_rule` [ RunTime:0.002292s ]
+SQL: SELECT `condition`,`name` FROM `ding_auth_rule` WHERE ( `id` IN ('1','2','3') ) AND ( `status` = 1 )  [ RunTime:0.000875s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.000976s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ding_member`
+SQL: SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000235s ]
+ERR: 1146:Table 'dogocms14.ding_member' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ding_member` WHERE ( `uid` = '1' ) LIMIT 1  
+NOTIC: [8] Undefined variable: skin /Library/WebServer/Documents/qiuyun/dogocms32/Application/Admin/Action/BaseAction.class.php 第 36 行.
+SQL: SELECT `id`,`ename` AS `text` FROM `ding_links_sort`  [ RunTime:0.000216s ]
+NOTIC: [8] Undefined index: parent_id /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Org/Util/Qiuyun.class.php 第 35 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000359s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000393s ]
+

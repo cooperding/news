@@ -1,0 +1,280 @@
+[ 2014-03-06T08:57:28+08:00 ] ::1 /qiuyun/dogocms32/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000074s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002339s ]
+NOTIC: [8192] mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead. /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Db/Driver/Mysql.class.php 第 330 行.
+SQL: SELECT `sys_value` FROM `ding_setting` WHERE ( `sys_name` = 'cfg_skin_web' ) LIMIT 1   [ RunTime:0.005171s ]
+SQL: SELECT * FROM `ding_nav_head` WHERE ( `status` = 20 )  [ RunTime:0.001814s ]
+SQL: SELECT * FROM `ding_setting` WHERE ( `sys_name` = 'cfg_title' ) LIMIT 1   [ RunTime:0.000268s ]
+SQL: SELECT * FROM `ding_setting` WHERE ( `sys_name` = 'cfg_keywords' ) LIMIT 1   [ RunTime:0.000440s ]
+SQL: SELECT * FROM `ding_setting` WHERE ( `sys_name` = 'cfg_description' ) LIMIT 1   [ RunTime:0.000265s ]
+SQL: SELECT `sys_value` FROM `ding_setting` WHERE ( `sys_name` = 'cfg_skin_web' ) LIMIT 1   [ RunTime:0.000141s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+NOTIC: [8] Undefined index: limit /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 57 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 58 行.
+NOTIC: [8] Undefined index: limit /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 57 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 58 行.
+NOTIC: [8] Undefined index: limit /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 57 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 58 行.
+NOTIC: [8] Undefined index: limit /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 57 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 58 行.
+NOTIC: [8] Undefined index: limit /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 57 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 58 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 238 行.
+SQL: SELECT * FROM `ding_setting` WHERE ( `sys_name` = 'cfg_sitename' ) LIMIT 1   [ RunTime:0.000409s ]
+SQL: SELECT * FROM `ding_setting` WHERE ( `sys_name` = 'cfg_copyright' ) LIMIT 1   [ RunTime:0.000261s ]
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 206 行.
+NOTIC: [8] Undefined index: limit /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 207 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 208 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000123s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+SQL: SELECT * FROM `ding_block_list` WHERE (  (`status`='20')  and (`sort_id` =4)  ) ORDER BY myorder asc LIMIT 12   [ RunTime:0.003458s ]
+SQL: SELECT * FROM `ding_ads` WHERE (  (`status`='20')  and (`sort_id` =1)  ) ORDER BY myorder asc LIMIT 0,4   [ RunTime:0.001977s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.003144s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.009306s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.001469s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.001609s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.001028s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.001522s ]
+SQL: SELECT * FROM `ding_ads` WHERE (  (`status`='20')  and (`sort_id` =1)  ) ORDER BY myorder asc LIMIT 0,4   [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.000898s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.001554s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.000861s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.001599s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.000857s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.001628s ]
+SQL: SELECT * FROM `ding_ads` WHERE (  (`status`='20')  and (`sort_id` =1)  ) ORDER BY myorder asc LIMIT 0,4   [ RunTime:0.000266s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.000890s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.001533s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.000943s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.002304s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.001153s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.001962s ]
+SQL: SELECT * FROM `ding_ads` WHERE (  (`status`='20')  and (`sort_id` =1)  ) ORDER BY myorder asc LIMIT 0,4   [ RunTime:0.000429s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.001376s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.002818s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.018733s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.006251s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.000885s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.001527s ]
+SQL: SELECT * FROM `ding_ads` WHERE (  (`status`='20')  and (`sort_id` =1)  ) ORDER BY myorder asc LIMIT 0,4   [ RunTime:0.000234s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.000999s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.001685s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.000880s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.001479s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.000969s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.002388s ]
+SQL: SELECT * FROM `ding_links` WHERE (  (`status`='20')  ) LIMIT 0,10   [ RunTime:0.002753s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.167500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.167562s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000974s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001029s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001108s ]
+
+[ 2014-03-06T08:57:31+08:00 ] ::1 /qiuyun/dogocms32/User/Passport/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007500s ]
+NOTIC: [8192] mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead. /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Db/Driver/Mysql.class.php 第 330 行.
+SQL: SELECT `sys_value` FROM `ding_setting` WHERE ( `sys_name` = 'cfg_member_skin' ) LIMIT 1   [ RunTime:0.000230s ]
+SQL: SELECT * FROM `ding_nav_head` WHERE ( `status` = 20 )  [ RunTime:0.000318s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000474s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000557s ]
+
+[ 2014-03-06T08:57:34+08:00 ] ::1 /qiuyun/dogocms32/shop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001226s ]
+NOTIC: [8192] mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead. /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Db/Driver/Mysql.class.php 第 330 行.
+SQL: SELECT `sys_value` FROM `ding_setting` WHERE ( `sys_name` = 'cfg_skin_shop' ) LIMIT 1   [ RunTime:0.000243s ]
+SQL: SELECT * FROM `ding_nav_head` WHERE ( `status` = 20 )  [ RunTime:0.000331s ]
+SQL: SELECT * FROM `ding_setting` WHERE ( `sys_name` = 'cfg_title' ) LIMIT 1   [ RunTime:0.000840s ]
+SQL: SELECT * FROM `ding_setting` WHERE ( `sys_name` = 'cfg_keywords' ) LIMIT 1   [ RunTime:0.000839s ]
+SQL: SELECT * FROM `ding_setting` WHERE ( `sys_name` = 'cfg_description' ) LIMIT 1   [ RunTime:0.000572s ]
+SQL: SELECT `sys_value` FROM `ding_setting` WHERE ( `sys_name` = 'cfg_skin_shop' ) LIMIT 1   [ RunTime:0.000154s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Think.class.php 第 198 行.
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 135 行.
+NOTIC: [8] Undefined index: tid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 137 行.
+NOTIC: [8] Undefined index: flag /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 139 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 140 行.
+NOTIC: [8] Undefined index: keywords /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 141 行.
+SQL: SELECT * FROM `ding_setting` WHERE ( `sys_name` = 'cfg_sitename' ) LIMIT 1   [ RunTime:0.000628s ]
+SQL: SELECT * FROM `ding_setting` WHERE ( `sys_name` = 'cfg_sitename' ) LIMIT 1   [ RunTime:0.000859s ]
+SQL: SELECT * FROM `ding_setting` WHERE ( `sys_name` = 'cfg_copyright' ) LIMIT 1   [ RunTime:0.000738s ]
+NOTIC: [8] Undefined index: typeid /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 206 行.
+NOTIC: [8] Undefined index: limit /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 207 行.
+NOTIC: [8] Undefined index: order /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Template/TagLib/Dogocms.class.php 第 208 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000173s ]
+SQL: SHOW COLUMNS FROM `ding_title` [ RunTime:0.001159s ]
+SQL: SELECT t.*,c.content,m.username,ns.text as sortname FROM ding_title t INNER JOIN  ding_news_sort ns on ns.id=t.sort_id  INNER JOIN  ding_content c on c.title_id=t.id  INNER JOIN  ding_members m on m.id=t.members_id   WHERE (  (t.`status`='12')  and (t.`is_recycle`='10')  ) ORDER BY t.id desc LIMIT 10   [ RunTime:0.001625s ]
+SQL: SELECT * FROM `ding_links` WHERE (  (`status`='20')  ) LIMIT 0,10   [ RunTime:0.000727s ]
+NOTIC: [8] Undefined variable: data /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Shop/cdc0d30c115ce2bc857e5555ea6638a5.php 第 163 行.
+NOTIC: [8] Undefined variable: data /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Shop/cdc0d30c115ce2bc857e5555ea6638a5.php 第 169 行.
+NOTIC: [8] Undefined variable: data /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Shop/cdc0d30c115ce2bc857e5555ea6638a5.php 第 175 行.
+NOTIC: [8] Undefined variable: data /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Shop/cdc0d30c115ce2bc857e5555ea6638a5.php 第 210 行.
+NOTIC: [8] Undefined variable: data /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Shop/cdc0d30c115ce2bc857e5555ea6638a5.php 第 216 行.
+NOTIC: [8] Undefined variable: data /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Shop/cdc0d30c115ce2bc857e5555ea6638a5.php 第 222 行.
+NOTIC: [8] Undefined variable: data /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Shop/cdc0d30c115ce2bc857e5555ea6638a5.php 第 228 行.
+NOTIC: [8] Undefined variable: data /Library/WebServer/Documents/qiuyun/dogocms32/Application/Runtime/Cache/Shop/cdc0d30c115ce2bc857e5555ea6638a5.php 第 234 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037240s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037292s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000406s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000448s ]
+
+[ 2014-03-06T08:57:34+08:00 ] ::1 /qiuyun/dogocms32/Public/Skin/Shop/default/style/style.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+ERR: 无法加载控制器:Public
+
+[ 2014-03-06T08:57:34+08:00 ] ::1 /qiuyun/dogocms32/Public/Skin/Shop/default/style/common.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+ERR: 无法加载控制器:Public
+
+[ 2014-03-06T08:57:34+08:00 ] ::1 /qiuyun/dogocms32/User/Passport/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000779s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001100s ]
+NOTIC: [8192] mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead. /Library/WebServer/Documents/qiuyun/dogocms32/Core/Library/Think/Db/Driver/Mysql.class.php 第 330 行.
+SQL: SELECT `sys_value` FROM `ding_setting` WHERE ( `sys_name` = 'cfg_member_skin' ) LIMIT 1   [ RunTime:0.000381s ]
+SQL: SELECT * FROM `ding_nav_head` WHERE ( `status` = 20 )  [ RunTime:0.000875s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000585s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000697s ]
+
