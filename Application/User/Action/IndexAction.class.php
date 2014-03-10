@@ -376,17 +376,17 @@ class IndexAction extends BaseuserAction {
         $condition['id'] = array('eq', $uid);
         $data = $m->where($condition)->field('email')->find();
         $email = $data['email'];
-        $html = 'Hi,亲爱的'.$email.':<br/> 请点击链接地址验证邮箱<br/>' .
+        $html = 'Hi,亲爱的' . $email . ':<br/> 请点击链接地址验证邮箱<br/>' .
                 '<a href="' . $url . '">' . $url . '</a><br/>'
-                . '谢谢！<br/>'.date("Y-m-d", time());
-        $web_name = R('Common/System/getCfg',array('cfg_sitename'));
-        $status = R('Common/System/sendEmail',array($email,'邮箱验证-'.$web_name,$html));
-        if($status){
+                . '谢谢！<br/>' . date("Y-m-d", time());
+        $web_name = R('Common/System/getCfg', array('cfg_sitename'));
+        $status = R('Common/System/sendEmail', array($email, '邮箱验证-' . $web_name, $html));
+        if ($status) {
             $_data['email_key'] = $key;
             $_data['email_sendtime'] = time();
             $m->where($condition)->save($_data);
             $array = array('status' => 0, 'msg' => '邮件发送成功！');
-        }else{
+        } else {
             $array = array('status' => 1, 'msg' => '邮件发送失败，请重试或联系管理员！');
         }
         echo json_encode($array);
@@ -604,13 +604,18 @@ class IndexAction extends BaseuserAction {
         $title = I('post.title');
         $content = I('post.content');
         if (empty($content)) {
-            $this->error('当真SHI内容不能为空！');
+            $this->error('文档内容不能为空！');
             exit;
         }
         $_POST['addtime'] = time();
         $_POST['members_id'] = $uid;
         $_POST['updatetime'] = time();
         $_POST['status'] = 10;
+        //获取内容中第一张图片
+        $pattern = "/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.jpg|\.png]))[\'|\"].*?[\/]?>/";
+        preg_match_all($pattern, $_POST['content'], $match);
+        $_POST['titlepic'] = $match['1']['0'];
+        
         $rs = $m->data($_POST)->add();
         $title_id = $m->getLastInsID();
         if ($rs == true) {

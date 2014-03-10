@@ -8,7 +8,7 @@
     </div><!--col-md-->
     <div class="col-md-9">
         <div class="dogo-member">
-            <h4>说说当真SHI</h4>
+            <h4>我的文档</h4>
             <div class="dogo-blank"></div>
             <link rel="stylesheet" type="text/css" href="__PUBLIC__/Kindeditor/themes/default/default.css"/>
             <link rel="stylesheet" type="text/css" href="__PUBLIC__/Kindeditor/themes/simple/simple.css"/>
@@ -24,14 +24,6 @@
                     <div class="col-sm-10">
                         <textarea class="form-control input-lg" name="content" id="inputContent" rows="9" required="required"
                                   placeholder="填写当真内容"></textarea>
-                    </div>
-                </div><!--form-group-->
-                <div class="form-group">
-                    <label for="url1" class="col-sm-2 control-label">图片：</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="titlepic" class="form-control input-lg" id="url1" placeholder="">
-                        <br/>
-                        <input name="image" type="button" id="image1" value="选择图片" class="btn btn-default col-lg-12 btn-lg dogo-color-white" />
                     </div>
                 </div><!--form-group-->
                 
@@ -68,18 +60,7 @@
             allowFileManager: false, //隐藏图片空间按钮
             uploadJson: '{:U("User/Index/uploadImg")}'
         });
-        KindEditor('#image1').click(function() {
-            editor.loadPlugin('image', function() {
-                editor.plugin.imageDialog({
-                    //showRemote : false,//隐藏网络图片选项卡
-                    imageUrl: KindEditor('#url1').val(),
-                    clickFn: function(url, title, width, height, border, align) {
-                        KindEditor('#url1').val(url);
-                        editor.hideDialog();
-                    }
-                });
-            });//
-        });
+        
 
 
     });

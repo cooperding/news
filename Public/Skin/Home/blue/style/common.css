@@ -44,7 +44,7 @@ a:hover{text-decoration:none;color: #FF6347;}
 /*border*/
 .dogo-border-notop{border: 1px solid #ccc;border-top: none;-webkit-border-radius: 0 0px 4px 4px;-moz-border-radius: 0px 0px 4px 4px;border-radius: 0px 0px 4px 4px;}
 .dogo-border-nobottom{border: 1px solid #ccc;border-bottom: none;-webkit-border-radius: 4px 4px 0 0;-moz-border-radius: 4px 4px 0 0;border-radius: 4px 4px 0 0;}
-.dogo-border-all{border: 1px solid rgba(255, 252, 252, 0.49);-webkit-border-radius: 4px 4px 4px 4px;-moz-border-radius: 4px 4px 4px 4px;border-radius: 4px 4px 4px 4px;}
+.dogo-border-all{border: 1px solid rgba(207, 202, 202, 0.55);-webkit-border-radius: 4px 4px 4px 4px;-moz-border-radius: 4px 4px 4px 4px;border-radius: 4px 4px 4px 4px;}
 .dogo-border-all{
     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 5px rgba(0,0,0,0.075);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 5px rgba(0,0,0,0.075);}
@@ -52,37 +52,19 @@ a:hover{text-decoration:none;color: #FF6347;}
 
 /*dogo-box*/
 .dogo-box{height: auto;}
-.dogo-box-header{ margin: 5px 0;line-height: 30px;color: #fff;}
-.dogo-box-header a{color: #fff;}
-.dogo-box-header a:hover{color: #e6e6e6;}
-.dogo-box-header h5{}
-.dogo-box-content{color: #fff;}
+.dogo-box-header{ margin: 5px 0;line-height: 30px;}
+.dogo-box-header a{color: #000;}
+.dogo-box-header a:hover{color: #FF6347;}
+.dogo-box-header h4{font-size: 20px;}
+.dogo-box-content{}
 .dogo-box-content p{font-size: 14px;}
 .dogo-box-footer{margin: 10px 5px;height: auto;line-height: 20px;}
 
 /*分页代码*/
-.pagination>li>a, .pagination>li>span{
-    color: #fff;
-    background-color: rgba(238, 238, 238, 0.13);
-    border-color: rgba(221, 221, 221, 0.45);
 
-}
-.pagination>li>a:hover, .pagination>li>span:hover, .pagination>li>a:focus, .pagination>li>span:focus {
-    color: #FCFEFF;
-    background-color: rgba(250, 247, 247, 0.27);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-.pagination .current{color: #9FF508;}
+.pagination .current{color: #FF6347;}
 .clearfix{*zoom:1}
 .clearfix:before,.clearfix:after{display:table;line-height:0;content:""}.clearfix:after{clear:both}
-
-.dogo-box-footer .btn-default{
-    background-image:none;
-    background: rgba(9, 183, 250, 0.58);
-    text-shadow: none;
-    border-color: rgba(255, 255, 255, 0.52);
-    color: #fff;
-}
 
 
 .dogo-dialog-modal .modal-content{border: 10px solid rgba(48, 48, 48, 0.7);border-radius: 8px;box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);}
@@ -162,9 +144,8 @@ ul.dogo-text-more li{display: block;float: left;margin: 5px 8px;}
 .dogo-list-comment a{color: #fff;}
 .dogo-list-comment a:hover{color: #BCE1FA;}
 .dogo-textarea{
-    color: #fff;
     background-color: rgba(255, 255, 255, 0.11);
-    border: 1px solid rgba(255, 255, 255, 0.54);
+    border: 1px solid rgba(219, 212, 212, 0.92);
 }
 
 .dogo-dialog-modal img{max-width: 100%;}
