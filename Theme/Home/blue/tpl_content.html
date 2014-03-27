@@ -106,9 +106,9 @@
                     </div>
                     <ul class="dogo-text-more">
                         <dogocms:sort typeid="0">
-                            <li><a href="#">{$sort.text}</a></li>
+                            <li><a href="{:U('Home/List/index',array('id'=>$sort['id']))}">{$sort.text}</a></li>
                             <volist name="sort.children" id="vo">
-                                <li><a href="#">{$vo.text}</a></li>
+                                <li><a href="{:U('Home/List/index',array('id'=>$vo['id']))}">{$vo.text}</a></li>
                             </volist>
                         </dogocms:sort>
                     </ul>
