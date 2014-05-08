@@ -63,7 +63,6 @@ $array = array(
         )),
     array('label' => L('menu_user_name'), 'type' => 'user_name', 'items' => array(
             array('label' => L('menu_member_name'), 'type' => 'member_name', 'items' => array(
-                    array('label' => L('menu_member_perinfo'), 'type' => 'perinfo', 'rel' => 'dialog', 'link' => __MODULE__ . '/Account/perinfo'),
                     array('label' => L('menu_member_changepwd'), 'type' => 'changepwd', 'rel' => 'dialog', 'link' => __MODULE__ . '/Account/changepwd'),
                     array('label' => L('menu_member_adminlist'), 'type' => 'member_adminlist', 'link' => __MODULE__ . '/Operators/index'),
                     array('label' => L('menu_member_frontlist'), 'type' => 'member_frontlist', 'link' => __MODULE__ . '/Members/index')
@@ -75,23 +74,6 @@ $array = array(
             array('label' => L('menu_frontcom_name'), 'type' => 'frontcom_name', 'items' => array(
                     array('label' => L('menu_frontcom_cat'), 'type' => 'frontcom_cat', 'link' => 'www.baidu.com'),
                     array('label' => L('menu_frontcom_list'), 'type' => 'frontcom_list', 'link' => 'www.baidu.com')
-                )),
-        )),
-    array('label' => '微站点', 'type' => 'templet_name', 'items' => array(
-            array('label' => '微站基础设置', 'type' => 'setting', 'items' => array(
-                    array('label' => '自定义菜单', 'type' => 'setting', 'link' => 'www.baidu.com')
-                )),
-            array('label' => '微站广告管理', 'type' => 'templet_', 'items' => array(
-                    array('label' => '微广告列表', 'type' => 'ffg', 'link' => 'www.baidu.com'),
-                    array('label' => '基础设置', 'type' => 'setting', 'link' => 'www.baidu.com')
-                )),
-            array('label' => L('menu_channel_name'), 'type' => 'channel_name', 'items' => array(
-                    array('label' => L('menu_model_cat'), 'type' => 'model_cat', 'link' => __MODULE__ . '/ContentModel/sort'),
-                    array('label' => L('menu_model_list'), 'type' => 'model_list', 'link' => __MODULE__ . '/ContentModel/sortlist')
-                )),
-            array('label' => L('menu_linkpage_name'), 'type' => 'linkpage_name', 'items' => array(
-                    array('label' => L('menu_linkpage_cat'), 'type' => 'linkpage_cat', 'link' => __MODULE__ . '/LinkPage/sort'),
-                    array('label' => L('menu_linkpage_list'), 'type' => 'linkpage_list', 'link' => __MODULE__ . '/LinkPage/sortlist')
                 )),
         ))
 );
