@@ -452,12 +452,19 @@ class IndexAction extends BaseuserAction {
         }
         if ($_POST['is_default']) {
             $m->where($condition)->setField('is_default', 10);
-            $_POST['is_default'] = 20;
+            $data['is_default'] = 20;
         }
-        $_POST['addtime'] = time();
-        $_POST['members_id'] = $uid;
-        $_POST['updatetime'] = time();
-        $rs = $m->data($_POST)->add();
+        $data['addtime'] = time();
+        $data['members_id'] = $uid;
+        $data['updatetime'] = time();
+        $data['name'] = I('post.name');
+        $data['telphone'] = I('post.telphone');
+        $data['province'] = I('post.province');
+        $data['city'] = I('post.city');
+        $data['county'] = I('post.county');
+        $data['zipcode'] = I('post.zipcode');
+        $data['address'] = I('post.address');
+        $rs = $m->data($data)->add();
         if ($rs == true) {
             $this->success('操作成功', __MODULE__ . '/Index/addressList');
         } else {
@@ -479,11 +486,18 @@ class IndexAction extends BaseuserAction {
         $condition['members_id'] = array('eq', $uid);
         if ($_POST['is_default']) {
             $m->where($condition)->setField('is_default', 10);
-            $_POST['is_default'] = 20;
+            $data['is_default'] = 20;
         }
         $condition['id'] = array('eq', I('post.id'));
-        $_POST['updatetime'] = time();
-        $rs = $m->where($condition)->save($_POST);
+        $data['updatetime'] = time();
+        $data['name'] = I('post.name');
+        $data['telphone'] = I('post.telphone');
+        $data['province'] = I('post.province');
+        $data['city'] = I('post.city');
+        $data['county'] = I('post.county');
+        $data['zipcode'] = I('post.zipcode');
+        $data['address'] = I('post.address');
+        $rs = $m->where($condition)->save($data);
         if ($rs == true) {
             $this->success('操作成功', __MODULE__ . '/Index/addressList');
         } else {
@@ -528,17 +542,17 @@ class IndexAction extends BaseuserAction {
             $this->error('token信息不能为空！');
             exit;
         }
-        $_POST['addtime'] = time();
-        $_POST['members_id'] = $uid;
-        $_POST['updatetime'] = time();
-        $_POST['status'] = 10;
-        $_POST['apitoken'] = $apitoken; //API用户名
+        $data['addtime'] = time();
+        $data['members_id'] = $uid;
+        $data['updatetime'] = time();
+        $data['status'] = 10;
+        $data['apitoken'] = $apitoken; //API用户名
         $secretkey = R('Common/System/guid');
         $signature = R('Common/System/guid');
-        $_POST['secretkey'] = md5($secretkey); //API密钥（自动生成）
-        $_POST['signature'] = md5(sha1($signature)); //签名（自动生成）
-        $_POST['domain'] = I('post.domain');
-        $rs = $m->data($_POST)->add();
+        $data['secretkey'] = md5($secretkey); //API密钥（自动生成）
+        $data['signature'] = md5(sha1($signature)); //签名（自动生成）
+        $data['domain'] = I('post.domain');
+        $rs = $m->data($data)->add();
         if ($rs == true) {
             $this->success('操作成功', __MODULE__ . '/Index/apiList');
         } else {
@@ -559,9 +573,11 @@ class IndexAction extends BaseuserAction {
         $uid = session('LOGIN_M_ID');
         $condition['members_id'] = array('eq', $uid);
         $condition['id'] = array('eq', I('post.id'));
-        $_POST['updatetime'] = time();
-        $_POST['status'] = '10';
-        $rs = $m->where($condition)->save($_POST);
+        $data['updatetime'] = time();
+        $data['status'] = '10';
+        $data['apitoken'] = I('post.apitoken');
+        $data['domain'] = I('post.domain');
+        $rs = $m->where($condition)->save($data);
         if ($rs == true) {
             $this->success('操作成功', __MODULE__ . '/Index/apiList');
         } else {
@@ -603,26 +619,31 @@ class IndexAction extends BaseuserAction {
         $uid = session('LOGIN_M_ID');
         $title = I('post.title');
         $content = I('post.content');
+        if (empty($title)) {
+            $this->error('文档内容不能为空！');
+            exit;
+        }
         if (empty($content)) {
             $this->error('文档内容不能为空！');
             exit;
         }
-        $_POST['addtime'] = time();
-        $_POST['members_id'] = $uid;
-        $_POST['updatetime'] = time();
-        $_POST['status'] = 10;
+        $data['addtime'] = time();
+        $data['title'] = $title;
+        $data['members_id'] = $uid;
+        $data['updatetime'] = time();
+        $data['status'] = 10;
         //获取内容中第一张图片
         $pattern = "/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.jpg|\.png]))[\'|\"].*?[\/]?>/";
         preg_match_all($pattern, $_POST['content'], $match);
-        $_POST['titlepic'] = $match['1']['0'];
+        $data['titlepic'] = $match['1']['0'];
         
-        $rs = $m->data($_POST)->add();
+        $rs = $m->data($data)->add();
         $title_id = $m->getLastInsID();
         if ($rs == true) {
             $c = D('Content');
-            $_data['title_id'] = $title_id;
-            $_data['content'] = $content;
-            $c->data($_data)->add();
+            $data_content['title_id'] = $title_id;
+            $data_content['content'] = $content;
+            $c->data($data_content)->add();
             $email = R('Common/System/getCfg', array('cfg_email_remind'));
             $time = date('Y-m-d H:i:s', time());
             R('Common/System/sendEmail', array($email, '当真网--会员提交信息提醒-' . $time, $content));

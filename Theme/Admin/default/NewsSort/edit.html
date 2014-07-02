@@ -15,6 +15,14 @@
                     <th>审核状态：</th>
                     <td><html:radio name="status" radios="status" checked="v_status"/></td>
             </tr>
+            <tr>
+                <th>列表模板：</th>
+                <td><input type="text" name="template_list" value="{$data.template_list}" /></td>
+            </tr>
+            <tr>
+                <th>内容模板：</th>
+                <td><input type="text" name="template_content" value="{$data.template_content}" /></td>
+            </tr>
                 <tr>
                     <th>{:L("keywords")}：</th>
                     <td><input type="text" name="keywords" value="{$data.keywords}" /></td>

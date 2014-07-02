@@ -78,7 +78,7 @@ class NewsAction extends BaseAction {
      */
     public function edit()
     {
-        $m = D('Title');
+        $m = M('Title');
         $id = I('get.id');
         $condition_id['t.id'] = array('eq', $id);
         $data = $m->field(array('t.*', 'c.content'))
@@ -99,8 +99,6 @@ class NewsAction extends BaseAction {
             '11' => ' 未通过审核 '
         );
         $this->assign('data', $data);
-        $this->assign('filed', $data_filed);
-        $this->assign('datafiled', $data_ms);
         $this->assign('flag', $flag);
         $this->assign('status', $status);
         $this->assign('v_status', $data['status']);
@@ -116,7 +114,7 @@ class NewsAction extends BaseAction {
      */
     public function insert()
     {
-        $t = D('Title');
+        $t = M('Title');
         $data['title'] = I('post.title');
         $data['sort_id'] = I('post.sort_id');
         if ($data['sort_id'] == 0) {
@@ -138,7 +136,7 @@ class NewsAction extends BaseAction {
         $rs = $t->add($data);
         $last_id = $t->getLastInsID();
         if ($rs == true) {
-            $c = D('Content');
+            $c = M('Content');
             $data_c['title_id'] = intval($last_id);
             $data_c['content'] = I('post.content');
             $rsc = $c->data($data_c)->add();
@@ -159,8 +157,8 @@ class NewsAction extends BaseAction {
      */
     public function update()
     {
-        $t = D('Title');
-        $c = D('Content');
+        $t = M('Title');
+        $c = M('Content');
         $id = I('post.id');
         $condition['id'] = array('eq', $id);//title表更新条件
         $condition_c['title_id'] = array('eq', $id);//content表更新条件
@@ -178,15 +176,16 @@ class NewsAction extends BaseAction {
         
         $data['updatetime'] = time();
         $data['op_id'] = session('LOGIN_UID');
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status']['0'];
         
         $data_c['content'] = I('post.content');
         $rs = $t->where($condition)->save($data);
+        $sql = $t->getlastsql();
         $rsc = $c->where($condition_c)->save($data_c);
         if ($rs == true || $rsc == true) {
             $this->dmsg('2', '更新成功！', true);
         } else {
-            $this->dmsg('1', '更新失败,或者未有更新！', false, true);
+            $this->dmsg('1', $sql, false, true);
         }
     }
 
@@ -199,7 +198,7 @@ class NewsAction extends BaseAction {
      */
     public function delete()
     {
-        $t = D('Title');
+        $t = M('Title');
         $id = I('post.id');
         $condition['id'] = array('in', $id);
         if (empty($condition['id'])) {
@@ -262,7 +261,7 @@ class NewsAction extends BaseAction {
      */
     public function recycleRevert()
     {
-        $t = D('Title');
+        $t = M('Title');
         $id = I('post.id');
         $condition['id'] = array('in', $id);
         if (empty($condition['id'])) {
@@ -285,8 +284,8 @@ class NewsAction extends BaseAction {
      */
     public function deleteRec()
     {
-        $t = D('Title');
-        $c = D('Content');
+        $t = M('Title');
+        $c = M('Content');
         $id = I('post.id');
         $data['id'] = array('in', $id);
         $cdata['title_id'] = array('in', $id);
@@ -308,8 +307,8 @@ class NewsAction extends BaseAction {
      */
     public function listJsonId()
     {
-        $m = D('Title');
-        $s = D('NewsSort');
+        $m = M('Title');
+        $s = M('NewsSort');
         $id = I('get.id');
         if ($id != 0) {//id为0时调用全部文档
             $condition_sort['id'] = $id;
@@ -371,7 +370,7 @@ class NewsAction extends BaseAction {
     public function jsonSortTree()
     {
         $qiuyun = new \Org\Util\Qiuyun;
-        $m = D('NewsSort');
+        $m = M('NewsSort');
         $tree = $m->field('id,parent_id,text')->select();
         $tree = $qiuyun->list_to_tree($tree, 'id', 'parent_id', 'children');
         $tree = array_merge(array(array('id' => 0, 'text' => '全部文档')), $tree);

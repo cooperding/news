@@ -52,7 +52,7 @@ class PagesAction extends BaseAction {
      */
     public function edit()
     {
-        $m = D('Pages');
+        $m = M('Pages');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
@@ -75,7 +75,7 @@ class PagesAction extends BaseAction {
      */
     public function insert()
     {
-        $m = D('Pages');
+        $m = M('Pages');
         $data['ename'] = I('post.ename');
         $data['sort_id'] = I('post.sort_id');
         if (empty($data['ename'])) {
@@ -111,7 +111,7 @@ class PagesAction extends BaseAction {
      */
     public function update()
     {
-        $m = D('Pages');
+        $m = M('Pages');
         $data['ename'] = I('post.ename');
         $data['sort_id'] = I('post.sort_id');
         $id = I('post.id');
@@ -145,7 +145,7 @@ class PagesAction extends BaseAction {
      */
     public function delete()
     {
-        $m = D('Pages');
+        $m = M('Pages');
         $id = I('post.id');
         $condition_id['id'] = array('eq', $id);
         $del = $m->where($condition_id)->delete();
@@ -194,7 +194,7 @@ class PagesAction extends BaseAction {
      */
     public function sortedit()
     {
-        $m = D('PagesSort');
+        $m = M('PagesSort');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
@@ -217,7 +217,7 @@ class PagesAction extends BaseAction {
      */
     public function sortinsert()
     {
-        $m = D('PagesSort');
+        $m = M('PagesSort');
         $parent_id = I('post.parent_id');
         $ename = I('post.ename');
         if (empty($ename)) {
@@ -233,7 +233,7 @@ class PagesAction extends BaseAction {
             $data = $m->where($condition_pid)->find();
             $data_up['path'] = $data['path'] . $parent_id . ',';
         }
-        $data_up['status'] = I('post.status')['0'];
+        $data_up['status'] = $_POST['status']['0'];
         $data_up['updatetime'] = time();
         $data_up['parent_id'] = $parent_id;
         $data_up['ename'] = $ename;
@@ -259,7 +259,7 @@ class PagesAction extends BaseAction {
      */
     public function sortupdate()
     {
-        $m = D('PagesSort');
+        $m = M('PagesSort');
         $id = I('post.id');
         $parent_id = I('post.parent_id');
         $tbname = 'PagesSort';
@@ -292,7 +292,7 @@ class PagesAction extends BaseAction {
             }
             $data_up['path'] = ','; //应该是这个
         }
-        $data_up['status'] = I('post.status')['0'];
+        $data_up['status'] = $_POST['status']['0'];
         $data_up['updatetime'] = time();
         $data_up['parent_id'] = $parent_id;
         $data_up['ename'] = $ename;
@@ -324,8 +324,19 @@ class PagesAction extends BaseAction {
      */
     public function sortdelete()
     {
-        $m = D('PagesSort');
+        $m = M('PagesSort');
         $id = I('post.id');
+        $condition_path['path'] = array('like', '%,' . $id . ',%');
+        $data = $m->field('id')->where($condition_path)->select();
+        if (is_array($data)) {
+            $this->dmsg('1', '该分类下还有子级分类，无法删除！', false, true);
+        }
+        $t = M('Pages');
+        $condition_sort['sort_id'] = array('eq', $id);
+        $t_data = $t->field('sort_id')->where($condition_sort)->find();
+        if (is_array($t_data)) {
+            $this->dmsg('1', '该分类下还有文档信息，无法删除！', false, true);
+        }
         $condition_id['id'] = array('eq', $id);
         $del = $m->where($condition_id)->delete();
         if ($del == true) {
@@ -344,8 +355,8 @@ class PagesAction extends BaseAction {
      */
     public function jsonSortList()
     {
-        $m = D('PagesSort');
-        $list = $m->field(array('id', 'parent_id', 'ename' => 'text'))->select();
+        $m = M('PagesSort');
+        $list = $m->field(array('id', 'parent_id', 'ename' => 'text','status'))->select();
         $navcatCount = $m->count("id");
         $a = array();
         $array = array();
@@ -353,6 +364,11 @@ class PagesAction extends BaseAction {
             foreach ($list as $k => $v) {
                 $a[$k] = $v;
                 $a[$k]['_parentId'] = intval($v['parent_id']); //_parentId为easyui中标识父id
+                if($v['status']==20){
+                    $a[$k]['status'] = '启用';
+                }else{
+                    $a[$k]['status'] = '禁用';
+                }
             }
         } else {
             $array['rows'] = 0;
@@ -372,7 +388,7 @@ class PagesAction extends BaseAction {
     public function jsonTree()
     {
         $qiuyun = new \Org\Util\Qiuyun();
-        $m = D('PagesSort');
+        $m = M('PagesSort');
         $tree = $m->field(array('id', 'parent_id', 'ename' => 'text'))->select();
         $tree = $qiuyun->list_to_tree($tree, 'id', 'parent_id', 'children');
         $tree = array_merge(array(array('id' => 0, 'text' => L('sort_root_name'))), $tree);
@@ -388,7 +404,7 @@ class PagesAction extends BaseAction {
      */
     public function jsonList()
     {
-        $m = D('Pages');
+        $m = M('Pages');
         $pageNumber = intval($_REQUEST['page']);
         $pageRows = intval($_REQUEST['rows']);
         $pageNumber = (($pageNumber == null || $pageNumber == 0) ? 1 : $pageNumber);
@@ -404,6 +420,11 @@ class PagesAction extends BaseAction {
         if ($data) {
             foreach ($data as $k => $v) {
                 $data[$k]['addtime'] = date('Y-m-d H:i:s', $v['addtime']);
+                if($v['status']==20){
+                    $data[$k]['status'] = '启用';
+                }else{
+                    $data[$k]['status'] = '禁用';
+                }
             }
         } else {
             $count = 0;

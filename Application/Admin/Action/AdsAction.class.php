@@ -53,6 +53,7 @@ class AdsAction extends BaseAction {
             '20' => '可用',
             '10' => '禁用'
         );
+        $this->assign('id',I('get.id'));
         $this->assign('status', $status);
         $this->display();
     }
@@ -66,7 +67,7 @@ class AdsAction extends BaseAction {
      */
     public function edit()
     {
-        $m = D('Ads');
+        $m = M('Ads');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
@@ -89,7 +90,7 @@ class AdsAction extends BaseAction {
      */
     public function insert()
     {
-        $m = D('Ads');
+        $m = M('Ads');
         $data['name'] = I('post.name');
         $data['sort_id'] = I('post.sort_id');
         if (empty($data['name'])) {
@@ -126,7 +127,7 @@ class AdsAction extends BaseAction {
      */
     public function update()
     {
-        $m = D('Ads');
+        $m = M('Ads');
         $condition['id'] = array('eq',I('post.id'));
         $data['name'] = I('post.name');
         $data['sort_id'] = I('post.sort_id');
@@ -160,7 +161,7 @@ class AdsAction extends BaseAction {
      */
     public function delete()
     {
-        $m = D('Ads');
+        $m = M('Ads');
         $id = I('post.id');
         $condition['id'] = array('eq', $id);
         $del = $m->where($condition)->delete();
@@ -209,7 +210,7 @@ class AdsAction extends BaseAction {
      */
     public function sortedit()
     {
-        $m = D('AdsSort');
+        $m = M('AdsSort');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
@@ -232,7 +233,7 @@ class AdsAction extends BaseAction {
      */
     public function sortinsert()
     {
-        $m = D('AdsSort');
+        $m = M('AdsSort');
         $data['ename'] = I('post.ename');
         $condition['ename'] = array('eq', $data['ename']);
         if (empty($data['ename'])) {
@@ -261,7 +262,7 @@ class AdsAction extends BaseAction {
      */
     public function sortupdate()
     {
-        $m = D('AdsSort');
+        $m = M('AdsSort');
         $id = I('post.id');
         $data['ename'] = I('post.ename');
         $condition['ename'] = array('eq', $ename);
@@ -292,8 +293,8 @@ class AdsAction extends BaseAction {
      */
     public function sortdelete()
     {
-        $m = D('AdsSort');
-        $l = D('Ads');
+        $m = M('AdsSort');
+        $l = M('Ads');
         $id = I('post.id');
         $condition_sort['sort_id'] = array('eq', $id);
         if ($l->field('id')->where($condition_sort)->find()) {
@@ -317,7 +318,7 @@ class AdsAction extends BaseAction {
      */
     public function sortJson()
     {
-        $m = D('AdsSort');
+        $m = M('AdsSort');
         $list = $m->select();
         $count = $m->count("id");
         $a = array();
@@ -346,7 +347,7 @@ class AdsAction extends BaseAction {
      */
     public function jsonSortTree()
     {
-        $m = D('AdsSort');
+        $m = M('AdsSort');
         $tree = $m->field(array('id', 'ename' => 'text'))->select();
         $tree = array_merge(array(array('id' => 0, 'text' => L('全部分类'))), $tree);
         echo json_encode($tree);
@@ -361,7 +362,7 @@ class AdsAction extends BaseAction {
      */
     public function listJsonId()
     {
-        $m = D('Ads');
+        $m = M('Ads');
         $id = I('get.id');
         if ($id != 0) {//id为0时调用全部文档;
             $condition['a.sort_id'] = array('eq', $id);

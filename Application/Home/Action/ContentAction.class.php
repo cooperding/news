@@ -45,6 +45,7 @@ class ContentAction extends BasehomeAction {
                             ->join(C('DB_PREFIX') . 'members m ON m.id = c.members_id ')
                             ->where($condition_comment)->order('floor asc')->select();
         }
+        $data['content'] = html_entity_decode($data['content']);
         $skin = $this->getSkin(); //获取前台主题皮肤名称
         $this->assign('data', $data);
         $this->assign('list_comment', $comment);

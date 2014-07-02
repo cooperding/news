@@ -7,7 +7,7 @@
     $(function() {
         var height = $('.indexcenter').height();
         var classId = 'adstab{$id}';
-        var hrefadd = '{:U("Admin/Ads/add")}';
+        var hrefadd = '{:U("Admin/Ads/add",array("id"=>$id))}';
         var hrefedit = '{:U("Admin/Ads/edit")}';
         var hrefcancel = '{:U("Admin/Ads/delete")}';
         var urljson = '{:U("Admin/Ads/listJsonId",array("id"=>$id))}';

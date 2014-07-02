@@ -100,7 +100,7 @@ class NavHeadAction extends BaseAction {
             if ($rs) {
                 $this->dmsg('2', '操作成功！', true);
             } else {
-                $this->dmsg('1', '分类添加失败！', false, true);
+                $this->dmsg('1', '添加失败！', false, true);
             }
         } else {
             $this->dmsg('1', '根据表单提交的POST数据创建数据对象失败！', false, true);

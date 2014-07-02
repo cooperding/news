@@ -56,7 +56,6 @@ class NavFootAction extends BaseAction {
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
-
         $status = array(
             '20' => '启用',
             '10' => '禁用'
@@ -101,7 +100,7 @@ class NavFootAction extends BaseAction {
             if ($rs) {
                 $this->dmsg('2', '操作成功！', true);
             } else {
-                $this->dmsg('1', '分类添加失败！', false, true);
+                $this->dmsg('1', '添加失败！', false, true);
             }
         } else {
             $this->dmsg('1', '根据表单提交的POST数据创建数据对象失败！', false, true);

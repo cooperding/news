@@ -35,7 +35,7 @@ class MessageAction extends BaseAction {
      */
     public function edit()
     {
-        $m = D('Message');
+        $m = M('Message');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
@@ -58,7 +58,7 @@ class MessageAction extends BaseAction {
      */
     public function update()
     {
-        $m = D('Message');
+        $m = M('Message');
         $sort_id = I('post.sort_id');
         $id = I('post.id');
         $condition['id'] = array('eq', $id);
@@ -86,7 +86,7 @@ class MessageAction extends BaseAction {
      */
     public function delete()
     {
-        $m = D('Message');
+        $m = M('Message');
         $id = I('post.id');
         $condition['id'] = array('eq', $id);
         $del = $m->where($condition)->delete();
@@ -135,7 +135,7 @@ class MessageAction extends BaseAction {
      */
     public function sortedit()
     {
-        $m = D('MessageSort');
+        $m = M('MessageSort');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
@@ -158,7 +158,7 @@ class MessageAction extends BaseAction {
      */
     public function sortinsert()
     {
-        $m = D('MessageSort');
+        $m = M('MessageSort');
         $ename = I('post.ename');
         $condition['ename'] = array('eq', $ename);
         if (empty($ename)) {
@@ -191,7 +191,7 @@ class MessageAction extends BaseAction {
      */
     public function sortupdate()
     {
-        $m = D('MessageSort');
+        $m = M('MessageSort');
         $id = I('post.id');
         $ename = I('post.ename');
         $condition['id'] = array('neq', $id);
@@ -223,8 +223,8 @@ class MessageAction extends BaseAction {
      */
     public function sortdelete()
     {
-        $m = D('MessageSort');
-        $l = D('Message');
+        $m = M('MessageSort');
+        $l = M('Message');
         $id = I('post.id');
         $condition['sort_id'] = array('eq', $id);
         if ($l->field('id')->where($condition)->find()) {
@@ -248,7 +248,7 @@ class MessageAction extends BaseAction {
      */
     public function jsonList()
     {
-        $m = D('Message');
+        $m = M('Message');
         $pageNumber = intval($_REQUEST['page']);
         $pageRows = intval($_REQUEST['rows']);
         $pageNumber = (($pageNumber == null || $pageNumber == 0) ? 1 : $pageNumber);
@@ -287,7 +287,7 @@ class MessageAction extends BaseAction {
      */
     public function sortJson()
     {
-        $m = D('MessageSort');
+        $m = M('MessageSort');
         $list = $m->select();
         $count = $m->count("id");
         $a = array();
@@ -317,7 +317,7 @@ class MessageAction extends BaseAction {
     public function jsonTree()
     {
         $qiuyun = new \Org\Util\Qiuyun;
-        $m = D('MessageSort');
+        $m = M('MessageSort');
         $tree = $m->field(array('id', 'ename' => 'text'))->select();
         $tree = $qiuyun->list_to_tree($tree, 'id', 'parent_id', 'children');
         $tree = array_merge(array(array('id' => 0, 'text' => L('sort_root_name'))), $tree);

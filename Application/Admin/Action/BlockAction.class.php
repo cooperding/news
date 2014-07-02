@@ -52,7 +52,7 @@ class BlockAction extends BaseAction {
      */
     public function edit()
     {
-        $m = D('BlockList');
+        $m = M('BlockList');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
@@ -76,7 +76,7 @@ class BlockAction extends BaseAction {
      */
     public function insert()
     {
-        $m = D('BlockList');
+        $m = M('BlockList');
         $data['title'] = I('post.title');
         $data['sort_id'] = I('post.sort_id');
         if (empty($data['title'])) {
@@ -117,7 +117,7 @@ class BlockAction extends BaseAction {
      */
     public function update()
     {
-        $m = D('BlockList');
+        $m = M('BlockList');
         $id = I('post.id');
         $data['title'] = I('post.title');
         $data['sort_id'] = I('post.sort_id');
@@ -156,7 +156,7 @@ class BlockAction extends BaseAction {
      */
     public function delete()
     {
-        $m = D('BlockList');
+        $m = M('BlockList');
         $id = I('post.id');
         $condition['id'] = array('eq', $id);
         $del = $m->where($condition)->delete();
@@ -205,7 +205,7 @@ class BlockAction extends BaseAction {
      */
     public function sortEdit()
     {
-        $m = D('BlockSort');
+        $m = M('BlockSort');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
@@ -228,7 +228,7 @@ class BlockAction extends BaseAction {
      */
     public function sortInsert()
     {
-        $m = D('BlockSort');
+        $m = M('BlockSort');
         $ename = I('post.ename');
         $condition['ename'] = array('eq', $ename);
         if (empty($ename)) {
@@ -261,7 +261,7 @@ class BlockAction extends BaseAction {
      */
     public function sortUpdate()
     {
-        $m = D('BlockSort');
+        $m = M('BlockSort');
         $id = I('post.id');
         $ename = I('post.ename');
         $condition['ename'] = array('eq', $ename);
@@ -293,7 +293,7 @@ class BlockAction extends BaseAction {
      */
     public function sortDelete()
     {
-        $m = D('BlockSort');
+        $m = M('BlockSort');
         $l = M('Block');
         $id = I('post.id');
         $condition_sort['sort_id'] = array('eq', $id);
@@ -318,8 +318,8 @@ class BlockAction extends BaseAction {
      */
     public function jsonSortList()
     {
-        $m = D('BlockSort');
-        $list = $m->select();
+        $m = M('BlockSort');
+        $list = $m->order('id desc')->select();
         $count = $m->count("id");
         $a = array();
         $array = array();
@@ -348,7 +348,7 @@ class BlockAction extends BaseAction {
     public function jsonTree()
     {
         $qiuyun = new \Org\Util\Qiuyun;
-        $m = D('BlockSort');
+        $m = M('BlockSort');
         $condition['status'] = array('eq', '20');
         $tree = $m->field(array('id', 'ename' => 'text'))->where($condition)->select();
         //$tree = $qiuyun->list_to_tree($tree, 'id', 'parent_id', 'children');
@@ -365,7 +365,7 @@ class BlockAction extends BaseAction {
      */
     public function jsonList()
     {
-        $m = D('BlockList');
+        $m = M('BlockList');
         $pageNumber = intval($_REQUEST['page']);
         $pageRows = intval($_REQUEST['rows']);
         $pageNumber = (($pageNumber == null || $pageNumber == 0) ? 1 : $pageNumber);

@@ -33,6 +33,9 @@ $array = array(
                 )),
             array('label' => '邮件模板', 'type' => 'setting', 'items' => array(
                     array('label' => '基础设置', 'type' => 'setting', 'link' => 'www.baidu.com')
+                )),
+            array('label' => '地区管理', 'type' => 'area', 'items' => array(
+                    array('label' => '地区列表', 'type' => 'area_list', 'link' => __MODULE__ . '/Area/index')
                 ))
         )),
     array('label' => L('menu_info_name'), 'type' => 'info_name', 'items' => array(

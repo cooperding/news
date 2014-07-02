@@ -1,8 +1,8 @@
 <?php
 
 /**
- * NewsSortAction.class.php
- * 信息分类
+ * AreaAction.class.php
+ * 地区管理
  * @author 正侠客 <lookcms@gmail.com>
  * @copyright 2012- http://www.dingcms.com http://www.dogocms.com All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
@@ -12,11 +12,11 @@
  */
 namespace Admin\Action;
 use Think\Action;
-class NewsSortAction extends BaseAction {
+class AreaAction extends BaseAction {
 
     /**
      * index
-     * 分类信息列表
+     * 地区列表
      * @access public
      * @return array
      * @version dogocms 1.0
@@ -28,7 +28,7 @@ class NewsSortAction extends BaseAction {
 
     /**
      * add
-     * 分类添加
+     * 添加地区
      * @access public
      * @return array
      * @version dogocms 1.0
@@ -45,14 +45,14 @@ class NewsSortAction extends BaseAction {
 
     /**
      * edit
-     * 分类数据编辑
+     * 地区信息编辑
      * @access public
      * @return array
      * @version dogocms 1.0
      */
     public function edit()
     {
-        $m =  M('NewsSort');
+        $m = D('Area');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
@@ -68,7 +68,7 @@ class NewsSortAction extends BaseAction {
 
     /**
      * insert
-     * 分类插入数据
+     * 地区插入数据
      * @access public
      * @return boolean
      * @version dogocms 1.0
@@ -76,16 +76,16 @@ class NewsSortAction extends BaseAction {
     public function insert()
     {
         //添加功能还需要验证数据不能为空的字段
-        $m = M('NewsSort');
+        $m = M('Area');
         $parent_id = I('post.parent_id');
-        $text = I('post.text');
-        if (empty($text)) {
+        $name = I('post.name');
+        if (empty($name)) {
             $this->dmsg('1', '分类名不能为空！', false, true);
         }
         $data_up['en_name'] = I('post.en_name');
         if (empty($data_up['en_name'])) {
             $pinyin = new \Org\Util\Pinyin();
-            $data_up['en_name'] = $pinyin->output($text);
+            $data_up['en_name'] = $pinyin->output($name);
         }
         if ($parent_id != 0) {
             $condition['id'] = array('eq', $parent_id);
@@ -93,14 +93,12 @@ class NewsSortAction extends BaseAction {
             $data_up['path'] = $data['path'] . $parent_id . ',';
         }
         $data_up['updatetime'] = time();
-        $data_up['text'] = $text;
+        $data_up['name'] = $name;
         $data_up['status'] = I('post.status')['0'];
         $data_up['parent_id'] = $parent_id;
         $data_up['keywords'] = I('post.keywords');
         $data_up['description'] = I('post.description');
         $data_up['myorder'] = I('post.myorder');
-        $data_up['template_list'] = I('post.template_list');
-        $data_up['template_content'] = I('post.template_content');
         if ($m->create($data_up)) {
             $rs = $m->add();
             if ($rs) {
@@ -113,17 +111,23 @@ class NewsSortAction extends BaseAction {
 
     /**
      * update
-     * 分类更新
+     * 地区信息更新
      * @access public
      * @return boolean
      * @version dogocms 1.0
      */
     public function update()
     {
-        $m = M('NewsSort');
+        $m = M('Area');
         $id = I('post.id');
         $parent_id = I('post.parent_id');
-        $tbname = 'NewsSort'; //可修改为相应的表名
+        $name = I('post.name');
+        $data_up['en_name'] = I('post.en_name');
+        if (empty($data_up['en_name'])) {
+            $pinyin = new \Org\Util\Pinyin();
+            $data_up['en_name'] = $pinyin->output($name);
+        }
+        $tbname = 'Area'; //可修改为相应的表名
         if ($parent_id != 0) {//不为0时判断是否为子分类
             if ($id == $parent_id) {
                 $this->dmsg('1', '不能选择自身分类为父级分类！', false, true);
@@ -148,21 +152,14 @@ class NewsSortAction extends BaseAction {
             }
             $data_up['path'] = ','; //应该是这个
         }
-        $text = I('post.text');
-        $data_up['en_name'] = I('post.en_name');
-        if (empty($data_up['en_name'])) {
-            $pinyin = new \Org\Util\Pinyin();
-            $data_up['en_name'] = $pinyin->output($text);
-        }
+
         $data_up['updatetime'] = time();
-        $data_up['text'] = $text;
+        $data_up['name'] = $name;
         $data_up['status'] = I('post.status')['0'];
         $data_up['parent_id'] = $parent_id;
         $data_up['keywords'] = I('post.keywords');
         $data_up['description'] = I('post.description');
         $data_up['myorder'] = I('post.myorder');
-        $data_up['template_list'] = I('post.template_list');
-        $data_up['template_content'] = I('post.template_content');
         $condition_sortid['id'] = array('eq', $id);
         $rs = $m->where($condition_sortid)->save($data_up);
         if ($rs == true) {
@@ -174,25 +171,19 @@ class NewsSortAction extends BaseAction {
 
     /**
      * delete
-     * 分类信息删除操作
+     * 地区信息删除操作
      * @access public
      * @return boolean
      * @version dogocms 1.0
      */
     public function delete()
     {
-        $m = M('NewsSort');
+        $m = M('Area');
         $id = I('post.id');
         $condition_path['path'] = array('like', '%,' . $id . ',%');
         $data = $m->field('id')->where($condition_path)->select();
         if (is_array($data)) {
             $this->dmsg('1', '该分类下还有子级分类，无法删除！', false, true);
-        }
-        $t = M('Title');
-        $condition_sort['sort_id'] = array('eq', $id);
-        $t_data = $t->field('sort_id')->where($condition_sort)->find();
-        if (is_array($t_data)) {
-            $this->dmsg('1', '该分类下还有文档信息，无法删除！', false, true);
         }
         $condition_id['id'] = array('eq', $id);
         $del = $m->where($condition_id)->delete();
@@ -205,21 +196,26 @@ class NewsSortAction extends BaseAction {
 
     /**
      * json
-     * 分类信息json数据
+     * 地区信息json数据
      * @access public
      * @return array
      * @version dogocms 1.0
      */
     public function json()
     {
-        $m = M('NewsSort');
-        $list = $m->field('id,parent_id,text')->select();
+        $m = M('Area');
+        $list = $m->field('id,parent_id,name as text,status')->select();
         $navcatCount = $m->count("id");
         $a = array();
         if ($list) {
             foreach ($list as $k => $v) {
                 $a[$k] = $v;
                 $a[$k]['_parentId'] = intval($v['parent_id']); //_parentId为easyui中标识父id
+                if ($v['status'] == 20) {
+                    $a[$k]['status'] = '启用';
+                } else {
+                    $a[$k]['status'] = '禁用';
+                }
             }
         }
 
@@ -231,7 +227,7 @@ class NewsSortAction extends BaseAction {
 
     /**
      * jsonTree
-     * 分类json树结构数据
+     * 地区json树结构数据
      * @access public
      * @return array
      * @version dogocms 1.0
@@ -239,8 +235,8 @@ class NewsSortAction extends BaseAction {
     public function jsonTree()
     {
         $qiuyun = new \Org\Util\Qiuyun;
-        $m = M('NewsSort');
-        $tree = $m->field('id,parent_id,text')->select();
+        $m = M('Area');
+        $tree = $m->field('id,parent_id,name as text')->select();
         $tree = $qiuyun->list_to_tree($tree, 'id', 'parent_id', 'children');
         $tree = array_merge(array(array('id' => 0, 'text' => L('sort_root_name'))), $tree);
         echo json_encode($tree);

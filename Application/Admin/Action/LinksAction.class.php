@@ -52,7 +52,7 @@ class LinksAction extends BaseAction {
      */
     public function edit()
     {
-        $m = D('Links');
+        $m = M('Links');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
@@ -75,7 +75,7 @@ class LinksAction extends BaseAction {
      */
     public function insert()
     {
-        $m = D('Links');
+        $m = M('Links');
         $data['webname'] = I('post.webname');
         $data['sort_id'] = I('post.sort_id');
         if (empty($data['webname'])) {
@@ -86,11 +86,12 @@ class LinksAction extends BaseAction {
         }
         $data['weburl'] = I('post.weburl');
         $data['webpic'] = I('post.webpic');
-        $data['emark'] = I('post.emark');
+        $data['remark'] = I('post.remark');
         $data['myorder'] = I('post.myorder');
         
         $data['updatetime'] = time();
-        $data['status'] = I('post.status')['0'];
+        $data['addtime'] = time();
+        $data['status'] = $_POST['status']['0'];
         if ($m->create($data)) {
             $rs = $m->add();
             if ($rs == true) {
@@ -112,7 +113,7 @@ class LinksAction extends BaseAction {
      */
     public function update()
     {
-        $m = D('Links');
+        $m = M('Links');
         $id = I('post.id');
         $data['webname'] = I('post.webname');
         $data['sort_id'] = I('post.sort_id');
@@ -125,11 +126,11 @@ class LinksAction extends BaseAction {
         }
         $data['weburl'] = I('post.weburl');
         $data['webpic'] = I('post.webpic');
-        $data['emark'] = I('post.emark');
+        $data['remark'] = I('post.remark');
         $data['myorder'] = I('post.myorder');
         
         $data['updatetime'] = time();
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status']['0'];
         $rs = $m->where($condition)->save($data);
         if ($rs == true) {
             $this->dmsg('2', ' 操作成功！', true);
@@ -147,7 +148,7 @@ class LinksAction extends BaseAction {
      */
     public function delete()
     {
-        $m = D('Links');
+        $m = M('Links');
         $id = I('post.id');
         $condition['id'] = array('eq', $id);
         $del = $m->where($condition)->delete();
@@ -180,8 +181,8 @@ class LinksAction extends BaseAction {
     public function sortadd()
     {
         $status = array(
-            '20' => ' 是 ',
-            '10' => ' 否 '
+            '20' => ' 启用 ',
+            '10' => ' 禁用 '
         );
         $this->assign('status', $status);
         $this->display();
@@ -196,13 +197,13 @@ class LinksAction extends BaseAction {
      */
     public function sortedit()
     {
-        $m = D('LinksSort');
+        $m = M('LinksSort');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
         $status = array(
-            '20' => ' 是 ',
-            '10' => ' 否 '
+            '20' => ' 启用 ',
+            '10' => ' 禁用 '
         );
         $this->assign('status', $status);
         $this->assign('v_status', $data['status']);
@@ -219,7 +220,7 @@ class LinksAction extends BaseAction {
      */
     public function sortinsert()
     {
-        $m = D('LinksSort');
+        $m = M('LinksSort');
         $data['ename'] = I('post.ename');
         if (empty($data['ename'])) {
             $this->dmsg('1', '请将信息输入完整！', false, true);
@@ -247,10 +248,10 @@ class LinksAction extends BaseAction {
      */
     public function sortupdate()
     {
-        $m = D('LinksSort');
+        $m = M('LinksSort');
         $id = I('post.id');
         $data['ename'] = I('post.ename');
-        $condition['ename'] = array('eq', $ename);
+        $condition['ename'] = array('eq', $data['ename']);
         $condition['id'] = array('neq', $id);
         if (empty($data['ename'])) {
             $this->dmsg('1', '请将信息输入完整！', false, true);
@@ -258,7 +259,7 @@ class LinksAction extends BaseAction {
         if ($m->field('id')->where($condition)->find()) {
             $this->dmsg('1', '您输入的名称' . $data['ename'] . '已经存在！', false, true);
         }
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status']['0'];
         $data['updatetime'] = time();
         $condition_id['id'] = array('eq', $id);
         $rs = $m->where($condition_id)->save($data);
@@ -278,8 +279,8 @@ class LinksAction extends BaseAction {
      */
     public function sortdelete()
     {
-        $m = D('LinksSort');
-        $l = D('Links');
+        $m = M('LinksSort');
+        $l = M('Links');
         $id = I('post.id');
         $condition['sort_id'] = array('eq', $id);
         if ($l->field('id')->where($condition)->find()) {
@@ -303,7 +304,7 @@ class LinksAction extends BaseAction {
      */
     public function sortJson()
     {
-        $m = D('LinksSort');
+        $m = M('LinksSort');
         $list = $m->select();
         $count = $m->count("id");
         $a = array();
@@ -334,7 +335,7 @@ class LinksAction extends BaseAction {
     public function jsonTree()
     {
         $qiuyun = new \Org\Util\Qiuyun;
-        $m = D('LinksSort');
+        $m = M('LinksSort');
         $tree = $m->field(array('id', 'ename' => 'text'))->select();
         $tree = $qiuyun->list_to_tree($tree, 'id', 'parent_id', 'children');
         $tree = array_merge(array(array('id' => 0, 'text' => L('sort_root_name'))), $tree);
@@ -350,7 +351,7 @@ class LinksAction extends BaseAction {
      */
     public function jsonList()
     {
-        $m = D('Links');
+        $m = M('Links');
         $pageNumber = intval($_REQUEST['page']);
         $pageRows = intval($_REQUEST['rows']);
         $pageNumber = (($pageNumber == null || $pageNumber == 0) ? 1 : $pageNumber);
