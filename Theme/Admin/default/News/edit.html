@@ -37,6 +37,12 @@
                     <input type="button" id="image1" value="选择图片" />
                 </td>
             </tr>
+            <if condition="$data['titlepic'] neq ''">
+                <tr>
+                    <th></th>
+                    <td><img src="{$data['titlepic']}" style="width: 300px;height:auto;"/></td>
+                </tr>
+            </if>
             <tr>
                 <th>关键词：</th>
                 <td><input type="text" name="keywords" value="{$data.keywords}" /></td>

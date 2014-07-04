@@ -138,7 +138,7 @@ class NewsAction extends BaseAction {
         if ($rs == true) {
             $c = M('Content');
             $data_c['title_id'] = intval($last_id);
-            $data_c['content'] = I('post.content');
+            $data_c['content'] = $_POST['content'];
             $rsc = $c->data($data_c)->add();
             if ($rs == true || $rsc == true) {
                 $this->dmsg('2', ' 操作成功！', true);
@@ -178,14 +178,13 @@ class NewsAction extends BaseAction {
         $data['op_id'] = session('LOGIN_UID');
         $data['status'] = $_POST['status']['0'];
         
-        $data_c['content'] = I('post.content');
+        $data_c['content'] = $_POST['content'];
         $rs = $t->where($condition)->save($data);
-        $sql = $t->getlastsql();
         $rsc = $c->where($condition_c)->save($data_c);
         if ($rs == true || $rsc == true) {
             $this->dmsg('2', '更新成功！', true);
         } else {
-            $this->dmsg('1', $sql, false, true);
+            $this->dmsg('1', '更新失败', false, true);
         }
     }
 
