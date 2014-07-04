@@ -124,7 +124,7 @@ class NewsAction extends BaseAction {
         $data['addtime'] = time();
         $data['updatetime'] = time();
         $data['op_id'] = session('LOGIN_UID');
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $data['subtitle'] = I('post.subtitle');
         $data['flag'] = implode(',', I('post.flag'));
         

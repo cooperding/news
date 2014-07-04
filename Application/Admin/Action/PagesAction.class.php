@@ -86,7 +86,7 @@ class PagesAction extends BaseAction {
         }
         $data['addtime'] = time();
         $data['updatetime'] = time();
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $data['keywords'] = I('post.keywords');
         $data['description'] = I('post.description');
         $data['content'] = I('post.content');
@@ -123,7 +123,7 @@ class PagesAction extends BaseAction {
             $this->dmsg('1', '请选择所属分类！', false, true);
         }
         $data['updatetime'] = time();
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $data['keywords'] = I('post.keywords');
         $data['description'] = I('post.description');
         $data['content'] = I('post.content');
@@ -233,7 +233,7 @@ class PagesAction extends BaseAction {
             $data = $m->where($condition_pid)->find();
             $data_up['path'] = $data['path'] . $parent_id . ',';
         }
-        $data_up['status'] = $_POST['status']['0'];
+        $data_up['status'] = $_POST['status'][0];
         $data_up['updatetime'] = time();
         $data_up['parent_id'] = $parent_id;
         $data_up['ename'] = $ename;

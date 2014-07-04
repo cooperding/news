@@ -100,7 +100,7 @@ class AdsAction extends BaseAction {
             $this->dmsg('1', '请选择所属广告分类！', false, true);
         }
         $data['url'] = I('post.url');
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $data['pic'] = I('post.pic');
         $data['remark'] = I('post.remark');
         $data['myorder'] = I('post.myorder');
@@ -138,7 +138,7 @@ class AdsAction extends BaseAction {
             $this->dmsg('1', '请选择所属广告分类！', false, true);
         }
         $data['url'] = I('post.url');
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $data['pic'] = I('post.pic');
         $data['remark'] = I('post.remark');
         $data['myorder'] = I('post.myorder');
@@ -239,7 +239,7 @@ class AdsAction extends BaseAction {
         if (empty($data['ename'])) {
             $this->dmsg('1', '请将信息输入完整！', false, true);
         }
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $data['updatetime'] = time();
         if ($m->create()) {
             $rs = $m->add($data);
@@ -274,7 +274,7 @@ class AdsAction extends BaseAction {
             $this->dmsg('1', '您输入的名称' . $ename . '已经存在！', false, true);
         }
         $condition_id['id'] = array('eq',$id);
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $data['updatetime'] = time();
         $rs = $m->where($condition_id)->save($data);
         if ($rs == true) {

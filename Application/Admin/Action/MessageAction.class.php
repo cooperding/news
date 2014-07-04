@@ -66,7 +66,7 @@ class MessageAction extends BaseAction {
             $this->dmsg('1', '请选择所属分类！', false, true);
         }
         $data['replaytime'] = time();
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $data['updatetime'] = time();
         $data['replycontent'] = I('post.replycontent');
         $rs = $m->where($condition)->save($data);
@@ -168,7 +168,7 @@ class MessageAction extends BaseAction {
             $this->dmsg('1', '您输入的名称' . $ename . '已经存在！', false, true);
         }
         $data['ename'] = $ename;
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $data['updatetime'] = time();
         if ($m->create()) {
             $rs = $m->add($data);
@@ -203,7 +203,7 @@ class MessageAction extends BaseAction {
             $this->dmsg('1', '您输入的名称' . $ename . '已经存在！', false, true);
         }
         $data['ename'] = $ename;
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $data['updatetime'] = time();
         $condition_id['id'] = array('eq', $id);
         $rs = $m->where($condition_id)->save($data);

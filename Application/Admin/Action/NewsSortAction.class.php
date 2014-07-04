@@ -94,7 +94,7 @@ class NewsSortAction extends BaseAction {
         }
         $data_up['updatetime'] = time();
         $data_up['text'] = $text;
-        $data_up['status'] = I('post.status')['0'];
+        $data_up['status'] = $_POST['status'][0];
         $data_up['parent_id'] = $parent_id;
         $data_up['keywords'] = I('post.keywords');
         $data_up['description'] = I('post.description');
@@ -156,7 +156,7 @@ class NewsSortAction extends BaseAction {
         }
         $data_up['updatetime'] = time();
         $data_up['text'] = $text;
-        $data_up['status'] = I('post.status')['0'];
+        $data_up['status'] = $_POST['status'][0];
         $data_up['parent_id'] = $parent_id;
         $data_up['keywords'] = I('post.keywords');
         $data_up['description'] = I('post.description');

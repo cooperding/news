@@ -125,8 +125,8 @@ class MembersAction extends BaseAction {
         $data['password'] = $this->changePassword($user_name, $password);
         $data['username'] = $user_name;
         $data['email'] = $email;
-        $data['sex'] = I('post.sex')['0'];
-        $data['status'] = I('post.status')['0'];
+        $data['sex'] = $_POST['sex'][0];
+        $data['status'] = $_POST['status'][0];
         $data['remark'] = I('post.remark');
         $data['addtime'] = time();
         $data['updatetime'] = time();
@@ -180,8 +180,8 @@ class MembersAction extends BaseAction {
         }
         $data['username'] = $user_name;
         $data['email'] = $email;
-        $data['sex'] = I('post.sex')['0'];
-        $data['status'] = I('post.status')['0'];
+        $data['sex'] = $_POST['sex'][0];
+        $data['status'] = $_POST['status'][0];
         $data['remark'] = I('post.remark');
         $data['updatetime'] = time();
         

@@ -88,7 +88,7 @@ class NavFootAction extends BaseAction {
             $data_up['path'] = $data['path'] . $parent_id . ',';
         }
         $data_up['text'] = I('post.text');
-        $data_up['status'] = I('post.status')['0'];
+        $data_up['status'] = $_POST['status'][0];
         $data_up['updatetime'] = time();
         $data_up['parent_id'] = $parent_id;
         $data_up['url'] = I('post.url');
@@ -150,7 +150,7 @@ class NavFootAction extends BaseAction {
             $data_up['path'] = ','; //应该是这个
         }
         $data_up['text'] = $text;
-        $data_up['status'] = I('post.status')['0'];
+        $data_up['status'] = $_POST['status'][0];
         $data_up['updatetime'] = time();
         $data_up['parent_id'] = $parent_id;
         $data_up['url'] = I('post.url');

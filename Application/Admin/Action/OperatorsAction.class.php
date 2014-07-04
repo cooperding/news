@@ -56,12 +56,6 @@ class OperatorsAction extends BaseAction {
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
-        /*
-          $data = $m->Table(C('DB_PREFIX') . 'operators o')
-          ->join(C('DB_PREFIX') . 'role_user r ON r.user_id=o.id')
-          ->where($condition)->find();
-         * 
-         */
 
         dump($data);
         $status = array(
@@ -86,7 +80,7 @@ class OperatorsAction extends BaseAction {
         $m = D('Operators');
         $data['username'] = I('post.username');
         $data['password'] = I('post.password');
-        $data['status'] = I('post.status')[0];
+        $data['status'] = $_POST['status'][0];
         if (empty($data['username'])) {
             $this->dmsg('1', '用户名不能为空！', false, true);
         }
@@ -133,7 +127,7 @@ class OperatorsAction extends BaseAction {
         $id = I('post.id');
         $data['username'] = I('post.username');
         $data['password'] = I('post.password');
-        $data['status'] = I('post.status')[0];
+        $data['status'] = $_POST['status'][0];
         if (empty($data['username'])) {
             $this->dmsg('1', '用户名不能为空！', false, true);
         }

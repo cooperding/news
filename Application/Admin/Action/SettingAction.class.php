@@ -93,7 +93,7 @@ class SettingAction extends BaseAction {
             $this->dmsg('1', '变量名"' . $sys_name . '"已经存在', false, true);
         }
         $data['sys_value'] = I('post.sys_value');
-        $data['sys_type'] = I('post.sys_type')[0];
+        $data['sys_type'] = $_POST['sys_type'][0];
         $data['updatetime'] = time();
         $data['sys_gid'] = I('post.sys_gid');
         $data['sys_info'] = I('post.sys_info');
@@ -132,7 +132,7 @@ class SettingAction extends BaseAction {
             $this->dmsg('1', '变量名"' . $sys_name . '"已经存在', false, true);
         }
         $data['sys_value'] = I('post.sys_value');
-        $data['sys_type'] = I('post.sys_type')[0];
+        $data['sys_type'] = $_POST['sys_type'][0];
         $data['updatetime'] = time();
         $data['sys_gid'] = I('post.sys_gid');
         $data['sys_info'] = I('post.sys_info');

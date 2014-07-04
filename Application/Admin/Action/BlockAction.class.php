@@ -95,7 +95,7 @@ class BlockAction extends BaseAction {
         $data['field4'] = I('post.field4');
         $data['field5'] = I('post.field5');
         $data['updatetime'] = time();
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         if ($m->create()) {
             $rs = $m->add($data);
             if ($rs) {//存在值
@@ -138,7 +138,7 @@ class BlockAction extends BaseAction {
         $data['field4'] = I('post.field4');
         $data['field5'] = I('post.field5');
         $data['updatetime'] = time();
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $rs = $m->where($condition)->save($data);
         if ($rs == true) {
             $this->dmsg('2', ' 操作成功！', true);
@@ -238,7 +238,7 @@ class BlockAction extends BaseAction {
             $this->dmsg('1', '您输入的名称' . $ename . '已经存在！', false, true);
         }
         $data['ename'] = $ename;
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $data['updatetime'] = time();
         if ($m->create()) {
             $rs = $m->add($data);
@@ -274,7 +274,7 @@ class BlockAction extends BaseAction {
         }
         $condition_id['id'] = array('eq', $id);
         $data['ename'] = $ename;
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $data['updatetime'] = time();
         $rs = $m->where($condition_id)->save($data);
         if ($rs == true) {

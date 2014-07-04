@@ -225,7 +225,7 @@ class LinksAction extends BaseAction {
         if (empty($data['ename'])) {
             $this->dmsg('1', '请将信息输入完整！', false, true);
         }
-        $data['status'] = I('post.status')['0'];
+        $data['status'] = $_POST['status'][0];
         $data['updatetime'] = time();
         if ($m->create()) {
             $rs = $m->add($data);
@@ -259,7 +259,7 @@ class LinksAction extends BaseAction {
         if ($m->field('id')->where($condition)->find()) {
             $this->dmsg('1', '您输入的名称' . $data['ename'] . '已经存在！', false, true);
         }
-        $data['status'] = $_POST['status']['0'];
+        $data['status'] = $_POST['status'][0];
         $data['updatetime'] = time();
         $condition_id['id'] = array('eq', $id);
         $rs = $m->where($condition_id)->save($data);
