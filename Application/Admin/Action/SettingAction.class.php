@@ -3,8 +3,8 @@
 /**
  * SettingAction.class.php
  * 系统基本参数
- * @author 正侠客 <lookcms@gmail.com>
- * @copyright 2012- http://www.dingcms.com http://www.dogocms.com All rights reserved.
+ * @author cooper ding <qiuyuncode@163.com.com>
+ * @copyright 2012- www.dingcms.com www.dogocms.com www.qiuyuncode.com www.adminsir.net All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @version dogocms 1.0 2012-11-5 11:23
  * @package  Controller
@@ -92,6 +92,7 @@ class SettingAction extends BaseAction {
         if (!empty($rs)) {//不为空说明存在，存在就不能添加
             $this->dmsg('1', '变量名"' . $sys_name . '"已经存在', false, true);
         }
+        $data['sys_name'] = $sys_name;
         $data['sys_value'] = I('post.sys_value');
         $data['sys_type'] = $_POST['sys_type'][0];
         $data['updatetime'] = time();
@@ -131,6 +132,7 @@ class SettingAction extends BaseAction {
         if (!empty($rs)) {//不为空说明存在，存在就不能添加
             $this->dmsg('1', '变量名"' . $sys_name . '"已经存在', false, true);
         }
+        $data['sys_name'] = $sys_name;
         $data['sys_value'] = I('post.sys_value');
         $data['sys_type'] = $_POST['sys_type'][0];
         $data['updatetime'] = time();

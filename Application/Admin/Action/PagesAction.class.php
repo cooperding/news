@@ -3,8 +3,8 @@
 /**
  * PagesAction.class.php联动模型
  * 单页文档
- * @author 正侠客 <lookcms@gmail.com>
- * @copyright 2012- http://www.dingcms.com http://www.dogocms.com All rights reserved.
+ * @author cooper ding <qiuyuncode@163.com.com>
+ * @copyright 2012- www.dingcms.com www.dogocms.com www.qiuyuncode.com www.adminsir.net All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @version dogocms 1.0 2013-2-11 20:09
  * @package  Controller

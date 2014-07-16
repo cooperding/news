@@ -3,8 +3,8 @@
 /**
  * AccountAction.class.php
  * 后台个人资料及密码操作
- * @author 正侠客 <lookcms@gmail.com>
- * @copyright 2012- http://www.dingcms.com http://www.dogocms.com All rights reserved.
+ * @author cooper ding <qiuyuncode@163.com.com>
+ * @copyright 2012- www.dingcms.com www.dogocms.com www.qiuyuncode.com www.adminsir.net All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @version dogocms 1.0 2012-11-5 11:20
  * @package  Controller
@@ -85,8 +85,8 @@ class AccountAction extends BaseAction
             $this->dmsg('1', '原密码输入不正确，请确认输入！', false, true);
         }
         $data['password'] = $this->changePassword($username, $newpwd);
-        $rs = $m->where($condition)->save($data);
-        if ($rs == true) {
+        $rs_s = $m->where($condition)->save($data);
+        if ($rs_s == true) {
             $this->dmsg('2', '操作成功！', true);
         } else {
             $this->dmsg('1', '未有操作或操作失败！', false, true);

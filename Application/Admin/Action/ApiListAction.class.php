@@ -3,8 +3,8 @@
 /**
  * ApiListAction.class.php
  * apilist信息管理
- * @author 正侠客 <lookcms@gmail.com>
- * @copyright 2012- http://www.dingcms.com http://www.dogocms.com All rights reserved.
+ * @author cooper ding <qiuyuncode@163.com.com>
+ * @copyright 2012- www.dingcms.com www.dogocms.com www.qiuyuncode.com www.adminsir.net All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @version dogocms 1.0 2013-09-04 15:00
  * @package  Controller
