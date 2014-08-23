@@ -56,7 +56,6 @@ class PassportAction extends Action {
 
     public function login()
     {
-        cookie('gobackurl', $_SERVER['HTTP_REFERER']);
         $skin = $this->getSkin(); //获取前台主题皮肤名称
         $this->assign('title', '会员登录');
         $this->theme($skin)->display(':login');
@@ -102,88 +101,52 @@ class PassportAction extends Action {
      */
     public function checkLogin()
     {
-        $m = D('Members');
+        $m = M('Members');
         $ver_code = I('post.v_code');
         $verify_status = $this->check_verify($ver_code);
         $type = I('post.type');
         if (!$verify_status) {
-            if ($type == '10') {
-                $array = array('status' => 1, 'msg' => '验证码输入错误或已过期！');
-                echo json_encode($array);
-                exit;
-            } else {
-                $this->error('验证码输入错误或已过期！');
-                exit;
-            }
+            $this->error('验证码输入错误或已过期！');
+            exit;
         }
         $email = I('post.email'); //邮箱
         if (empty($email)) {
-            if ($type == '10') {
-                $array = array('status' => 1, 'msg' => '注册邮箱不能为空！');
-                echo json_encode($array);
-                exit;
-            } else {
-                $this->error('注册邮箱不能为空！');
-                exit;
-            }
+            $this->error('用户名或邮箱帐号不能为空！');
+            exit;
         }
         $pwd = I('post.pwd'); //密码
         if (empty($pwd)) {
-            if ($type == '10') {
-                $array = array('status' => 1, 'msg' => '密码不能为空！');
-                echo json_encode($array);
-                exit;
-            } else {
-                $this->error('密码不能为空！');
-                exit;
-            }
+            $this->error('密码不能为空！');
+            exit;
         }
-        $condition['email'] = array('eq', $email);
-        $rs = $m->where($condition)->field('id,username,addtime,password,status')->find();
+        $condition['email|username'] = array('eq', $email);
+        $rs = $m->where($condition)->field('id,email,username,addtime,password,status')->find();
         if ($rs) {
             $uname = $rs['username'];
             $password = R('Common/System/getPwd', array($uname, $pwd));
             if ($password == $rs['password']) {//密码匹配
                 if ($rs['status'] == '10') {//禁用账户，不可登录
-                    if ($type == '10') {
-                        $array = array('status' => 1, 'msg' => '您的账户被禁止登录！');
-                        echo json_encode($array);
-                        exit;
-                    } else {
-                        $this->error('您的账户被禁止登录！', __ROOT__);
-                        exit();
-                    }
+                    $this->error('您的账户被禁止登录！', __ROOT__);
+                    exit();
                 } else {
                     session('LOGIN_M_STATUS', 'TRUE');
                     session('LOGIN_M_NAME', $rs['username']);
                     session('LOGIN_M_ID', $rs['id']);
                     session('LOGIN_M_ADDTIME', $rs['addtime']);
                     session('LOGIN_M_LOGINTIME', time());
-                    if ($type == '10') {
-                        $array = array('status' => 0, 'msg' => '登陆成功！');
-                        echo json_encode($array);
+                    $url = $_POST['referer'];
+                    if ($url) {
+                        $url = 'http://' . $url;
+                        $this->success('登陆成功！', $url);
                         exit;
-                    } else {
-                        $this->success('登陆成功！', __MODULE__);
                     }
+                    $this->success('登陆成功！', __MODULE__);
                 }
-            } else {
-                if ($type == '10') {
-                    $array = array('status' => 1, 'msg' => '您的输入用户名或者密码错误！');
-                    echo json_encode($array);
-                    exit;
-                } else {
-                    $this->error('您的输入用户名或者密码错误！');
-                }
-            }
-        } else {//未查询到数据
-            if ($type == '10') {
-                $array = array('status' => 1, 'msg' => '您的输入用户名或者密码错误！');
-                echo json_encode($array);
-                exit;
             } else {
                 $this->error('您的输入用户名或者密码错误！');
             }
+        } else {//未查询到数据
+            $this->error('您的输入用户名或者密码错误！');
         }
     }
 
@@ -197,7 +160,7 @@ class PassportAction extends Action {
      */
     public function getNewPwd()
     {
-        $m = D('Members');
+        $m = M('Members');
         $v_code = I('post.v_code');
         $verify_status = $this->check_verify($v_code);
         if (!$verify_status) {
@@ -245,80 +208,38 @@ class PassportAction extends Action {
      */
     public function register()
     {
-        $m = D('Members');
+        $m = M('Members');
         $v_code = I('post.v_code');
         $verify_status = $this->check_verify($v_code);
         $type = I('post.type');
         if (!$verify_status) {
-            if ($type == '10') {
-                $array = array('status' => 1, 'msg' => '验证码为空或者输入错误！');
-                echo json_encode($array);
-                exit;
-            } else {
-                $this->error('验证码为空或者输入错误！');
-            }
+            $this->error('验证码为空或者输入错误！');
         }
         $uname = I('post.uname'); //用户名
         $email = I('post.email'); //邮箱
         $pwd = I('post.pwd'); //密码
         $pwd2 = I('post.pwd2'); //密码2
         if (empty($uname)) {
-            if ($type == '10') {
-                $array = array('status' => 1, 'msg' => '用户名不能为空！');
-                echo json_encode($array);
-                exit;
-            } else {
-                $this->error('用户名不能为空！');
-            }
+            $this->error('用户名不能为空！');
         }
         if (empty($email)) {
-            if ($type == '10') {
-                $array = array('status' => 1, 'msg' => '邮箱不能为空！');
-                echo json_encode($array);
-                exit;
-            } else {
-                $this->error('邮箱不能为空！');
-            }
+            $this->error('邮箱不能为空！');
         }
         if (empty($pwd) || empty($pwd2)) {
-            if ($type == '10') {
-                $array = array('status' => 1, 'msg' => '密码不能为空！');
-                echo json_encode($array);
-                exit;
-            } else {
-                $this->error('密码不能为空！');
-            }
+            $this->error('密码不能为空！');
         }
         if ($pwd != $pwd2) {
-            if ($type == '10') {
-                $array = array('status' => 1, 'msg' => '两次密码输入不一致！');
-                echo json_encode($array);
-                exit;
-            } else {
-                $this->error('两次密码输入不一致！');
-            }
+            $this->error('两次密码输入不一致！');
         }
         $condition_uname['username'] = array('eq', $uname);
         $rs_uname = $m->where($condition_uname)->find();
         if ($rs_uname) {
-            if ($type == '10') {
-                $array = array('status' => 1, 'msg' => '用户名已经存在！');
-                echo json_encode($array);
-                exit;
-            } else {
-                $this->error('用户名已经存在！');
-            }
+            $this->error('用户名已经存在！');
         }
         $condition_email['email'] = array('eq', $email);
         $rs_email = $m->where($condition_email)->find();
         if ($rs_email) {
-            if ($type == '10') {
-                $array = array('status' => 1, 'msg' => '邮箱已经存在！');
-                echo json_encode($array);
-                exit;
-            } else {
-                $this->error('邮箱已经存在！');
-            }
+            $this->error('邮箱已经存在！');
         }
         $password = R('Common/System/getPwd', array($uname, $pwd));
         $data['username'] = $uname;
@@ -329,21 +250,9 @@ class PassportAction extends Action {
         $data['ip'] = get_client_ip();
         $rs = $m->data($data)->add();
         if ($rs == true) {
-            if ($type == '10') {
-                $array = array('status' => 0, 'msg' => '注册成功,请登录后操作！');
-                echo json_encode($array);
-                exit;
-            } else {
-                $this->success('注册成功,请登录后操作！', __MODULE__ . '/Passport/login');
-            }
+            $this->success('注册成功,请登录后操作！', __MODULE__ . '/Passport/login');
         } else {
-            if ($type == '10') {
-                $array = array('status' => 1, 'msg' => '注册失败，请联系管理员！');
-                echo json_encode($array);
-                exit;
-            } else {
-                $this->error('注册失败，请联系管理员！');
-            }
+            $this->error('注册失败，请联系管理员！');
         }
     }
 
@@ -397,7 +306,7 @@ class PassportAction extends Action {
     {
         $verify = new \Think\Verify();
         $verify->seKey = 'verify_user_login'; //验证码的加密密钥
-        return $verify->check($code, $id);
+        return $verify->check($code);
     }
 
     /*

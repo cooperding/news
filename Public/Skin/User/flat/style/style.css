@@ -1,0 +1,51 @@
+
+/*page*/
+.dogo-page {height:auto;}
+
+/*override*/
+.navbar-default .navbar-nav > li > a{color: #000;font-size: 15px;}
+.navbar-default .navbar-brand{color: #000;font-size: 17px;}
+
+/*dogo-box*/
+.dogo-box{}
+.dogo-box-header{}
+.dogo-box-header h3{font-size: 15px;line-height: 30px;padding-left: 15px;}
+
+
+/*header*/
+.dogo-header{}
+.dogo-header .navbar{border-radius: 0px;}
+
+/*top*/
+.dogo-top{background: #f2f2f2;}
+
+/*dogo-logo*/
+.dogo-logo{}
+/*dogo-nav*/
+.dogo-nav-noborder{background-image:none;box-shadow:none;background-color:#fff;border-color: #fff;margin-top: 10px;}
+
+.dogo-border-shadow{border: 10px solid rgba(48, 48, 48, 0.08);border-radius: 8px;box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);}
+
+/*dogo-footer*/
+.dogo-footer{text-align: center;margin: 20px 0 30px;}
+
+
+
+@media(min-width:768px){
+    .dogo-thumbnail{min-height: 270px;}
+    .dogo-thumbnail img{min-height: 250px;}
+}
+@media (min-width: 1200px){
+    .dogo-wp {width: 1240px;}
+    .dogo-wp-login{width:950px;margin: 0 auto;}
+    .dogo-thumbnail{min-height: 270px;}
+    .dogo-thumbnail img{max-height: 150px;min-height: 150px;}
+    .dogo-top{height: 26px;}
+    .dogo-logo{height: 90px;}
+}
+@media(max-width:768px){
+
+}
+
+
+
