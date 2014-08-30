@@ -2,8 +2,12 @@
 /*page*/
 .dogo-page {height:auto;}
 
+.dogo-navbar{min-height: 80px;}
+.dogo-navbar .navbar-toggle {margin-top:20px;}
 /*override*/
-.navbar-default .navbar-nav > li > a{color: #444;}
+
+.dogo-navbar .navbar-brand{line-height: 50px;color: #000;font-size: 16px;}
+.dogo-navbar .navbar-nav>li>a{line-height: 50px;font-size: 16px;color: #000;}
 
 /*dogo-box*/
 .dogo-box{}
@@ -15,19 +19,39 @@
 .dogo-header{}
 .dogo-header .navbar{border-radius: 0px;}
 
-/*top*/
-.dogo-top{background: #f2f2f2;height: 36px;}
-/*dogo-logo*/
-.dogo-logo{}
+/*dogo-navbar*/
+.dogo-navbar{-webkit-box-shadow:none;box-shadow:none;background: #fff;}
+
 /*dogo-nav*/
 .dogo-nav{}
 .navbar{margin-bottom: 0;}
 /*dogo-notice*/
-.dogo-notice{min-height: 28px;line-height: 30px;background: #e5e5e5;}
+.dogo-notice{min-height: 35px;line-height: 35px;background: #e5e5e5;}
 
 /*dogo-flash*/
 .dogo-flash{height: auto;}
 .dogo-flash img{height: 300px;}
+
+.dogo-text{}
+.dogo-text ul{}
+.dogo-text ul li{height: 22px;line-height: 22px;overflow: hidden;}
+.dogo-text ul li a{margin-left: 4px;}
+
+.dogo-single-text{}
+.dogo-single-text h1{max-height: 30px;font-size: 17px;line-height: 30px;overflow: hidden;text-align: center;}
+.dogo-single-text p{font-size: 14px;line-height: 20px;max-height: 40px;color: #646363;margin-bottom: 8px;text-indent: 25px;overflow: hidden;}
+
+
+.dogo-list-text{}
+.dogo-list-text ul{}
+.dogo-list-text ul li{min-height: 125px;border-bottom: dashed #E4E2E2 1px;margin: 4px 0 9px 0;padding-bottom: 5px;}
+.dogo-list-text ul li:last-of-type{border-bottom: none;}
+.dogo-list-text ul li h3{font-size: 18px;line-height: 35px;font-weight: 500;overflow: hidden;font-family: "微软雅黑", "Microsoft Yahei";}
+.dogo-list-text ul li p{color: #000;line-height: 20px;max-height: 60px;overflow: hidden;font-size: 12px;}
+.dogo-list-text ul li h6{line-height: 25px;color: #868686;}
+.dogo-list-text ul li h6 span{margin: 0 2px 0 5px;}
+
+
 
 /*dogo-list-news*/
 
@@ -64,7 +88,9 @@
 .dogo-slide{margin-left: -10px;
 margin-right: -10px;}
 /*dogo-footer*/
-.dogo-footer{text-align: center;margin: 20px 0 30px;}
+.dogo-footer{text-align: center;margin: 5px 0 30px;}
+.dogo-footer nav{text-align: left;line-height: 25px;margin-bottom: 30px;}
+.dogo-footer nav a{margin: 0 8px;}
 
 .dogo-thumbnail{-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.075);box-shadow: 1px 1px 5px rgba(0,0,0,.085);
                border: 0px;}

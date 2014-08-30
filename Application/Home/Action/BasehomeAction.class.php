@@ -20,7 +20,9 @@ class BasehomeAction extends Action {
     {
         $skin = $this->getSkin(); //获取前台主题皮肤名称
         $navhead = R('Common/System/getNav', array('header')); //导航菜单
+        $navfoot = R('Common/System/getNav', array('footer')); //导航菜单
         $this->assign('navhead', $navhead);
+        $this->assign('navfoot', $navfoot);
         $this->assign('style_common', '/Common');
         $this->assign('style', '/Skin/Home/' . $skin);
         $this->assign('tpl_header', './Theme/Home/' . $skin . '/tpl_header.html');

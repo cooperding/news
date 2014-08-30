@@ -25,25 +25,25 @@
                             <input type="text" name="telphone" class="form-control input-lg" id="inputTelphone" placeholder="手机号码" value="{$data.username}" required="required">
                         </div>
                     </div><!--form-group-->
-                    <div class="form-group">
+                    <div class="form-group dogo-click-area">
                         <label class="col-sm-2 control-label">所在地区：</label>
                         <div class="col-sm-10">
 
 
                             <div class="col-sm-3">
-                                <select class="form-control" name="province">
-                                    <option>请选择省市/其他...</option>
-                                </select>
+                                <div class="dogo-ajax-province">
+
+                                </div>
                             </div>
                             <div class="col-sm-3">
-                                <select class="form-control" name="city">
-                                    <option>请选择城市...</option>
-                                </select>
+                                <div class="dogo-ajax-city">
+
+                                </div>
                             </div>
                             <div class="col-sm-6">
-                                <select class="form-control" name="county">
-                                    <option>请选择区/县...</option>
-                                </select>
+                                <div class="dogo-ajax-county">
+
+                                </div>
                             </div>
                         </div>
                     </div><!--form-group-->
@@ -88,6 +88,47 @@
 <include file="$tpl_footer" />
 
 </div><!--dogo-page-->
-
+<script>
+    $(function() {
+        //获取省份
+        var url = '{:U("User/Index/getArea")}';
+        $.ajax({
+            type: "post",
+            dataType: 'html',
+            url: url,
+            data: {type: 'province'},
+            success: function(data) {
+                $('.dogo-ajax-province').html(data);
+            }
+        });
+        //获取城市
+        $('.dogo-click-area').on('change', 'select[name="province"]', function() {
+            var province_id = $(this).val();
+            $.ajax({
+                type: "post",
+                dataType: 'html',
+                url: url,
+                data: {type: 'city', province_id: province_id},
+                success: function(data) {
+                    $('.dogo-ajax-city').html(data);
+                    $('.dogo-ajax-county').html('');
+                }
+            });
+        });
+        //获取县区
+        $('.dogo-click-area').on('change', 'select[name="city"]', function() {
+            var city_id = $(this).val();
+            $.ajax({
+                type: "post",
+                dataType: 'html',
+                url: url,
+                data: {type: 'county', city_id: city_id},
+                success: function(data) {
+                    $('.dogo-ajax-county').html(data);
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

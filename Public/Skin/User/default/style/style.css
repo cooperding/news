@@ -3,7 +3,8 @@
 .dogo-page {height:auto;}
 
 /*override*/
-.navbar-default .navbar-nav > li > a{color: #444;}
+.navbar-default .navbar-nav > li > a{color: #000;font-size: 15px;}
+.navbar-default .navbar-brand{color: #000;font-size: 17px;}
 
 /*dogo-box*/
 .dogo-box{}
@@ -21,25 +22,9 @@
 /*dogo-logo*/
 .dogo-logo{}
 /*dogo-nav*/
-.dogo-nav{}
+.dogo-nav-noborder{background-image:none;box-shadow:none;background-color:#fff;border-color: #fff;margin-top: 10px;}
 
-/*dogo-flash*/
-.dogo-flash img{height: 300px;}
-
-/*dogo-view-title*/
-.dogo-view-title{height: auto;border-bottom: 1px solid #f2f2f2; padding: 5px 0;}
-.dogo-view-title h4{line-height: 25px;font-size: 18px;color: #000;}
-.dogo-view-title p{line-height: 20px;color: #cc4026;font-weight: bold;padding-top: 5px;}
-
-.dogo-view-info{}
-.dogo-view-info p{line-height: 20px;height: 25px;margin: 5px 0;}
-.dogo-view-info p span{margin-left: 15px;font-size: 15px;margin-right: 5px;}
-.dogo-view-info p span.price{text-decoration:line-through;}
-
-
-.dogo-view-cart{border: 1px solid #f2f2f2;height: auto;padding: 5px 10px;line-height: 45px;}
-.dogo-view-cart p a:first-child{padding: 6px 40px;margin: 0 8px;}
-.dogo-view-cart p a:last-child{padding: 6px 40px;}
+.dogo-border-shadow{border: 10px solid rgba(48, 48, 48, 0.08);border-radius: 8px;box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);}
 
 /*dogo-footer*/
 .dogo-footer{text-align: center;margin: 20px 0 30px;}
@@ -52,6 +37,7 @@
 }
 @media (min-width: 1200px){
     .dogo-wp {width: 1240px;}
+    .dogo-wp-login{width:950px;margin: 0 auto;}
     .dogo-thumbnail{min-height: 270px;}
     .dogo-thumbnail img{max-height: 150px;min-height: 150px;}
     .dogo-top{height: 26px;}

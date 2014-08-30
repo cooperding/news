@@ -17,10 +17,15 @@ a:hover{text-decoration:none;color: #FF6347;}
 .dogo-pd1015{padding:10px 15px;}
 .dogo-pd15{padding: 15px;}
 .dogo-mr15{margin-right: 15px;}
+.dogo-ml10{margin-left: 10px;}
+.dogo-mt10{margin-top: 10px;}
+.dogo-mt50{margin-top: 50px;}
+.dogo-ml50{margin-left: 50px;}
 .dogo-blank{ height:10px;margin: 0;padding: 0;}
 .cursor{cursor:pointer;}
 .dogo-flt{float: left;display: inline;}
 .dogo-frt{float: right;display: inline;}
+
 
 /*dogo-bg-gray*/
 .dogo-bg-gray{background-color: #eae8ee;border-radius: 5px;}
@@ -337,7 +342,7 @@ a:hover{text-decoration:none;color: #FF6347;}
 
 /*btn base*/
 .dogo-btn{-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
-box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);}
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);}
 /*dogo-btn-blueone*/
 .dogo-btn-blueone{
     background-image: -webkit-linear-gradient(top,#4298F8 0,#2d89ef 100%);
@@ -495,15 +500,6 @@ box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);}
 
 
 
-
-
-
-
-
-
-
-
-
 /*会员中心菜单style*/
 .dogo-sidebar{}
 .dogo-sidebar a{text-indent: 15px;}
@@ -530,10 +526,13 @@ a.dogo-nav-header{text-indent: 5px;}
 }
 /*会员登录*/
 .dogo-input {margin: 5px 0;}
-.dogo-member{background-color: #eae8ee;border-radius: 5px;padding: 20px;overflow: hidden;}
+.dogo-member{background-color: #fff;border:1px solid #ECECEC;border-radius: 5px;padding: 20px;overflow: hidden;}
 .dogo-member .btn-default{background: #ff5400;background-image: linear-gradient(to bottom,#ff5400 0,#ff5400 100%);
                           background-repeat: repeat-x;border-color: #ff5400;}
 .dogo-member .btn-default:hover,.dogo-member .btn-default:focus {background-color: #fc8043;border-color: #fc8043;background-position: 0 -45px;color: #fff;}
 .dogo-member p{line-height: 25px;overflow: hidden;}
 
-
+.dogo-member .btn-gray{background: #F7F7F7;background-image: linear-gradient(to bottom,#F7F7F7 0,#DFDFDF 100%);
+                       background-repeat: repeat-x;border-color: #F7F7F7;}
+.dogo-member .btn-gray:hover,.dogo-member .btn-gray:focus{background: #F7F7F7;background-image: linear-gradient(to bottom,#F7F7F7 0,#CAC9C9 100%);
+                                                          background-repeat: repeat-x;border-color: #F7F7F7;}
