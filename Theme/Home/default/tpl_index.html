@@ -1,27 +1,16 @@
 <include file="$tpl_header" />
 <div class="container dogo-wp">
     <div class="row dogo-notice">
-        <div class="col-md-3">
-            <ul>
-
-                <li><span class="glyphicon glyphicon-volume-up"></span> <a href="#">[7-30]帐号注册协议公告</a></li>
-            </ul>
-        </div><!--col-md-->
-        <div class="col-md-3">
-            <ul>
-                <li><a href="#">帐号注册协议公告</a></li>
-            </ul>
-        </div><!--col-md-->
-        <div class="col-md-3">
-            <ul>
-                <li><a href="#">帐号注册协议公告</a></li>
-            </ul>
-        </div><!--col-md-->
-        <div class="col-md-3">
-            <ul>
-                <li><a href="#">帐号注册协议公告2</a></li>
-            </ul>
-        </div><!--col-md-->
+        <dogocms:block typeid="4" limit="4" key="i">
+            <div class="col-md-3">
+                <ul>
+                    <li>
+                    <if condition="$i eq 1"><span class="glyphicon glyphicon-volume-up"></span> </if>
+                    <a href="{$block.url}" target="_blank" title="{$block.title}">{$block.title}</a>
+                    </li>
+                </ul>
+            </div><!--col-md-->
+        </dogocms:block>
     </div><!--row-->
     <div class="dogo-blank"></div>
     <div class="row">
@@ -30,8 +19,8 @@
                 <div class="col-md-4">
                     <div class="dogo-box dogo-flash">
                         <ul class="bxslider">
-                            <dogocms:ads typeid="1">
-                                <li><a href="" title="{$ads.name}"><img src="{$ads.pic}" title="{$ads.name}"/></a></li>
+                            <dogocms:ads typeid="1" limit="5">
+                                <li><a href="{$ads.url}" title="{$ads.name}"><img src="{$ads.pic}" title="{$ads.name}"/></a></li>
                             </dogocms:ads>
                         </ul>
                     </div>
@@ -45,8 +34,10 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="dogo-box dogo-single-text">
-                                            <h1><a href="#">用最粗糙的语言陈述最操蛋的现实用最粗糙的语言陈述最操蛋的现实</a></h1>
-                                            <p>用最粗糙的语言陈述最操蛋的现实用最粗糙的语言陈述最操蛋的现实,用最粗糙的语言陈述最操蛋的现实用最粗糙的语言陈述最操蛋的现实</p>
+                                            <dogocms:article type="all" limit="1">
+                                                <h3><a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></h3>
+                                                <p>{$article.description}</p>
+                                            </dogocms:article>
                                         </div><!--dogo-box-->
                                     </div><!--col-md-->
                                 </div><!--row-->
@@ -55,8 +46,9 @@
                                         <aside>
                                             <div class=" dogo-text">
                                                 <ul>
-                                                    <li>·<a href="">用最粗糙的语言陈述最操蛋的现实用最粗糙的语言陈述最操蛋的现实</a></li>
-                                                    <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
+                                                    <dogocms:article type="all" limit="0,2">
+                                                        <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                                    </dogocms:article>
                                                 </ul>
                                             </div>
                                         </aside>
@@ -65,8 +57,9 @@
                                         <aside>
                                             <div class=" dogo-text">
                                                 <ul>
-                                                    <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                                    <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
+                                                    <dogocms:article type="all" limit="2,4">
+                                                        <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                                    </dogocms:article>
                                                 </ul>
                                             </div>
                                         </aside>
@@ -80,7 +73,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="dogo-box dogo-single-text ">
-                                <img src="http://localhost/qiuyun/shop/Public/Uploads/Images/20140701/53b2bdac897be.jpg" class="img-responsive"/>
+                                <dogocms:ads typeid="1" limit="1">
+                                    <a href="" title="{$ads.name}"><img src="{$ads.pic}" class="img-responsive" alt="{$ads.name}" title="{$ads.name}"/></a>
+                                </dogocms:ads>
                             </div><!--dogo-box-->
                         </div><!--col-md-->
                     </div><!--row-->
@@ -99,12 +94,9 @@
                                 </div>
                                 <div class="panel-body dogo-text">
                                     <ul>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
+                                        <dogocms:article type="all" limit="8">
+                                            <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                        </dogocms:article>
                                     </ul>
                                 </div>
                             </div>
@@ -118,12 +110,9 @@
                                 </div>
                                 <div class="panel-body dogo-text">
                                     <ul>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
+                                        <dogocms:article type="all" limit="8">
+                                            <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                        </dogocms:article>
                                     </ul>
                                 </div>
                             </div>
@@ -137,12 +126,9 @@
                                 </div>
                                 <div class="panel-body dogo-text">
                                     <ul>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
+                                        <dogocms:article type="all" limit="8">
+                                            <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                        </dogocms:article>
                                     </ul>
                                 </div>
                             </div>
@@ -156,12 +142,9 @@
                                 </div>
                                 <div class="panel-body dogo-text">
                                     <ul>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
+                                        <dogocms:article type="all" limit="8">
+                                            <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                        </dogocms:article>
                                     </ul>
                                 </div>
                             </div>
@@ -175,12 +158,9 @@
                                 </div>
                                 <div class="panel-body dogo-text">
                                     <ul>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                        <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                        <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
+                                        <dogocms:article type="all" limit="8">
+                                            <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                        </dogocms:article>
                                     </ul>
                                 </div>
                             </div>
@@ -193,154 +173,29 @@
                         <div class="dogo-box">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title"><a href="#">全部分类</a></h3>
+                                    <h3 class="panel-title"><a href="#">最新文档</a></h3>
                                 </div>
                                 <div class="panel-body dogo-list-text">
                                     <ul>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="#"><img src="/qiuyun/news/Public/Uploads/Images/20140310/CIC1.jpg" class="img-responsive"/></a>
-                                                </div><!--col-md-->
-                                                <div class="col-md-8">
-                                                    <h3><a href="#">用最粗糙的语言陈述最操蛋的现实</a></h3>
-                                                    <h6>
-                                                        <span class="glyphicon glyphicon-refresh"></span> 08/27 19:40
-                                                        <span class="glyphicon glyphicon-list"></span> HTML5
-                                                        <span class="glyphicon glyphicon-eye-open"></span> 238
-                                                    </h6>
-                                                    <p>用户体验到底值得是什么？它与产品的价值又在哪里？与产品、设计部门的关系又是怎么样的？ 反思一：用户体验的概念和落地情况 笼统地说，用户</p>
-                                                </div><!--col-md-->
-                                            </div><!--row-->
-                                        </li>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="#"><img src="/qiuyun/news/Public/Uploads/Images/20140310/a01.jpg" class="img-responsive"/></a>
-                                                </div><!--col-md-->
-                                                <div class="col-md-8">
-                                                    <h3><a href="#">“品读”，一个阅读界的Pinterest</a></h3>
-                                                    <h6>
-                                                        <span class="glyphicon glyphicon-refresh"></span> 08/27 19:40
-                                                        <span class="glyphicon glyphicon-list"></span> HTML5
-                                                        <span class="glyphicon glyphicon-eye-open"></span> 238
-                                                    </h6>
-                                                    <p>用户的时间也是宝贵的,我们不能让它白白浪费掉！在每个项目中我们都要问自己两个问题:“我们为用户节省时间了吗? ”、“我们是如何为用户节省时间</p>
-                                                </div><!--col-md-->
-                                            </div><!--row-->
-                                        </li>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="#"><img src="/qiuyun/news/Public/Uploads/Images/20140310/a02.jpg" class="img-responsive"/></a>
-                                                </div><!--col-md-->
-                                                <div class="col-md-8">
-                                                    <h3><a href="#">用最粗糙的语言陈述最操蛋的现实</a></h3>
-                                                    <h6>
-                                                        <span class="glyphicon glyphicon-refresh"></span> 08/27 19:40
-                                                        <span class="glyphicon glyphicon-list"></span> HTML5
-                                                        <span class="glyphicon glyphicon-eye-open"></span> 238
-                                                    </h6>
-                                                    <p>小编按：优先处理最重要的事情，而不是找借口推迟它，可以使我们的工作更有价值。 “这星期你的五大工作重点是什么？” “你用来衡量本季度工作成</p>
-                                                </div><!--col-md-->
-                                            </div><!--row-->
-                                        </li>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="#"><img src="/qiuyun/news/Public/Uploads/Images/20140310/CIC1.jpg" class="img-responsive"/></a>
-                                                </div><!--col-md-->
-                                                <div class="col-md-8">
-                                                    <h3><a href="#">用最粗糙的语言陈述最操蛋的现实</a></h3>
-                                                    <h6>
-                                                        <span class="glyphicon glyphicon-refresh"></span> 08/27 19:40
-                                                        <span class="glyphicon glyphicon-list"></span> HTML5
-                                                        <span class="glyphicon glyphicon-eye-open"></span> 238
-                                                    </h6>
-                                                    <p>用户体验到底值得是什么？它与产品的价值又在哪里？与产品、设计部门的关系又是怎么样的？ 反思一：用户体验的概念和落地情况 笼统地说，用户</p>
-                                                </div><!--col-md-->
-                                            </div><!--row-->
-                                        </li>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="#"><img src="/qiuyun/news/Public/Uploads/Images/20140310/a01.jpg" class="img-responsive"/></a>
-                                                </div><!--col-md-->
-                                                <div class="col-md-8">
-                                                    <h3><a href="#">“品读”，一个阅读界的Pinterest</a></h3>
-                                                    <h6>
-                                                        <span class="glyphicon glyphicon-refresh"></span> 08/27 19:40
-                                                        <span class="glyphicon glyphicon-list"></span> HTML5
-                                                        <span class="glyphicon glyphicon-eye-open"></span> 238
-                                                    </h6>
-                                                    <p>用户的时间也是宝贵的,我们不能让它白白浪费掉！在每个项目中我们都要问自己两个问题:“我们为用户节省时间了吗? ”、“我们是如何为用户节省时间</p>
-                                                </div><!--col-md-->
-                                            </div><!--row-->
-                                        </li>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="#"><img src="/qiuyun/news/Public/Uploads/Images/20140310/a02.jpg" class="img-responsive"/></a>
-                                                </div><!--col-md-->
-                                                <div class="col-md-8">
-                                                    <h3><a href="#">用最粗糙的语言陈述最操蛋的现实</a></h3>
-                                                    <h6>
-                                                        <span class="glyphicon glyphicon-refresh"></span> 08/27 19:40
-                                                        <span class="glyphicon glyphicon-list"></span> HTML5
-                                                        <span class="glyphicon glyphicon-eye-open"></span> 238
-                                                    </h6>
-                                                    <p>小编按：优先处理最重要的事情，而不是找借口推迟它，可以使我们的工作更有价值。 “这星期你的五大工作重点是什么？” “你用来衡量本季度工作成</p>
-                                                </div><!--col-md-->
-                                            </div><!--row-->
-                                        </li>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="#"><img src="/qiuyun/news/Public/Uploads/Images/20140310/CIC1.jpg" class="img-responsive"/></a>
-                                                </div><!--col-md-->
-                                                <div class="col-md-8">
-                                                    <h3><a href="#">用最粗糙的语言陈述最操蛋的现实</a></h3>
-                                                    <h6>
-                                                        <span class="glyphicon glyphicon-refresh"></span> 08/27 19:40
-                                                        <span class="glyphicon glyphicon-list"></span> HTML5
-                                                        <span class="glyphicon glyphicon-eye-open"></span> 238
-                                                    </h6>
-                                                    <p>用户体验到底值得是什么？它与产品的价值又在哪里？与产品、设计部门的关系又是怎么样的？ 反思一：用户体验的概念和落地情况 笼统地说，用户</p>
-                                                </div><!--col-md-->
-                                            </div><!--row-->
-                                        </li>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="#"><img src="/qiuyun/news/Public/Uploads/Images/20140310/a01.jpg" class="img-responsive"/></a>
-                                                </div><!--col-md-->
-                                                <div class="col-md-8">
-                                                    <h3><a href="#">“品读”，一个阅读界的Pinterest</a></h3>
-                                                    <h6>
-                                                        <span class="glyphicon glyphicon-refresh"></span> 08/27 19:40
-                                                        <span class="glyphicon glyphicon-list"></span> HTML5
-                                                        <span class="glyphicon glyphicon-eye-open"></span> 238
-                                                    </h6>
-                                                    <p>用户的时间也是宝贵的,我们不能让它白白浪费掉！在每个项目中我们都要问自己两个问题:“我们为用户节省时间了吗? ”、“我们是如何为用户节省时间</p>
-                                                </div><!--col-md-->
-                                            </div><!--row-->
-                                        </li>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="#"><img src="/qiuyun/news/Public/Uploads/Images/20140310/a02.jpg" class="img-responsive"/></a>
-                                                </div><!--col-md-->
-                                                <div class="col-md-8">
-                                                    <h3><a href="#">用最粗糙的语言陈述最操蛋的现实</a></h3>
-                                                    <h6>
-                                                        <span class="glyphicon glyphicon-refresh"></span> 08/27 19:40
-                                                        <span class="glyphicon glyphicon-list"></span> HTML5
-                                                        <span class="glyphicon glyphicon-eye-open"></span> 238
-                                                    </h6>
-                                                    <p>小编按：优先处理最重要的事情，而不是找借口推迟它，可以使我们的工作更有价值。 “这星期你的五大工作重点是什么？” “你用来衡量本季度工作成</p>
-                                                </div><!--col-md-->
-                                            </div><!--row-->
-                                        </li>
+                                        <dogocms:article type="all" limit="8">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">
+                                                            <img src="{$article.titlepic}" title="{$article.title}" alt="{$article.title}" /></a>
+                                                    </div><!--col-md-->
+                                                    <div class="col-md-8">
+                                                        <h3><a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></h3>
+                                                        <h6>
+                                                            <span class="glyphicon glyphicon-refresh"></span> {$article.updatetime|date="m/d H:i",###}
+                                                            <span class="glyphicon glyphicon-list"></span> <a href="{:U('Home/List/index',array('id'=>$article['sort_id']))}">{$article.sortname}</a>
+                                                            <span class="glyphicon glyphicon-eye-open"></span> {$article.views}
+                                                        </h6>
+                                                        <p>{$article.description}</p>
+                                                    </div><!--col-md-->
+                                                </div><!--row-->
+                                            </li>
+                                        </dogocms:article>
                                     </ul>
                                 </div>
                             </div><!--panel-->
@@ -349,10 +204,10 @@
                 </div><!--col-md-->
             </div><!--row-->
 
-            
 
 
-            
+
+
 
 
 
@@ -365,12 +220,9 @@
                     <div class="panel panel-default">
                         <div class="panel-body dogo-text">
                             <ul>
-                                <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
+                                <dogocms:article type="all" limit="8">
+                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                </dogocms:article>
                             </ul>
                         </div>
                     </div>
@@ -384,12 +236,9 @@
                         </div>
                         <div class="panel-body dogo-text">
                             <ul>
-                                <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
+                                <dogocms:article type="all" limit="8">
+                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                </dogocms:article>
                             </ul>
                         </div>
                     </div>
@@ -397,7 +246,11 @@
             </aside>
 
             <aside>
-                <a href="#"><img src="/qiuyun/news/Public/Uploads/Images/20140310/CIC1.jpg" class="img-responsive"/></a>
+
+                <dogocms:ads typeid="1" limit="1">
+                    <a href="" title="{$ads.name}"><img src="{$ads.pic}" class="img-responsive" alt="{$ads.name}" title="{$ads.name}"/></a>
+                </dogocms:ads>
+
             </aside>
             <div class="dogo-blank"></div>
             <aside>
@@ -406,8 +259,12 @@
                         <div class="panel-heading">
                             <h3 class="panel-title"><a href="#">全部分类</a></h3>
                         </div>
-                        <div class="panel-body">
-                            Panel content
+                        <div class="panel-body dogo-text">
+                            <ul>
+                                <dogocms:article type="all" limit="8">
+                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                </dogocms:article>
+                            </ul>
                         </div>
                     </div>
                 </div><!--dogo-box-->
@@ -420,8 +277,12 @@
                         <div class="panel-heading">
                             <h3 class="panel-title"><a href="#">全部分类</a></h3>
                         </div>
-                        <div class="panel-body">
-                            Panel content
+                        <div class="panel-body dogo-text">
+                            <ul>
+                                <dogocms:article type="all" limit="8">
+                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                </dogocms:article>
+                            </ul>
                         </div>
                     </div>
                 </div><!--dogo-box-->
@@ -432,8 +293,12 @@
                         <div class="panel-heading">
                             <h3 class="panel-title"><a href="#">全部分类</a></h3>
                         </div>
-                        <div class="panel-body">
-                            Panel content
+                        <div class="panel-body dogo-text">
+                            <ul>
+                                <dogocms:article type="all" limit="8">
+                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                </dogocms:article>
+                            </ul>
                         </div>
                     </div>
                 </div><!--dogo-box-->
@@ -444,8 +309,12 @@
                         <div class="panel-heading">
                             <h3 class="panel-title"><a href="#">全部分类</a></h3>
                         </div>
-                        <div class="panel-body">
-                            Panel content
+                        <div class="panel-body dogo-text">
+                            <ul>
+                                <dogocms:article type="all" limit="8">
+                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                </dogocms:article>
+                            </ul>
                         </div>
                     </div>
                 </div><!--dogo-box-->

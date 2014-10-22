@@ -2,27 +2,16 @@
 
 <div class="container dogo-wp">
     <div class="row dogo-notice">
-        <div class="col-md-3">
-            <ul>
-
-                <li><span class="glyphicon glyphicon-volume-up"></span> <a href="#">[7-30]帐号注册协议公告</a></li>
-            </ul>
-        </div><!--col-md-->
-        <div class="col-md-3">
-            <ul>
-                <li><a href="#">帐号注册协议公告</a></li>
-            </ul>
-        </div><!--col-md-->
-        <div class="col-md-3">
-            <ul>
-                <li><a href="#">帐号注册协议公告</a></li>
-            </ul>
-        </div><!--col-md-->
-        <div class="col-md-3">
-            <ul>
-                <li><a href="#">帐号注册协议公告</a></li>
-            </ul>
-        </div><!--col-md-->
+        <dogocms:block typeid="4" limit="4" key="i">
+            <div class="col-md-3">
+                <ul>
+                    <li>
+                    <if condition="$i eq 1"><span class="glyphicon glyphicon-volume-up"></span> </if>
+                    <a href="{$block.url}" target="_blank" title="{$block.title}">{$block.title}</a>
+                    </li>
+                </ul>
+            </div><!--col-md-->
+        </dogocms:block>
     </div><!--row-->
     <div class="dogo-blank"></div>
     <div class="row ">
@@ -35,12 +24,9 @@
                         </div>
                         <div class="panel-body dogo-text">
                             <ul>
-                                <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
+                                <dogocms:article type="all" limit="8">
+                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                </dogocms:article>
                             </ul>
                         </div>
                     </div>
@@ -54,12 +40,9 @@
                         </div>
                         <div class="panel-body dogo-text">
                             <ul>
-                                <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
-                                <li>·<a href="">用最粗糙的语言陈述最操蛋的现实</a></li>
-                                <li>·<a href="">荣耀平板：莫谈颠覆，先行立足</a></li>
+                                <dogocms:article type="all" limit="8">
+                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                </dogocms:article>
                             </ul>
                         </div>
                     </div>
@@ -67,9 +50,9 @@
             </aside>
         </div><!--col-md-3-->
         <div class="col-md-9">
-            
-            
-            
+
+
+
             <div class="dogo-box dogo-view-info dogo-border-all dogo-pd1015">
                 <div class="dogo-box-header">
                     <h1>{$data.title}</h1>

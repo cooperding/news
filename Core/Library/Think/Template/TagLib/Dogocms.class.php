@@ -175,11 +175,10 @@ class Dogocms extends TagLib {
         if ($keywords) {
             $tag['where'] .= ' and (t.`keywords` like \'%' . $keywords . '%\') ';
         }//if
-        $tag['field'] = ' \'t.*,c.content,m.username,ns.text as sortname\' ';
+        $tag['field'] = ' \'t.*,c.content,ns.text as sortname\' ';
         $table = '\'' . C('DB_PREFIX') . 'title t\'';
         $join = 'join(\' ' . C('DB_PREFIX') . 'news_sort ns on ns.id=t.sort_id \')->';
         $join .= 'join(\' ' . C('DB_PREFIX') . 'content c on c.title_id=t.id \')->';
-        $join .= 'join(\' ' . C('DB_PREFIX') . 'members m on m.id=t.members_id \')->';
         $result = 'article'; //定义数据查询的结果存放变量
         $key = !empty($tag['key']) ? $tag['key'] : 'i';
         $mod = isset($tag['mod']) ? $tag['mod'] : '2';
