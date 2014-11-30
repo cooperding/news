@@ -33,10 +33,12 @@ class IndexAction extends BaseuserAction {
         $data['addtime'] = session('LOGIN_M_ADDTIME');
         $data_signature = $m->field('signature')->where($condition)->find();
         $data['signature'] = $data_signature['signature'];
+        $sites = json_decode(cookie('LOGIN_SITES'),true);
         $skin = $this->getSkin(); //获取前台主题皮肤名称
         $this->assign('title', '会员中心');
         $this->assign('sidebar_active', 'index');
         $this->assign('data', $data);
+        $this->assign('sites', $sites);
         $this->theme($skin)->display(':index');
     }
 

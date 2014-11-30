@@ -10,13 +10,14 @@
  * @version dogocms 1.0 2012-11-5 11:20
  * @package  Controller
  */
+
 namespace User\Action;
 use Think\Action;
+
 class PassportAction extends Action {
 
     //初始化
-    function _initialize()
-    {
+    function _initialize() {
         $skin = $this->getSkin(); //获取前台主题皮肤名称
         $navhead = R('Common/System/getNav', array('header')); //导航菜单
         $this->assign('navhead', $navhead);
@@ -34,8 +35,7 @@ class PassportAction extends Action {
      * @version dogocms 1.0
      * @todo 权限验证
      */
-    public function index()
-    {
+    public function index() {
 
         //此处判断是否已经登录，如果登录跳转到后台首页否则跳转到登录页面
         $status = session('LOGIN_M_STATUS');
@@ -54,8 +54,7 @@ class PassportAction extends Action {
      * @version dogocms 1.0
      */
 
-    public function login()
-    {
+    public function login() {
         $skin = $this->getSkin(); //获取前台主题皮肤名称
         $this->assign('title', '会员登录');
         $this->theme($skin)->display(':login');
@@ -69,8 +68,7 @@ class PassportAction extends Action {
      * @version dogocms 1.0
      */
 
-    public function signup()
-    {
+    public function signup() {
         $skin = $this->getSkin(); //获取前台主题皮肤名称
         $this->assign('title', '会员注册');
         $this->theme($skin)->display(':signup');
@@ -84,8 +82,7 @@ class PassportAction extends Action {
      * @version dogocms 1.0
      */
 
-    public function resetPassword()
-    {
+    public function resetPassword() {
         $skin = $this->getSkin(); //获取前台主题皮肤名称
 
         $this->assign('title', '重置密码');
@@ -99,16 +96,19 @@ class PassportAction extends Action {
      * @return boolean
      * @version dogocms 1.0
      */
-    public function checkLogin()
-    {
-        $m = M('Members');
-        $ver_code = I('post.v_code');
-        $verify_status = $this->check_verify($ver_code);
-        $type = I('post.type');
-        if (!$verify_status) {
-            $this->error('验证码输入错误或已过期！');
-            exit;
-        }
+    public function checkLogin() {
+        //基础数据的验证
+        /*
+          $ver_code = I('post.v_code');
+          $verify_status = $this->check_verify($ver_code);
+          $type = I('post.type');
+          if (!$verify_status) {
+          $this->error('验证码输入错误或已过期！');
+          exit;
+          }
+         * 
+         */
+        //echo md5('e658a3576149b9174a1cbf974d86d0fe' . 'ad1dd6651e6a28f91ded5fd35ae8ef80' . 'e17c0d10061a89bfcde7e0c8c4d2715d');
         $email = I('post.email'); //邮箱
         if (empty($email)) {
             $this->error('用户名或邮箱帐号不能为空！');
@@ -119,34 +119,42 @@ class PassportAction extends Action {
             $this->error('密码不能为空！');
             exit;
         }
-        $condition['email|username'] = array('eq', $email);
-        $rs = $m->where($condition)->field('id,email,username,addtime,password,status')->find();
-        if ($rs) {
-            $uname = $rs['username'];
-            $password = R('Common/System/getPwd', array($uname, $pwd));
-            if ($password == $rs['password']) {//密码匹配
-                if ($rs['status'] == '10') {//禁用账户，不可登录
-                    $this->error('您的账户被禁止登录！', __ROOT__);
-                    exit();
-                } else {
-                    session('LOGIN_M_STATUS', 'TRUE');
-                    session('LOGIN_M_NAME', $rs['username']);
-                    session('LOGIN_M_ID', $rs['id']);
-                    session('LOGIN_M_ADDTIME', $rs['addtime']);
-                    session('LOGIN_M_LOGINTIME', time());
-                    $url = $_POST['referer'];
-                    if ($url) {
-                        $url = 'http://' . $url;
-                        $this->success('登陆成功！', $url);
-                        exit;
-                    }
-                    $this->success('登陆成功！', __MODULE__);
-                }
+        $json['email'] = $email;
+        $json['pwd'] = $pwd;
+
+        //请求会员服务器验证用户信息
+        $ums = new \Org\Younuo\YounuoUMSClient(); //验证单点登录
+        $url = 'http://localhost/younuosso/api/Members/login';
+        $data_form = $ums->getFormKey();
+        $json = array_merge($json, $data_form);
+        $ch = curl_init(); //初始化curl
+        curl_setopt($ch, CURLOPT_URL, $url); //抓取指定网页
+        curl_setopt($ch, CURLOPT_HEADER, 0); //设置header
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //要求结果为字符串且输出到屏幕上
+        curl_setopt($ch, CURLOPT_POST, 1); //post提交方式
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+        $data = curl_exec($ch); //运行curl
+        curl_close($ch);
+        $data = json_decode($data, TRUE);
+        if ($data['statuscode'] == '200') {
+            //验证回传数据
+            $status = $ums->checkAuth($data);
+            if ($status == 'ok') {
+                $endecry = new \Org\Younuo\YounuoEndecry();
+                $openinfo = $endecry->decrypt($data['openinfo'], $data['parakey']);
+                cookie('LOGIN_SITES', json_encode($data['sites']), 3600);
+                session('LOGIN_M_STATUS', 'TRUE');
+                session('openinfo',$openinfo);
+                session('LOGIN_M_ID', substr($openinfo, 0, 32));
+                session('LOGIN_M_NAME', substr($openinfo, 32, strlen($openinfo)));
+                $this->success('登陆成功！', __MODULE__);
+                exit;
             } else {
-                $this->error('您的输入用户名或者密码错误！');
+                $this->error('登录失败！');
             }
-        } else {//未查询到数据
-            $this->error('您的输入用户名或者密码错误！');
+            //判断验证是否成功
+        } else {
+            $this->error('登录失败！');
         }
     }
 
@@ -158,8 +166,7 @@ class PassportAction extends Action {
      * @version dogocms 1.0
      * @todo 完善密码找回操作，增加邮件发送功能
      */
-    public function getNewPwd()
-    {
+    public function getNewPwd() {
         $m = M('Members');
         $v_code = I('post.v_code');
         $verify_status = $this->check_verify($v_code);
@@ -206,8 +213,7 @@ class PassportAction extends Action {
      * @return boolean
      * @version dogocms 1.0
      */
-    public function register()
-    {
+    public function register() {
         $m = M('Members');
         $v_code = I('post.v_code');
         $verify_status = $this->check_verify($v_code);
@@ -263,8 +269,7 @@ class PassportAction extends Action {
      * @return boolean
      * @version dogocms 1.0
      */
-    public function logout()
-    {
+    public function logout() {
         $type = I('post.type');
         session('[destroy]');
         if ($type == '10') {
@@ -283,8 +288,7 @@ class PassportAction extends Action {
      * @return boolean
      * @version dogocms 1.0
      */
-    public function verify()
-    {
+    public function verify() {
         $verify = new \Think\Verify();
         $verify->useImgBg = false; //是否使用背景图片 默认为false
         //$verify->expire =; //验证码的有效期（秒）
@@ -302,8 +306,7 @@ class PassportAction extends Action {
     }
 
     // 检测输入的验证码是否正确，$code为用户输入的验证码字符串
-    function check_verify($code, $id = '')
-    {
+    function check_verify($code, $id = '') {
         $verify = new \Think\Verify();
         $verify->seKey = 'verify_user_login'; //验证码的加密密钥
         return $verify->check($code);
@@ -315,8 +318,7 @@ class PassportAction extends Action {
      * @todo 使用程序读取主题皮肤名称
      */
 
-    public function getSkin()
-    {
+    public function getSkin() {
         $skin = R('Common/System/getCfg', array('cfg_member_skin'));
         if (!$skin) {
             $skin = C('DEFAULT_THEME');
@@ -333,8 +335,7 @@ class PassportAction extends Action {
      * @version dogocms 1.0
      * @todo 
      */
-    public function checkEmail()
-    {
+    public function checkEmail() {
         $key = I('get.key');
         $uid = I('get.uid');
         $m = M('Members');

@@ -22,6 +22,9 @@
 
 </div><!--container-->
 <include file="$tpl_footer" />
+<foreach name="sites" item="vo">
+<script src="{$vo.domain}"></script>
+</foreach>
 </div><!--dogo-page-->
 
 </body>
