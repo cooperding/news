@@ -12,6 +12,7 @@
  */
 
 namespace User\Action;
+
 use Think\Action;
 
 class PassportAction extends Action {
@@ -98,17 +99,13 @@ class PassportAction extends Action {
      */
     public function checkLogin() {
         //基础数据的验证
-        /*
-          $ver_code = I('post.v_code');
-          $verify_status = $this->check_verify($ver_code);
-          $type = I('post.type');
-          if (!$verify_status) {
-          $this->error('验证码输入错误或已过期！');
-          exit;
-          }
-         * 
-         */
-        //echo md5('e658a3576149b9174a1cbf974d86d0fe' . 'ad1dd6651e6a28f91ded5fd35ae8ef80' . 'e17c0d10061a89bfcde7e0c8c4d2715d');
+        $ver_code = I('post.v_code');
+        $verify_status = $this->check_verify($ver_code);
+        $type = I('post.type');
+        if (!$verify_status) {
+            $this->error('验证码输入错误或已过期！');
+            exit;
+        }
         $email = I('post.email'); //邮箱
         if (empty($email)) {
             $this->error('用户名或邮箱帐号不能为空！');
@@ -121,21 +118,12 @@ class PassportAction extends Action {
         }
         $json['email'] = $email;
         $json['pwd'] = $pwd;
-
         //请求会员服务器验证用户信息
         $ums = new \Org\Younuo\YounuoUMSClient(); //验证单点登录
-        $url = 'http://localhost/younuosso/api/Members/login';
+        $url = C('SSO_MEMBERS_LOGIN');
         $data_form = $ums->getFormKey();
         $json = array_merge($json, $data_form);
-        $ch = curl_init(); //初始化curl
-        curl_setopt($ch, CURLOPT_URL, $url); //抓取指定网页
-        curl_setopt($ch, CURLOPT_HEADER, 0); //设置header
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //要求结果为字符串且输出到屏幕上
-        curl_setopt($ch, CURLOPT_POST, 1); //post提交方式
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
-        $data = curl_exec($ch); //运行curl
-        curl_close($ch);
-        $data = json_decode($data, TRUE);
+        $data = $ums->curlRequest($url, $json); //发送curl请求
         if ($data['statuscode'] == '200') {
             //验证回传数据
             $status = $ums->checkAuth($data);
@@ -144,7 +132,7 @@ class PassportAction extends Action {
                 $openinfo = $endecry->decrypt($data['openinfo'], $data['parakey']);
                 cookie('LOGIN_SITES', json_encode($data['sites']), 3600);
                 session('LOGIN_M_STATUS', 'TRUE');
-                session('openinfo',$openinfo);
+                session('openinfo', $openinfo);
                 session('LOGIN_M_ID', substr($openinfo, 0, 32));
                 session('LOGIN_M_NAME', substr($openinfo, 32, strlen($openinfo)));
                 $this->success('登陆成功！', __MODULE__);
@@ -167,7 +155,6 @@ class PassportAction extends Action {
      * @todo 完善密码找回操作，增加邮件发送功能
      */
     public function getNewPwd() {
-        $m = M('Members');
         $v_code = I('post.v_code');
         $verify_status = $this->check_verify($v_code);
         if (!$verify_status) {
@@ -179,30 +166,17 @@ class PassportAction extends Action {
             $this->error('注册邮箱不能为空！');
             exit;
         }
-        //先验证邮箱是否存在
-        $condition['email'] = array('eq', $email);
-        $rs = $m->where($condition)->field('id,username')->find();
-        if (!$rs) {
-            $this->error('注册邮箱不正确！');
-            exit;
-        }
-        //随机生成密码，并发送到注册邮箱中
-        $pwd = rand(100000, 999999);
-        $uname = $rs['username'];
-        $password = R('Common/System/getPwd', array($uname, $pwd));
-        $data['password'] = $password;
-        $data['updatetime'] = time();
-        $condition_id['id'] = $rs['id'];
-        $rs_pwd = $m->where($condition_id)->save($data);
-        if ($rs_pwd == true) {
-            $rs_email = R('Common/System/sendEmail', array($email, '找回密码', $pwd));
-            if ($rs_email) {
-                $this->success('重置密码成功，请登录邮箱查看！', __MODULE__);
-            } else {
-                $this->error('重置密码失败，请重新发送！');
-            }
+        $json['email'] = $email;
+        //请求会员服务器验证用户信息
+        $ums = new \Org\Younuo\YounuoUMSClient(); //验证单点登录
+        $url = C('SSO_MEMBERS_FORGET_PWD');
+        $data_form = $ums->getFormKey();
+        $json = array_merge($json, $data_form);
+        $data = $ums->curlRequest($url, $json); //发送curl请求
+        if ($data['statuscode'] == '200') {
+            $this->success('重置密码成功，请登录邮箱查看！', __MODULE__);
         } else {
-            $this->error('重置密码失败！');
+            $this->error($data['msg']);
         }
     }
 
@@ -214,18 +188,16 @@ class PassportAction extends Action {
      * @version dogocms 1.0
      */
     public function register() {
-        $m = M('Members');
         $v_code = I('post.v_code');
         $verify_status = $this->check_verify($v_code);
-        $type = I('post.type');
         if (!$verify_status) {
             $this->error('验证码为空或者输入错误！');
         }
-        $uname = I('post.uname'); //用户名
+        $username = I('post.uname'); //用户名
         $email = I('post.email'); //邮箱
         $pwd = I('post.pwd'); //密码
         $pwd2 = I('post.pwd2'); //密码2
-        if (empty($uname)) {
+        if (empty($username)) {
             $this->error('用户名不能为空！');
         }
         if (empty($email)) {
@@ -237,28 +209,19 @@ class PassportAction extends Action {
         if ($pwd != $pwd2) {
             $this->error('两次密码输入不一致！');
         }
-        $condition_uname['username'] = array('eq', $uname);
-        $rs_uname = $m->where($condition_uname)->find();
-        if ($rs_uname) {
-            $this->error('用户名已经存在！');
-        }
-        $condition_email['email'] = array('eq', $email);
-        $rs_email = $m->where($condition_email)->find();
-        if ($rs_email) {
-            $this->error('邮箱已经存在！');
-        }
-        $password = R('Common/System/getPwd', array($uname, $pwd));
-        $data['username'] = $uname;
-        $data['password'] = $password;
-        $data['addtime'] = time();
-        $data['updatetime'] = time();
-        $data['email'] = $email;
-        $data['ip'] = get_client_ip();
-        $rs = $m->data($data)->add();
-        if ($rs == true) {
+        $json['username'] = $username;
+        $json['email'] = $email;
+        $json['pwd'] = $pwd;
+        //请求会员服务器验证用户信息
+        $ums = new \Org\Younuo\YounuoUMSClient(); //验证单点登录
+        $url = C('SSO_MEMBERS_REGISTER');
+        $data_form = $ums->getFormKey();
+        $json = array_merge($json, $data_form);
+        $data = $ums->curlRequest($url, $json); //发送curl请求
+        if ($data['statuscode'] == '200') {
             $this->success('注册成功,请登录后操作！', __MODULE__ . '/Passport/login');
         } else {
-            $this->error('注册失败，请联系管理员！');
+            $this->error($data['msg']);
         }
     }
 
