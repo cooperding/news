@@ -1,5 +1,6 @@
 <include file="$tpl_header" />
-<div class="container dogo-wp">
+<div class="container">
+    <div class="dogo-blank"></div>
     <div class="row">
         <div class="col-md-3">
 
@@ -73,7 +74,7 @@
                     </div><!--form-group-->
                     <div class="form-group">
                         <div class=" col-sm-12">
-                            <button type="submit" class="btn btn-default col-lg-12 btn-lg dogo-color-white">提交</button>
+                            <button type="submit" class="btn btn-default col-lg-12 btn-lg">提交</button>
                         </div>
                     </div>
                 </form>
@@ -89,7 +90,7 @@
 
 </div><!--dogo-page-->
 <script>
-    $(function() {
+    $(function () {
         //获取省份
         var url = '{:U("User/Index/getArea")}';
         $.ajax({
@@ -97,33 +98,33 @@
             dataType: 'html',
             url: url,
             data: {type: 'province'},
-            success: function(data) {
+            success: function (data) {
                 $('.dogo-ajax-province').html(data);
             }
         });
         //获取城市
-        $('.dogo-click-area').on('change', 'select[name="province"]', function() {
+        $('.dogo-click-area').on('change', 'select[name="province"]', function () {
             var province_id = $(this).val();
             $.ajax({
                 type: "post",
                 dataType: 'html',
                 url: url,
                 data: {type: 'city', province_id: province_id},
-                success: function(data) {
+                success: function (data) {
                     $('.dogo-ajax-city').html(data);
                     $('.dogo-ajax-county').html('');
                 }
             });
         });
         //获取县区
-        $('.dogo-click-area').on('change', 'select[name="city"]', function() {
+        $('.dogo-click-area').on('change', 'select[name="city"]', function () {
             var city_id = $(this).val();
             $.ajax({
                 type: "post",
                 dataType: 'html',
                 url: url,
                 data: {type: 'county', city_id: city_id},
-                success: function(data) {
+                success: function (data) {
                     $('.dogo-ajax-county').html(data);
                 }
             });

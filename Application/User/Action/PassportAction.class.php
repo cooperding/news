@@ -20,12 +20,15 @@ class PassportAction extends Action {
     //初始化
     function _initialize() {
         $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin_home = $this->getSkin('cfg_skin_web'); //获取前台主题皮肤名称
         $navhead = R('Common/System/getNav', array('header')); //导航菜单
+        $navfoot = R('Common/System/getNav', array('footer')); //导航菜单
         $this->assign('navhead', $navhead);
+        $this->assign('navfoot', $navfoot);
         $this->assign('style_common', '/Common');
         $this->assign('style', '/Skin/User/' . $skin);
-        $this->assign('tpl_header', './Theme/User/' . $skin . '/tpl_header.html');
-        $this->assign('tpl_footer', './Theme/User/' . $skin . '/tpl_footer.html');
+        $this->assign('tpl_header', './Theme/Home/' . $skin_home . '/tpl_header.html');
+        $this->assign('tpl_footer', './Theme/Home/' . $skin_home . '/tpl_footer.html');
     }
 
     /**
@@ -116,8 +119,8 @@ class PassportAction extends Action {
             $this->error('密码不能为空！');
             exit;
         }
-        $json['email'] = $email;
-        $json['pwd'] = $pwd;
+        $json['email'] = trim($email);
+        $json['pwd'] = trim($pwd);
         //请求会员服务器验证用户信息
         $ums = new \Org\Younuo\YounuoUMSClient(); //验证单点登录
         $url = C('SSO_MEMBERS_LOGIN');
@@ -281,8 +284,9 @@ class PassportAction extends Action {
      * @todo 使用程序读取主题皮肤名称
      */
 
-    public function getSkin() {
-        $skin = R('Common/System/getCfg', array('cfg_member_skin'));
+    public function getSkin($str) {
+        $str = $str ? $str : 'cfg_member_skin';
+        $skin = R('Common/System/getCfg', array($str));
         if (!$skin) {
             $skin = C('DEFAULT_THEME');
         }

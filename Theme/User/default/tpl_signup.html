@@ -1,13 +1,9 @@
 <include file="$tpl_header" />
-
-<div class="container dogo-wp-login">
-
+<div class="container">
+    <div class="dogo-blank"></div>
     <div class="row">
         <div class="col-md-12 ">
-            <div class="dogo-member dogo-border-shadow">
-                <h4>会员注册</h4>
-                <div class="dogo-blank"></div>
-                <div class="dogo-box">
+            <div class="dogo-box">
                 <form class="form-horizontal" role="form" action="{:U('User/Passport/register')}" method="post">
                     <div class="form-group">
                         <label for="unameSigup" class="col-sm-2 control-label input-lg">用户名：</label>
@@ -49,20 +45,25 @@
                     <div class="dogo-blank"></div>
                     <button type="submit" class="btn btn-gray col-lg-12 btn-lg">注册</button>
                 </form>
-                </div><!--dogo-box-->
+            </div><!--dogo-box-->
+
+            <div class="dogo-member dogo-border-shadow">
+
+
                 <div class="dogo-blank"></div>
                 <div class="dogo-box dogo-align-right dogo-mt50">
                     <a href="{:U('User/Passport/login')}">登录</a>
                     <a href="{:U('User/Passport/resetPassword')}" class="dogo-ml10">忘记密码？</a>
                 </div><!--dogo-align-right-->
-
             </div><!--dogo-member-->
+
         </div><!--col-md-->
     </div><!--row-->
-
-
-
+    <div class="dogo-blank"></div>
 </div><!--container-->
+
+
+
 <include file="$tpl_footer" />
 
 </div><!--dogo-page-->

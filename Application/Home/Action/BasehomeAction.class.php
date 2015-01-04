@@ -34,9 +34,10 @@ class BasehomeAction extends Action {
      * @todo 使用程序读取主题皮肤名称
      */
 
-    public function getSkin()
+    public function getSkin($str)
     {
-        $skin = R('Common/System/getCfg', array('cfg_skin_web'));
+        $str = $str?$str:'cfg_skin_web';
+        $skin = R('Common/System/getCfg', array($str));
         if (!$skin) {
             $skin = C('DEFAULT_THEME');
         }

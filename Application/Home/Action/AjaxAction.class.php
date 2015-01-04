@@ -34,49 +34,7 @@ class AjaxAction extends BasehomeAction {
         }
     }
 
-    /**
-     * vote
-     * 投票操作
-     * @param string $key_id 信息编号
-     * @param string $type 投票类型
-     * @param string $uid 会员编号
-     * @return boolean
-     * @version dogocms 1.0
-     * @todo 权限验证
-     */
-    public function vote()
-    {
-        $t = D('Title');
-        $ir = D('InformationRecord');
-        $key_id = I('post.key_id');
-        $type = I('post.type');
-        $this->checkLoginStatus(); //验证登录状态
-        $ip = get_client_ip();
-        $uid = session('LOGIN_M_ID'); //会员ID
-        $data['key_id'] = $key_id;
-        $data['type'] = $type;
-        $data['ip'] = $ip;
-        $data['addtime'] = time();
-        $data['updatetime'] = time();
-        $data['members_id'] = $uid;
-        $rs = $ir->add($data);
-        if ($rs == true) {
-            $condition['id'] = array('eq', $key_id);
-            if ($type == '10') {//up
-                $t->where($condition)->setInc('num_top');
-                $data_num = $t->field('num_top')->where($condition)->find();
-                $num = $data_num['num_top'];
-            } elseif ($type == '11') {//down
-                $t->where($condition)->setInc('num_beat');
-                $data_num = $t->field('num_beat')->where($condition)->find();
-                $num = $data_num['num_beat'];
-            }
-            $array = array('status' => 0, 'msg' => '投票成功', 'num' => $num);
-        } else {
-            $array = array('status' => 1, 'msg' => '投票失败！');
-        }
-        echo json_encode($array);
-    }
+    
 
     /**
      * commemt
@@ -101,7 +59,7 @@ class AjaxAction extends BasehomeAction {
         $data['ip'] = $ip;
         $data['addtime'] = time();
         $data['updatetime'] = time();
-        $data['members_id'] = $uid;
+        $data['open_id'] = $uid;
         $data['content'] = $content;
         //计算最大值
         $condition_comment['title_id'] = array('eq', $key_id);

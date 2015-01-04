@@ -108,7 +108,7 @@ class IndexAction extends BaseuserAction {
     {
         $m = D('MembersAddress');
         $uid = session('LOGIN_M_ID');
-        $condition['members_id'] = array('eq', $uid);
+        $condition['open_id'] = array('eq', $uid);
         $data = $m->where($condition)->select();
         $skin = $this->getSkin(); //获取前台主题皮肤名称
         $this->assign('title', '收货地址列表');
@@ -143,7 +143,7 @@ class IndexAction extends BaseuserAction {
     {
         $m = D('MembersAddress');
         $uid = session('LOGIN_M_ID');
-        $condition['members_id'] = array('eq', $uid);
+        $condition['open_id'] = array('eq', $uid);
         $condition['id'] = array('eq', I('get.id'));
         $data = $m->where($condition)->find();
         $skin = $this->getSkin(); //获取前台主题皮肤名称
@@ -179,7 +179,7 @@ class IndexAction extends BaseuserAction {
     {
         $m = D('Title');
         $uid = session('LOGIN_M_ID');
-        $condition['t.members_id'] = array('eq', $uid);
+        $condition['t.open_id'] = array('eq', $uid);
         $condition['t.id'] = array('eq', I('get.id'));
         $data = $m->Table(C('DB_PREFIX') . 'title t')
                         ->field('t.*,c.content')
@@ -203,7 +203,7 @@ class IndexAction extends BaseuserAction {
     {
         $t = D('Title');
         $uid = session('LOGIN_M_ID');
-        $condition['t.members_id'] = array('eq', $uid);
+        $condition['t.open_id'] = array('eq', $uid);
         $count = $t->Table(C('DB_PREFIX') . 'title t')
                         ->join(C('DB_PREFIX') . 'content c ON c.title_id = t.id ')
                         ->where($condition)->count();
@@ -237,68 +237,7 @@ class IndexAction extends BaseuserAction {
         $this->theme($skin)->display(':news_list');
     }
 
-    /**
-     * apiList
-     * api 接口列表信息
-     * @return display
-     * @version dogocms 1.0
-     * @todo 
-     */
-    public function apiList()
-    {
-        $m = D('ApiList');
-        $uid = session('LOGIN_M_ID');
-        $condition['members_id'] = array('eq', $uid);
-        $data = $m->where($condition)->select();
-        foreach ($data as $k => $v) {
-            if ($v['status'] == '20') {
-                $data[$k]['status'] = '可用';
-            } else {
-                $data[$k]['status'] = '禁用';
-            }
-        }
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
-        $this->assign('title', 'API列表');
-        $this->assign('sidebar_active', 'apilist');
-        $this->assign('list', $data);
-        $this->theme($skin)->display(':api_list');
-    }
-
-    /**
-     * apiListAdd
-     * api接口-添加
-     * @return display
-     * @version dogocms 1.0
-     * @todo 
-     */
-    public function apiListAdd()
-    {
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
-        $this->assign('title', '添加API信息');
-        $this->assign('sidebar_active', 'apilist');
-        $this->theme($skin)->display(':api_add');
-    }
-
-    /**
-     * apiListEdit
-     * api接口-编辑
-     * @return display
-     * @version dogocms 1.0
-     * @todo 
-     */
-    public function apiListEdit()
-    {
-        $m = D('ApiList');
-        $uid = session('LOGIN_M_ID');
-        $condition['members_id'] = array('eq', $uid);
-        $condition['id'] = array('eq', I('get.id'));
-        $data = $m->where($condition)->find();
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
-        $this->assign('title', '修改API信息');
-        $this->assign('sidebar_active', 'apilist');
-        $this->assign('data', $data);
-        $this->theme($skin)->display(':api_edit');
-    }
+    
 
     /**
      * doPersonal
@@ -446,7 +385,7 @@ class IndexAction extends BaseuserAction {
     {
         $m = D('MembersAddress');
         $uid = session('LOGIN_M_ID');
-        $condition['members_id'] = array('eq', $uid);
+        $condition['open_id'] = array('eq', $uid);
         $count = $m->where($condition)->count();
         if ($count >= 5) {
             $this->error('最多可以设置5条收货地址！');
@@ -457,7 +396,7 @@ class IndexAction extends BaseuserAction {
             $data['is_default'] = 20;
         }
         $data['addtime'] = time();
-        $data['members_id'] = $uid;
+        $data['open_id'] = $uid;
         $data['updatetime'] = time();
         $data['name'] = I('post.name');
         $data['telphone'] = I('post.telphone');
@@ -485,7 +424,7 @@ class IndexAction extends BaseuserAction {
     {
         $m = D('MembersAddress');
         $uid = session('LOGIN_M_ID');
-        $condition['members_id'] = array('eq', $uid);
+        $condition['open_id'] = array('eq', $uid);
         if ($_POST['is_default']) {
             $m->where($condition)->setField('is_default', 10);
             $data['is_default'] = 20;
@@ -518,7 +457,7 @@ class IndexAction extends BaseuserAction {
     {
         $m = D('MembersAddress');
         $uid = session('LOGIN_M_ID');
-        $condition['members_id'] = array('eq', $uid);
+        $condition['open_id'] = array('eq', $uid);
         $condition['id'] = array('eq', I('get.id'));
         $rs = $m->where($condition)->delete();
         if ($rs == true) {
@@ -528,85 +467,7 @@ class IndexAction extends BaseuserAction {
         }
     }
 
-    /**
-     * apiInsert
-     * 添加api
-     * @return display
-     * @version dogocms 1.0
-     * @todo 
-     */
-    public function apiInsert()
-    {
-        $m = D('ApiList');
-        $uid = session('LOGIN_M_ID');
-        $apitoken = I('post.apitoken');
-        if (empty($apitoken)) {
-            $this->error('token信息不能为空！');
-            exit;
-        }
-        $data['addtime'] = time();
-        $data['members_id'] = $uid;
-        $data['updatetime'] = time();
-        $data['status'] = 10;
-        $data['apitoken'] = $apitoken; //API用户名
-        $secretkey = R('Common/System/guid');
-        $signature = R('Common/System/guid');
-        $data['secretkey'] = md5($secretkey); //API密钥（自动生成）
-        $data['signature'] = md5(sha1($signature)); //签名（自动生成）
-        $data['domain'] = I('post.domain');
-        $rs = $m->data($data)->add();
-        if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/apiList');
-        } else {
-            $this->error('操作失败，请重新操作！');
-        }
-    }
-
-    /**
-     * apiUpdate
-     *  更新api
-     * @return display
-     * @version dogocms 1.0
-     * @todo 
-     */
-    public function apiUpdate()
-    {
-        $m = D('ApiList');
-        $uid = session('LOGIN_M_ID');
-        $condition['members_id'] = array('eq', $uid);
-        $condition['id'] = array('eq', I('post.id'));
-        $data['updatetime'] = time();
-        $data['status'] = '10';
-        $data['apitoken'] = I('post.apitoken');
-        $data['domain'] = I('post.domain');
-        $rs = $m->where($condition)->save($data);
-        if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/apiList');
-        } else {
-            $this->error('操作失败，请重新操作！');
-        }
-    }
-
-    /**
-     * apiDelete
-     *  删除api
-     * @return display
-     * @version dogocms 1.0
-     * @todo 
-     */
-    public function apiDelete()
-    {
-        $m = D('ApiList');
-        $uid = session('LOGIN_M_ID');
-        $condition['members_id'] = array('eq', $uid);
-        $condition['id'] = array('eq', I('get.id'));
-        $rs = $m->where($condition)->delete();
-        if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/addressList');
-        } else {
-            $this->error('操作失败，请重新操作！');
-        }
-    }
+    
 
     /**
      * newsInsert
@@ -631,7 +492,7 @@ class IndexAction extends BaseuserAction {
         }
         $data['addtime'] = time();
         $data['title'] = $title;
-        $data['members_id'] = $uid;
+        $data['open_id'] = $uid;
         $data['updatetime'] = time();
         $data['status'] = 10;
         //获取内容中第一张图片

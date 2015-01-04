@@ -23,31 +23,20 @@ class BaseuserAction extends Action {
         if ($status != 'TRUE') {
             $this->redirect('..'.__MODULE__.'/Passport/login');
         }
-        $this->assign('count_address', $this->getAddressCount());
-        $this->assign('count_apilist', $this->getApiListCount());
         $this->assign('count_newslist', $this->getNewsListCount());
         $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin_home = $this->getSkin('cfg_skin_web'); //获取前台主题皮肤名称
         $navhead = R('Common/System/getNav', array('header')); //导航菜单
+        $navfoot = R('Common/System/getNav', array('footer')); //导航菜单
         $this->assign('navhead', $navhead);
+        $this->assign('navfoot', $navfoot);
         $this->assign('style_common', '/Common');
         $this->assign('style', '/Skin/User/' . $skin);
-        $this->assign('tpl_header', './Theme/User/' . $skin . '/tpl_header.html');
-        $this->assign('tpl_footer', './Theme/User/' . $skin . '/tpl_footer.html');
+        $this->assign('tpl_header', './Theme/Home/' . $skin_home . '/tpl_header.html');
+        $this->assign('tpl_footer', './Theme/Home/' . $skin_home . '/tpl_footer.html');
         $this->assign('tpl_sidebar', './Theme/User/' . $skin . '/tpl_sidebar.html');
-    }
-    /*
-     * getAddressCount
-     * 获取收货地址数量
-     * 
-     */
-
-    public function getAddressCount()
-    {
-        $m = D('MembersAddress');
-        $uid = session('LOGIN_M_ID');
-        $condition['members_id'] = array('eq', $uid);
-        $count = $m->where($condition)->count();
-        return $count;
+        
+        
     }
     /*
      * getNewsListCount
@@ -59,21 +48,7 @@ class BaseuserAction extends Action {
     {
         $m = D('Title');
         $uid = session('LOGIN_M_ID');
-        $condition['members_id'] = array('eq', $uid);
-        $count = $m->where($condition)->count();
-        return $count;
-    }
-    /*
-     * getApiListCount
-     * 获取apiList数量
-     * 
-     */
-
-    public function getApiListCount()
-    {
-        $m = D('ApiList');
-        $uid = session('LOGIN_M_ID');
-        $condition['members_id'] = array('eq', $uid);
+        $condition['open_id'] = array('eq', $uid);
         $count = $m->where($condition)->count();
         return $count;
     }
@@ -83,9 +58,10 @@ class BaseuserAction extends Action {
      * @todo 使用程序读取主题皮肤名称
      */
 
-    public function getSkin()
+    public function getSkin($str)
     {
-        $skin = R('Common/System/getCfg', array('cfg_member_skin'));
+        $str = $str?$str:'cfg_member_skin';
+        $skin = R('Common/System/getCfg', array($str));
         if (!$skin) {
             $skin = C('DEFAULT_THEME');
         }

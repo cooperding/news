@@ -7,7 +7,7 @@
             <div class="dogo-box-header">
                 <h5><span class="glyphicon glyphicon-hand-right"></span> {$data.title}</h5>
                 <p>
-                    <span class="glyphicon glyphicon-user"></span> <a href="{:U('Home/User/index',array('uid'=>$data['members_id']))}">{$data.username} </a>
+                    <span class="glyphicon glyphicon-user"></span> <a href="{:U('Home/User/index',array('uid'=>$data['open_id']))}">{$data.username} </a>
                     <span class="glyphicon glyphicon-time"></span>  
                 </p>
             </div>
@@ -62,7 +62,7 @@
                 <ul>
                     <foreach name="list_comment" item="vo">
                         <li><span class="glyphicon glyphicon-user"></span> 
-                            <a href="{:U('Home/User/index',array('uid'=>$vo['members_id']))}">{$vo.username} </a>
+                            <a href="{:U('Home/User/index',array('uid'=>$vo['open_id']))}">{$vo.username} </a>
                             {$vo.content}
                             <span class="dogo-frt">#{$vo.floor}</span>
                         </li>

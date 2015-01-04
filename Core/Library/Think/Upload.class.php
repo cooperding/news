@@ -20,7 +20,7 @@ class Upload {
         'exts'          =>  array(), //允许上传的文件后缀
         'autoSub'       =>  true, //自动子目录保存文件
         'subName'       =>  array('date', 'Y-m-d'), //子目录创建方式，[0]-函数名，[1]-参数，多个参数使用数组
-        'rootPath'      =>  './Public/Uploads/', //保存根路径
+        'rootPath'      =>  './Uploads/', //保存根路径
         'savePath'      =>  '', //保存路径
         'saveName'      =>  array('uniqid', ''), //上传文件命名规则，[0]-函数名，[1]-参数，多个参数使用数组
         'saveExt'       =>  '', //文件保存后缀，空则使用原后缀
@@ -145,6 +145,7 @@ class Upload {
         // 对上传文件数组信息处理
         $files   =  $this->dealFiles($files);    
         foreach ($files as $key => $file) {
+            $file['name']  = strip_tags($file['name']);
             if(!isset($file['key']))   $file['key']    =   $key;
             /* 通过扩展获取文件类型，可解决FLASH上传$FILES数组返回文件类型错误的问题 */
             if(isset($finfo)){

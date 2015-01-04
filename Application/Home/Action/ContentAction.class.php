@@ -41,7 +41,7 @@ class ContentAction extends BasehomeAction {
             $condition_comment['c.status'] = array('eq', 20);
             $comment = $c->field(array('m.id as uid,m.username', 'c.*'))
                             ->Table(C('DB_PREFIX') . 'comment c')
-                            ->join(C('DB_PREFIX') . 'members m ON m.id = c.members_id ')
+                            ->join(C('DB_PREFIX') . 'members m ON m.id = c.open_id ')
                             ->where($condition_comment)->order('floor asc')->select();
             $data['content'] = stripslashes($data['content']);
             $condition_sort['id'] = array('eq',$data['sort_id']);

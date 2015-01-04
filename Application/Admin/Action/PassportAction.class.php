@@ -50,8 +50,10 @@ class PassportAction extends Action {
             exit;
         }
         $user_name = I('post.user_name');
+        $user_name = trim($user_name);//过滤空格
         $condition['username'] = array('eq', $user_name);
         $password = I('post.user_password');
+        $password = trim($password);//过滤空格
         if (!empty($user_name) && !empty($password)) {//依据用户名查询
             $login = D('Operators');
             $rs = $login->field('username,creat_time,id,password')->where($condition)->find();
