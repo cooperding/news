@@ -10,9 +10,29 @@
  * @package  Controller
  * @todo 视图重新写
  */
+
 namespace Admin\Action;
+
 use Think\Action;
+
 class SettingAction extends BaseAction {
+
+    /**
+     * doCache
+     * 更新缓存
+     * @access public
+     * @return array
+     * @version dogocms 1.1
+     */
+    public function doCache() {
+
+        //$dirName = './Application/Runtime2';
+        $dirName = RUNTIME_PATH;
+        $file = new \Org\Util\File();
+        $file->clearDir($dirName, false, 'index.html');
+        $array = array('status' => 2, 'msg' => '操作成功！');
+        echo json_encode($array);
+    }
 
     /**
      * index
@@ -21,8 +41,7 @@ class SettingAction extends BaseAction {
      * @return array
      * @version dogocms 1.0
      */
-    public function index()
-    {
+    public function index() {
         $this->display();
     }
 
@@ -33,8 +52,7 @@ class SettingAction extends BaseAction {
      * @return array
      * @version dogocms 1.0
      */
-    public function add()
-    {
+    public function add() {
         $radios = array(
             'text' => '文本',
             'radio' => '布尔型',
@@ -53,8 +71,7 @@ class SettingAction extends BaseAction {
      * @return array
      * @version dogocms 1.0
      */
-    public function edit()
-    {
+    public function edit() {
         $m = D('Setting');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
@@ -79,8 +96,7 @@ class SettingAction extends BaseAction {
      * @return boolean
      * @version dogocms 1.0
      */
-    public function insert()
-    {
+    public function insert() {
         $m = D('Setting');
         $sys_gid = I('post.sys_gid');
         $sys_name = I('post.sys_name');
@@ -116,13 +132,12 @@ class SettingAction extends BaseAction {
      * @return boolean
      * @version dogocms 1.0
      */
-    public function update()
-    {
+    public function update() {
         $m = D('Setting');
         $id = I('post.id');
         $sys_gid = I('post.sys_gid');
         $sys_name = I('post.sys_name');
-        
+
         $condition['id'] = array('neq', $id);
         if (empty($sys_gid) || empty($sys_name)) {//不为空说明存在，存在就不能添加
             $this->dmsg('1', '变量名或者所属分组不能为空！', false, true);
@@ -155,8 +170,7 @@ class SettingAction extends BaseAction {
      * @return array
      * @version dogocms 1.0
      */
-    public function settinglist()
-    {
+    public function settinglist() {
         $m = D('Setting');
         $id = I('get.id');
         $this->assign('id', $id);
@@ -170,8 +184,7 @@ class SettingAction extends BaseAction {
      * @return array
      * @version dogocms 1.0
      */
-    public function delete()
-    {
+    public function delete() {
         $this->dmsg('1', '暂不支持删除操作！', false, true);
         exit;
         $m = D('Setting');
@@ -192,8 +205,7 @@ class SettingAction extends BaseAction {
      * @return array
      * @version dogocms 1.0
      */
-    public function listJsonId()
-    {
+    public function listJsonId() {
         $m = D('Setting');
         $id = I('get.id');
         $condition['sys_gid'] = array('eq', $id);
@@ -226,8 +238,7 @@ class SettingAction extends BaseAction {
      * @return array
      * @version dogocms 1.0
      */
-    public function jsonTree()
-    {
+    public function jsonTree() {
         $qiuyun = new \Org\Util\Qiuyun;
         $sort = array(
             array('id' => 1, 'text' => '站点设置'),
