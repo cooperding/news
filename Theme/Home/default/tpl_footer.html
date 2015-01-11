@@ -1,33 +1,16 @@
 <footer class="dogo-footer">
-    <div class="dogo-nav-footer">
-        <div class="container dogo-wp">
-            <div class="row">
-                <div class="col-md-3">
-                    23
-                </div>
-                <div class="col-md-9">
-                    <nav class="dogo-align-right">
-                        <volist name="navfoot" id="navlist">
-                            <a href="{$navlist.url}">{$navlist.text}</a>
-                        </volist>
-                    </nav>
-
-                </div><!--col-md-->
-            </div><!--row-->
-        </div><!--container-->
-    </div>
-    <div class="dogo-bottom">
-        <div class="container dogo-wp">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="dogo-align-center"><dogocms:cfg name="cfg_copyright"/></p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
+    <div class="container dogo-wp">
+        <div class="row">
+            <div class="col-md-12">
+                <nav>
+                    <volist name="navfoot" id="navlist">
+                    <a href="{$navlist.url}">{$navlist.text}</a>
+                </volist>
+                </nav>
+                <p><dogocms:cfg name="cfg_copyright"/></p>
+            </div><!--col-md-->
+        </div><!--row-->
+    </div><!--container-->
 </footer>
 
 
@@ -37,8 +20,15 @@
 <script type="text/javascript" src="__PUBLIC__{$style_common}/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="__PUBLIC__{$style_common}/js/jquery.bxslider.min.js"></script>
 
+
+
 <script>
-    $(function () {
+    $(function() {
         $('img').addClass('img-responsive');
+        $('.bxslider').bxSlider({
+            mode: 'fade',
+            captions: true,
+            auto: true
+        });
     });
 </script>

@@ -1,6 +1,6 @@
 <include file="$tpl_header" />
 
-<div class="container">
+<div class="container dogo-wp">
     <div class="row dogo-notice">
         <div class="col-md-3">
             <ul>
@@ -26,44 +26,42 @@
     </div><!--row-->
     <div class="dogo-blank"></div>
     <div class="row ">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <aside>
                 <div class="dogo-box">
-
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-                        <volist name="data_sort" id="vo" key="i">
-                            <div class="panel dogo-panel-blueone">
-                                <div class="panel-heading" role="tab" id="heading{$i}">
-                                    <h4 class="panel-title">
-                                        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse{$i}" aria-expanded="false" aria-controls="collapse{$i}">
-                                            {$vo.ename}
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapse{$i}" class="panel-collapse collapse <if condition='$i eq 1'>in</if>" role="tabpane{$i}" aria-labelledby="heading{$i}">
-                                    <div class="panel-body dogo-text">
-                                        <ul>
-                                            <foreach name="vo.list" item="vo_list">
-                                            <li><a href="{:U('Home/Page/index',array('id'=>$vo_list['id']))}">{$vo_list.ename}</a></li>
-                                            </foreach>
-                                        </ul>
-                                    </div><!--panel-body-->
-                                </div>
-                            </div><!--panel-->
-                        </volist>
-
-                    </div><!--panel-group-->
-
+                    <div class="panel dogo-panel-redone">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><a href="#">全部分类</a></h3>
+                        </div>
+                        <div class="panel-body dogo-text">
+                            <ul>
+                                <li><a href="#">苹果也太粗心了！安全认证忘了更新</a></li>
+                                <li><a href="#">解决Win8.1兼容性 Sandboxie 4.10更新</a></li>
+                                <li><a href="#">苹果收购Beats波澜：消息泄露或致交易延期</a></li>
+                                <li><a href="#">苹果周边产品 带动创见策略性产品营收创新高</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div><!--dogo-box-->
             </aside>
-
-        </div><!--col-md-4-->
-        <div class="col-md-8">
+            <aside>
+                <div class="dogo-box">
+                    <div class="panel dogo-panel-redone">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><a href="#">全部分类</a></h3>
+                        </div>
+                        <div class="panel-body">
+                            Panel content
+                        </div>
+                    </div>
+                </div><!--dogo-box-->
+            </aside>
+        </div><!--col-md-3-->
+        <div class="col-md-9">
             <div class="dogo-box dogo-view-info dogo-border-all dogo-pd1015">
                 <div class="dogo-box-header">
                     <h1>{$data.ename}</h1>
-
+                    
                 </div>
                 <div class="dogo-box-content">
                     <p>{$data.content}</p>
