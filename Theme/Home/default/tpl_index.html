@@ -60,26 +60,26 @@
                 </section>
             </div><!--dogo-box-->
             <div class="dogo-blank"></div>
-            <div class="dogo-box">
-                <section class="dogo-border-all dogo-text-rank">
-                    <ul>
-                        <li><span>1</span><a href="">纯电动汽车能普及我们的生活圈吗纯电动汽车能普及我们的生活圈吗</a></li>
-                        <li><span>2</span><a href="">纯电动汽车能普及我们的生活圈吗，还有</a></li>
-                        <li><span>3</span><a href="">纯电动汽车能普及我们的生活圈吗，还有</a></li>
-                        <li><span>4</span><a href="">纯电动汽车能普及我们的生活圈吗，还有</a></li>
-                        <li><span>5</span><a href="">纯电动汽车能普及我们的生活圈吗，还有</a></li>
-                        <li><span>6</span><a href="">纯电动汽车能普及我们的生活圈吗，还有</a></li>
-                        <li><span>7</span><a href="">纯电动汽车能普及我们的生活圈吗，还有</a></li>
-                    </ul>
-                </section>
-            </div><!--dogo-box-->
+            <aside>
+                <div class="dogo-box">
+                    <div class="panel panel-default">
+                        <div class="panel-body dogo-text-rank">
+                            <ul>
+                                <dogocms:article type="all" limit="7" key="i">
+                                    <li><span>{$i}</span><a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
+                                </dogocms:article>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!--dogo-box-->
+            </aside>
 
 
 
         </div>
     </div><!--row-->
 </div><!--container-->
-<div class="dogo-blank"></div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -123,75 +123,27 @@
                     </div>
                     <div class="dogo-box-content">
                         <ul>
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <a href="#"><img src="/news/Public/Uploads/Images/20140310/u84.png" /></a>
-                                    </div><!--col-md-->
-                                    <div class="col-md-8">
-                                        <h3><a href="{:U('Home/Content/index',array('id'=>$vo['id']))}">罗永浩又讲相声了，全文看点在这；锤子手机已卖出12万部，39%的用户上一部手机是iPhone</a></h3>
-                                        <h6>
-                                            <span class="glyphicon glyphicon-refresh"></span> {$vo.addtime|date="m/d H:i",###}
-                                            <span class="glyphicon glyphicon-list"></span> <a href="{:U('Home/List/index',array('id'=>$vo['sort_id']))}">{$vo.text}</a>
-                                            <span class="glyphicon glyphicon-eye-open"></span> {$vo.views}
-                                        </h6>
-                                        <p>{$vo.description}罗永浩又讲相声了，全文看点在这；锤子手机已卖出12万部，39%的用户上一部手机是iPhone锤子手机已卖出12万部，39%的用户上一部手机是iPhone</p>
-                                    </div><!--col-md-->
-                                </div><!--row-->
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <a href="#"><img src="/news/Public/Uploads/Images/20140310/u84.png" /></a>
-                                    </div><!--col-md-->
-                                    <div class="col-md-8">
-                                        <h3><a href="{:U('Home/Content/index',array('id'=>$vo['id']))}">罗永浩又讲相声了，全文看点在这；锤子手机已卖出12万部，39%的用户上一部手机是iPhone</a></h3>
-                                        <h6>
-                                            <span class="glyphicon glyphicon-refresh"></span> {$vo.addtime|date="m/d H:i",###}
-                                            <span class="glyphicon glyphicon-list"></span> <a href="{:U('Home/List/index',array('id'=>$vo['sort_id']))}">{$vo.text}</a>
-                                            <span class="glyphicon glyphicon-eye-open"></span> {$vo.views}
-                                        </h6>
-                                        <p>{$vo.description}</p>
-                                    </div><!--col-md-->
-                                </div><!--row-->
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <a href="#"><img src="/news/Public/Uploads/Images/20140310/u84.png" /></a>
-                                    </div><!--col-md-->
-                                    <div class="col-md-8">
-                                        <h3><a href="{:U('Home/Content/index',array('id'=>$vo['id']))}">罗永浩又讲相声了，全文看点在这；锤子手机已卖出12万部，39%的用户上一部手机是iPhone</a></h3>
-                                        <h6>
-                                            <span class="glyphicon glyphicon-refresh"></span> {$vo.addtime|date="m/d H:i",###}
-                                            <span class="glyphicon glyphicon-list"></span> <a href="{:U('Home/List/index',array('id'=>$vo['sort_id']))}">{$vo.text}</a>
-                                            <span class="glyphicon glyphicon-eye-open"></span> {$vo.views}
-                                        </h6>
-                                        <p>{$vo.description}</p>
-                                    </div><!--col-md-->
-                                </div><!--row-->
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <a href="#"><img src="/news/Public/Uploads/Images/20140310/u84.png" /></a>
-                                    </div><!--col-md-->
-                                    <div class="col-md-8">
-                                        <h3><a href="{:U('Home/Content/index',array('id'=>$vo['id']))}">罗永浩又讲相声了，全文看点在这；锤子手机已卖出12万部，39%的用户上一部手机是iPhone</a></h3>
-                                        <h6>
-                                            <span class="glyphicon glyphicon-refresh"></span> {$vo.addtime|date="m/d H:i",###}
-                                            <span class="glyphicon glyphicon-list"></span> <a href="{:U('Home/List/index',array('id'=>$vo['sort_id']))}">22{$vo.text}333</a>
-                                            <span class="glyphicon glyphicon-eye-open"></span> {$vo.views}
-                                        </h6>
-                                        <p>{$vo.description}</p>
-                                    </div><!--col-md-->
-                                </div><!--row-->
-                            </li>
+                            <dogocms:article type="all" limit="8">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">
+                                                <img src="__ROOT__{$article.titlepic}" title="{$article.title}" alt="{$article.title}"/></a>
+                                        </div><!--col-md-->
+                                        <div class="col-md-8">
+                                            <h3><a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></h3>
+                                            <h6>
+                                                <span class="glyphicon glyphicon-refresh"></span> {$article.addtime|date="m/d H:i",###}
+                                                <span class="glyphicon glyphicon-list"></span> <a href="{:U('Home/List/index',array('id'=>$article['sort_id']))}">{$vo.text}</a>
+                                                <span class="glyphicon glyphicon-eye-open"></span> {$article.views}
+                                            </h6>
+                                            <p>{$article.description}</p>
+                                        </div><!--col-md-->
+                                    </div><!--row-->
+                                </li>
+                            </dogocms:article>
                             
-                            
-                            
-                            
-                            
+
                         </ul>
 
                     </div><!--dogo-box-content-->
@@ -239,72 +191,36 @@
                     </div><!--dogo-box-content-->
                 </section>
             </div><!--dogo-box-->
-            <div class="dogo-box">
-                <section class=" dogo-text-graphic">
-                    <div class="dogo-box-header">
-                        <h3><a href="#">热门文章</a></h3>
+            <aside>
+                <div class="dogo-box">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><a href="#">热门文章</a></h3>
+                        </div>
+                        <div class="panel-body dogo-text-graphic">
+                            <ul>
+                                <dogocms:article type="all" limit="8">
+                                    <li>
+                                        <div class="pic dogo-flt">
+                                            <a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">
+                                                <img src="__ROOT__{$article.titlepic}" title="{$article.title}" alt="{$article.title}"/></a>
+                                        </div>
+                                        <div class="title dogo-frt">
+                                            <h3><a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></h3>
+                                            <p><span class="glyphicon glyphicon-time"></span> {$article.addtime|date="m-d H:i:s",###} <span class="glyphicon glyphicon-eye-open"></span> {$article.views}</p>
+                                        </div>
+                                    </li>
+                                </dogocms:article>
+                                <div class="dogo-clear"></div>
+
+                            </ul>
+                        </div>
                     </div>
-                    <div class="dogo-box-content">
-                        <ul>
-                            <li>
-                                <div class="pic dogo-flt">
-                                    <a href="#"><img src="/news/Public/Uploads/Images/20140310/u84.png"/></a>
-                                </div>
-                                <div class="title dogo-frt">
-                                    <h3><a href="#">罗永浩又讲相声了，全文看点在这；锤子手机已卖出12万部，39%的用户上一部手机是iPhone</a></h3>
-                                    <p>12月03日 07:48 788</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="pic dogo-flt">
-                                    <a href="#"><img src="/news/Public/Uploads/Images/20140310/u84.png"/></a>
-                                </div>
-                                <div class="title dogo-frt">
-                                    <h3><a href="#">罗永浩又讲相声了，全文看点在这；锤子手机已卖出12万部，39%的用户上一部手机是iPhone</a></h3>
-                                    <p>12月03日 07:48 788</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="pic dogo-flt">
-                                    <a href="#"><img src="/news/Public/Uploads/Images/20140310/u84.png"/></a>
-                                </div>
-                                <div class="title dogo-frt">
-                                    <h3><a href="#">罗永浩又讲相声了，全文看点在这；锤子手机已卖出12万部，39%的用户上一部手机是iPhone</a></h3>
-                                    <p>12月03日 07:48 788</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="pic dogo-flt">
-                                    <a href="#"><img src="/news/Public/Uploads/Images/20140310/u84.png"/></a>
-                                </div>
-                                <div class="title dogo-frt">
-                                    <h3><a href="#">罗永浩又讲相声了，全文看点在这；锤子手机已卖出12万部，39%的用户上一部手机是iPhone</a></h3>
-                                    <p>12月03日 07:48 788</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="pic dogo-flt">
-                                    <a href="#"><img src="/news/Public/Uploads/Images/20140310/u84.png"/></a>
-                                </div>
-                                <div class="title dogo-frt">
-                                    <h3><a href="#">罗永浩又讲相声了，全文看点在这；锤子手机已卖出12万部，39%的用户上一部手机是iPhone</a></h3>
-                                    <p>12月03日 07:48 788</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="pic dogo-flt">
-                                    <a href="#"><img src="/news/Public/Uploads/Images/20140310/u84.png"/></a>
-                                </div>
-                                <div class="title dogo-frt">
-                                    <h3><a href="#">罗永浩又讲相声了，全文看点在这；锤子手机已卖出12万部，39%的用户上一部手机是iPhone</a></h3>
-                                    <p>12月03日 07:48 788</p>
-                                </div>
-                            </li>
-                            <div class="dogo-clear"></div>
-                        </ul>
-                    </div><!--dogo-box-content-->
-                </section>
-            </div><!--dogo-box-->
+                </div><!--dogo-box-->
+            </aside>
+
+
+
 
         </div>
     </div><!--row-->

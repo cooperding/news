@@ -34,8 +34,9 @@ class ContentAction extends BasehomeAction {
             //浏览量赋值+1
             $condition_id['id'] = array('eq', $id);
             $t->where($condition_id)->setInc('views', 1);
-
+            
             //获取评论信息
+            /*
             $c = D('Comment');
             $condition_comment['c.title_id'] = array('eq', $id);
             $condition_comment['c.status'] = array('eq', 20);
@@ -43,13 +44,15 @@ class ContentAction extends BasehomeAction {
                             ->Table(C('DB_PREFIX') . 'comment c')
                             ->join(C('DB_PREFIX') . 'members m ON m.id = c.open_id ')
                             ->where($condition_comment)->order('floor asc')->select();
+             * 
+             */
             $data['content'] = stripslashes($data['content']);
             $condition_sort['id'] = array('eq',$data['sort_id']);
             $tpl_content = M('NewsSort')->where($condition_sort)->getField('template_content');
         }
         $skin = $this->getSkin(); //获取前台主题皮肤名称
         $this->assign('data', $data);
-        $this->assign('list_comment', $comment);
+        //$this->assign('list_comment', $comment);
         $this->assign('title', $data['title']);
         $this->assign('keywords', $data['keywords']);
         $this->assign('description', $data['description']);

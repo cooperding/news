@@ -70,6 +70,7 @@ class SystemAction extends BaseApiAction {
      * 获取站点配置
      * @param string $name 参数名称
      * @return string
+     * @$skin = R('Common/System/getCfg', array($str));
      * @version dogocms 1.0
      */
 

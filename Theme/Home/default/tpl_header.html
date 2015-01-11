@@ -11,7 +11,7 @@
         <link rel="stylesheet" type="text/css" href="__PUBLIC__{$style_common}/css/alertify.css"/>
         <link rel="stylesheet" type="text/css" href="__PUBLIC__{$style_common}/css/alertify.default.css"/>
         <link rel="stylesheet" type="text/css" href="__PUBLIC__{$style}/style/jquery.bxslider.css"/>
-        <link rel="stylesheet" type="text/css" href="__PUBLIC__{$style_common}/css/common.css"/>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__{$style}/style/common.css"/>
         <link rel="stylesheet" type="text/css" href="__PUBLIC__{$style}/style/style.css"/>
     </head>
     <body>
@@ -22,7 +22,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="dogo-logo">
-                                    <img src="/news/Public/Uploads/Images/20140310/u84.png"/>
+                                    <a href="{:U('/')}"><img src="__PUBLIC__{$style}/style/images/logo.gif"/></a>
                                 </div><!--dogo-logo-->
                             </div>
                             <div class="col-md-4">
@@ -39,7 +39,13 @@
                             <div class="col-md-2">
                                 
                                 <div class="dogo-klogin dogo-align-right">
-                                    <a href="{:U('User/Passport/login')}">{$data.uname}登录</a>| <a href="{:U('User/Passport/signup')}">注册</a>
+                                    <php>if(session('LOGIN_M_STATUS')=='TRUE'){</php>
+                                    <a role="menuitem" href="{:U('User/Index/index')}"> 我的主页</a>
+                                    <a role="menuitem" href="javascript:void(0)" class="dogo-click-logout">退出</a>
+                                    <php>}else{</php>
+                                    <a href="{:U('User/Passport/login')}">登录</a>| <a href="{:U('User/Passport/signup')}">注册</a>
+                                    <php>}</php>
+                                    
                                 </div>
 
                             </div>
@@ -93,25 +99,3 @@
                     </div><!--container-->
                 </div><!--dogo-nav-->
             </header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

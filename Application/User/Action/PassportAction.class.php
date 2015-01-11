@@ -73,6 +73,11 @@ class PassportAction extends Action {
      */
 
     public function signup() {
+        $status = R('Common/System/getCfg', array('cfg_is_signup'));
+        if($status==2){
+            $this->error('暂时关闭注册功能，请稍后访问！');
+            exit;
+        }//if
         $skin = $this->getSkin(); //获取前台主题皮肤名称
         $this->assign('title', '会员注册');
         $this->theme($skin)->display(':signup');

@@ -1,6 +1,6 @@
 /**gongong**/
 body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,table,td,th,form,fieldset,img,dl,dt,dd,input,select,bottom{margin:0;padding:0;}
-body{font-family: 'Open Sans','Helvetica Neue',Arial,"Hiragino Sans GB",'Microsoft YaHei',sans-serif;font-size: 13px;}
+body{font-family: 'Microsoft YaHei',sans-serif;font-size: 13px;}
 li{list-style: none;}
 a{text-decoration:none;color: #3E3E3E;}
 a:hover{text-decoration:none;color: #FF6347;}
@@ -48,7 +48,7 @@ a:hover{text-decoration:none;color: #FF6347;}
 .dogo-recom .dogo-box-content p{line-height: 25px;height: 25px;overflow: hidden;}
 
 /*dogo-text-rank*/
-.dogo-text-rank{height: 185px;}
+.dogo-text-rank{height: 185px;padding: 5px;}
 .dogo-text-rank ul{}
 .dogo-text-rank ul li{line-height: 30px;height: 25px;overflow: hidden;}
 .dogo-text-rank ul li span{width: 16px;height: 16px;background: #7E4FC3;margin: 0 5px;padding: 0 5px;color: #fff;}
@@ -56,13 +56,11 @@ a:hover{text-decoration:none;color: #FF6347;}
 .dogo-text-rank ul li a:hover{}
 
 /*dogo-text-graphic*/
-.dogo-text-graphic{}
-.dogo-text-graphic .dogo-box-header{}
-.dogo-text-graphic .dogo-box-header h3{border-bottom: 2px solid #FD6639;margin-bottom: 10px;}
-.dogo-text-graphic .dogo-box-header h3 a{color: #FD6639;}
+
 .dogo-text-graphic ul{}
 .dogo-text-graphic ul li{overflow: hidden;margin-bottom: 15px;}
 .dogo-text-graphic .pic{width: 70px;}
+.dogo-text-graphic .pic img{width: 100%;height: auto;}
 .dogo-text-graphic .title{width: 230px;}
 .dogo-text-graphic .title h3{font-size: 13px;height: 55px;line-height: 18px;overflow: hidden;}
 .dogo-text-graphic .title h3 a{color: #000;}

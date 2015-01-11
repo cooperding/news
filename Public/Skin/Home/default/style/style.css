@@ -9,6 +9,7 @@
 .dogo-navbar .navbar-brand{line-height: 50px;color: #000;font-size: 16px;}
 .dogo-navbar .navbar-nav>li>a{line-height: 50px;font-size: 16px;color: #000;}
 .panel,.panel-heading{border-radius: 0;}
+.panel-group .panel{border-radius: 0;}
 /*dogo-box*/
 .dogo-box{}
 .dogo-box-header{}
@@ -17,7 +18,7 @@
 /*header*/
 .dogo-header{}
 .dogo-header .dogo-top{min-height: 90px;background: #fff;}
-.dogo-header .dogo-nav{min-height: 40px;background: #7E4FC3;}
+.dogo-header .dogo-nav{min-height: 40px;background: #2470F8;}
 /*.dogo-header .dogo-nav{height: 40px;background: #F05050;}*/
 /*.dogo-header .dogo-nav{height: 40px;background: #2470F8;}*/
 /*dogo-logo*/
@@ -66,9 +67,9 @@
 .dogo-list-text ul{}
 .dogo-list-text ul li{border-bottom: 1px dotted #ccc;padding: 8px 0;margin-bottom: 10px;}
 .dogo-list-text ul li:last-child{border-bottom: none;}
-.dogo-list-text ul li h3{font-size: 18px;line-height: 25px;font-weight: bold;}
-.dogo-list-text ul li h6{line-height: 25px;}
-.dogo-list-text ul li p{line-height: 25px;}
+.dogo-list-text ul li h3{font-size: 18px;line-height: 25px;}
+.dogo-list-text ul li h6{line-height: 25px;color: #777;}
+.dogo-list-text ul li p{line-height: 25px;color: #666;}
 
 
 
@@ -107,7 +108,7 @@
     .dogo-thumbnail-pic img{max-height: 310px;min-height: 310px;}
     .dogo-logo{height: 90px;}
     */
-    .container {width: 1020px;}
+    .container {width: 1100px;}
 }
 @media(max-width:768px){
     .dogo-top{line-height: 20px;}
