@@ -97,61 +97,6 @@ class IndexAction extends BaseuserAction {
         $this->theme($skin)->display(':changepwd');
     }
 
-    /**
-     * addressList
-     * 收货地址列表
-     * @return display
-     * @version dogocms 1.0
-     * @todo 
-     */
-    public function addressList()
-    {
-        $m = D('MembersAddress');
-        $uid = session('LOGIN_M_ID');
-        $condition['open_id'] = array('eq', $uid);
-        $data = $m->where($condition)->select();
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
-        $this->assign('title', '收货地址列表');
-        $this->assign('sidebar_active', 'address');
-        $this->assign('list', $data);
-        $this->theme($skin)->display(':address_list');
-    }
-
-    /**
-     * addressAdd
-     * 收货地址-添加
-     * @return display
-     * @version dogocms 1.0
-     * @todo 
-     */
-    public function addressAdd()
-    {
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
-        $this->assign('title', '添加收货地址');
-        $this->assign('sidebar_active', 'address');
-        $this->theme($skin)->display(':address_add');
-    }
-
-    /**
-     * addressEdit
-     * 收货地址-编辑
-     * @return display
-     * @version dogocms 1.0
-     * @todo 
-     */
-    public function addressEdit()
-    {
-        $m = D('MembersAddress');
-        $uid = session('LOGIN_M_ID');
-        $condition['open_id'] = array('eq', $uid);
-        $condition['id'] = array('eq', I('get.id'));
-        $data = $m->where($condition)->find();
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
-        $this->assign('title', '修改收货地址');
-        $this->assign('sidebar_active', 'changepwd');
-        $this->assign('data', $data);
-        $this->theme($skin)->display(':address_edit');
-    }
 
     /**
      * newsAdd
@@ -179,7 +124,7 @@ class IndexAction extends BaseuserAction {
     {
         $m = D('Title');
         $uid = session('LOGIN_M_ID');
-        $condition['t.open_id'] = array('eq', $uid);
+        $condition['t.members_id'] = array('eq', $uid);
         $condition['t.id'] = array('eq', I('get.id'));
         $data = $m->Table(C('DB_PREFIX') . 'title t')
                         ->field('t.*,c.content')
@@ -203,7 +148,7 @@ class IndexAction extends BaseuserAction {
     {
         $t = D('Title');
         $uid = session('LOGIN_M_ID');
-        $condition['t.open_id'] = array('eq', $uid);
+        $condition['t.members_id'] = array('eq', $uid);
         $count = $t->Table(C('DB_PREFIX') . 'title t')
                         ->join(C('DB_PREFIX') . 'content c ON c.title_id = t.id ')
                         ->where($condition)->count();
@@ -374,101 +319,7 @@ class IndexAction extends BaseuserAction {
         }
     }
 
-    /**
-     * addressInsert
-     * 添加收货地址
-     * @return display
-     * @version dogocms 1.0
-     * @todo 
-     */
-    public function addressInsert()
-    {
-        $m = D('MembersAddress');
-        $uid = session('LOGIN_M_ID');
-        $condition['open_id'] = array('eq', $uid);
-        $count = $m->where($condition)->count();
-        if ($count >= 5) {
-            $this->error('最多可以设置5条收货地址！');
-            exit;
-        }
-        if ($_POST['is_default']) {
-            $m->where($condition)->setField('is_default', 10);
-            $data['is_default'] = 20;
-        }
-        $data['addtime'] = time();
-        $data['open_id'] = $uid;
-        $data['updatetime'] = time();
-        $data['name'] = I('post.name');
-        $data['telphone'] = I('post.telphone');
-        $data['province'] = I('post.province');
-        $data['city'] = I('post.city');
-        $data['county'] = I('post.county');
-        $data['zipcode'] = I('post.zipcode');
-        $data['address'] = I('post.address');
-        $rs = $m->data($data)->add();
-        if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/addressList');
-        } else {
-            $this->error('操作失败，请重新操作！');
-        }
-    }
-
-    /**
-     * addressUpdate
-     *  更新收货地址
-     * @return display
-     * @version dogocms 1.0
-     * @todo 
-     */
-    public function addressUpdate()
-    {
-        $m = D('MembersAddress');
-        $uid = session('LOGIN_M_ID');
-        $condition['open_id'] = array('eq', $uid);
-        if ($_POST['is_default']) {
-            $m->where($condition)->setField('is_default', 10);
-            $data['is_default'] = 20;
-        }
-        $condition['id'] = array('eq', I('post.id'));
-        $data['updatetime'] = time();
-        $data['name'] = I('post.name');
-        $data['telphone'] = I('post.telphone');
-        $data['province'] = I('post.province');
-        $data['city'] = I('post.city');
-        $data['county'] = I('post.county');
-        $data['zipcode'] = I('post.zipcode');
-        $data['address'] = I('post.address');
-        $rs = $m->where($condition)->save($data);
-        if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/addressList');
-        } else {
-            $this->error('操作失败，请重新操作！');
-        }
-    }
-
-    /**
-     * addressDelete
-     *  删除收货地址
-     * @return display
-     * @version dogocms 1.0
-     * @todo 
-     */
-    public function addressDelete()
-    {
-        $m = D('MembersAddress');
-        $uid = session('LOGIN_M_ID');
-        $condition['open_id'] = array('eq', $uid);
-        $condition['id'] = array('eq', I('get.id'));
-        $rs = $m->where($condition)->delete();
-        if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/addressList');
-        } else {
-            $this->error('操作失败，请重新操作！');
-        }
-    }
-
     
-
     /**
      * newsInsert
      * 添加信息
@@ -492,7 +343,7 @@ class IndexAction extends BaseuserAction {
         }
         $data['addtime'] = time();
         $data['title'] = $title;
-        $data['open_id'] = $uid;
+        $data['members_id'] = $uid;
         $data['updatetime'] = time();
         $data['status'] = 10;
         //获取内容中第一张图片

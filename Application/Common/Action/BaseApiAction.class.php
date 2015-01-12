@@ -59,7 +59,7 @@ class BaseApiAction extends Action {
      */
     public function getPassword($uname, $pwd)
     {
-        $password = md5(md5($uname) . sha1($pwd));
+        $password = md5(sha1(md5($uname) . sha1($pwd)));
         return $password;
     }
 

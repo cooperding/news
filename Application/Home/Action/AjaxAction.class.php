@@ -59,7 +59,7 @@ class AjaxAction extends BasehomeAction {
         $data['ip'] = $ip;
         $data['addtime'] = time();
         $data['updatetime'] = time();
-        $data['open_id'] = $uid;
+        $data['members_id'] = $uid;
         $data['content'] = $content;
         //计算最大值
         $condition_comment['title_id'] = array('eq', $key_id);

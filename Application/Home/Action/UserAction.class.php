@@ -20,7 +20,7 @@ class UserAction extends BasehomeAction {
         $m = D('Members'); //实例化会员信息表
         $t = D('Title');
         $condition['t.status'] = array('eq', '12');
-        $condition['t.open_id'] = array('eq', $uid);
+        $condition['t.members_id'] = array('eq', $uid);
         $count = $t->Table(C('DB_PREFIX') . 'title t')
                         ->join(C('DB_PREFIX') . 'content c ON c.title_id = t.id ')
                         ->where($condition)->count();
@@ -31,7 +31,7 @@ class UserAction extends BasehomeAction {
         // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
         $list = $t->Table(C('DB_PREFIX') . 'title t')
                 ->join(C('DB_PREFIX') . 'content c ON c.title_id = t.id ')
-                ->join(C('DB_PREFIX') . 'members m ON t.open_id = m.id ')
+                ->join(C('DB_PREFIX') . 'members m ON t.members_id = m.id ')
                 ->where($condition)
                 ->field('t.*,c.*,m.username')
                 ->order('t.id desc')

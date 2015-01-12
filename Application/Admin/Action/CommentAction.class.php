@@ -40,7 +40,7 @@ class CommentAction extends BaseAction {
         $condition['c.id'] = array('eq', $id);
         $data = $m->field(array('c.*', 't.title', 'm.username'))->Table(C('DB_PREFIX') . 'comment c')
                         ->join(C('DB_PREFIX') . 'title t ON t.id=c.title_id')
-                        ->join(C('DB_PREFIX') . 'members m ON m.id=c.open_id')
+                        ->join(C('DB_PREFIX') . 'members m ON m.id=c.members_id')
                         ->limit($firstRow . ',' . $pageRows)->order('c.id desc')
                         ->where($condition)->find();
         $status = array(
@@ -114,7 +114,7 @@ class CommentAction extends BaseAction {
         $firstRow = ($pageNumber - 1) * $pageRows;
         $data = $m->field(array('c.*', 't.title', 'm.username'))->Table(C('DB_PREFIX') . 'comment c')
                         ->join(C('DB_PREFIX') . 'title t ON t.id=c.title_id')
-                        ->join(C('DB_PREFIX') . 'members m ON m.id=c.open_id')
+                        ->join(C('DB_PREFIX') . 'members m ON m.id=c.members_id')
                         ->limit($firstRow . ',' . $pageRows)->order('c.id desc')->select();
         $array = array();
         if ($data) {
