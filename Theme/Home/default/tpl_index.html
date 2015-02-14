@@ -89,11 +89,11 @@
                         <div class="dogo-box">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title"><a href="#">全部分类</a></h3>
+                                    <h3 class="panel-title"><a href="{:U('Home/List/index',array('id'=>13))}">唯爱情感</a></h3>
                                 </div>
                                 <div class="panel-body dogo-text">
                                     <ul>
-                                        <dogocms:article type="all" limit="8">
+                                        <dogocms:article typeid="3" limit="2">
                                             <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
                                         </dogocms:article>
                                     </ul>

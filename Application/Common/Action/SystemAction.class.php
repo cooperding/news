@@ -147,7 +147,7 @@ class SystemAction extends BaseApiAction {
             return array('error' => 1, 'message' => $msg);
             exit;
         } else {// 上传成功 获取上传文件信息
-            $url = '/Public/Uploads'.$info['imgFile']['savepath'] . $info['imgFile']['savename'];
+            $url = '/Uploads'.$info['imgFile']['savepath'] . $info['imgFile']['savename'];
             $url = __ROOT__ . '/' . $url;
             return array('error' => 0, 'url' => $url);
         }
