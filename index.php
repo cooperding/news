@@ -20,6 +20,7 @@ define('APP_DEBUG',true);
 // 定义应用目录
 define('APP_PATH','./Application/');
 define('TMPL_PATH','./Theme/');
+define('RUNTIME_PATH', './Runtime/');//定义缓存目录
 // 引入ThinkPHP入口文件
 require './Core/ThinkPHP.php';
 
