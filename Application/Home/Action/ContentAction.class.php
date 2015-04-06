@@ -34,7 +34,8 @@ class ContentAction extends BasehomeAction {
             $condition_id['id'] = array('eq', $id);
             $t->where($condition_id)->setInc('views', 1);
 
-            //获取评论信息
+            //获取评论信息，以后获取从其他方法返回值
+            /*
             $c = D('Comment');
             $condition_comment['c.title_id'] = array('eq', $id);
             $condition_comment['c.status'] = array('eq', 20);
@@ -42,7 +43,8 @@ class ContentAction extends BasehomeAction {
                             ->Table(C('DB_PREFIX') . 'comment c')
                             ->join(C('DB_PREFIX') . 'members m ON m.id = c.members_id ')
                             ->where($condition_comment)->order('floor asc')->select();
-
+             * 
+             */
             $data['content'] = stripslashes($data['content']);
             $condition_sort['id'] = array('eq', $data['sort_id']);
             $tpl_content = M('NewsSort')->where($condition_sort)->getField('template_content');
