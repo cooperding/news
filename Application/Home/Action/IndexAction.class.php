@@ -15,8 +15,7 @@ namespace Home\Action;
 use Think\Action;
 class IndexAction extends BasehomeAction {
 
-    public function index()
-    {
+    public function index() {
         $m = D('Setting');
         $title['sys_name'] = array('eq', 'cfg_title');
         $keywords['sys_name'] = array('eq', 'cfg_keywords');
@@ -29,7 +28,7 @@ class IndexAction extends BasehomeAction {
         $this->assign('title', $data_title['sys_value']);
         $this->assign('keywords', $data_keywords['sys_value']);
         $this->assign('description', $data_description['sys_value']);
-        $this->theme($skin)->display(':index');
+        $this->theme($skin)->display(C('TPL_NAME') . 'index');
     }
 
 }

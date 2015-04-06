@@ -11,18 +11,15 @@
  * @package  Controller
  * @todo 完善更多方法
  */
-
 namespace Home\Action;
-
 use Think\Action;
-
 class PageAction extends BasehomeAction {
 
     /**
      * 使用方法/page/index/id/$id
      */
     public function index() {
-        
+
         $m = M('Pages');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
@@ -33,12 +30,13 @@ class PageAction extends BasehomeAction {
         }
         $skin = $this->getSkin(); //获取前台主题皮肤名称
         $this->assign('data', $data); // 赋值数据集
-        $this->assign('data_sort',$this->getSort());
+        $this->assign('data_sort', $this->getSort());
         $this->assign('title', $data['ename']);
         $this->assign('keywords', $data['keywords']);
         $this->assign('description', $data['description']);
-        $this->theme($skin)->display(':page');
+        $this->theme($skin)->display(C('TPL_NAME') . 'page');
     }
+
     /**
      * 获取单页分类信息
      */
@@ -47,16 +45,14 @@ class PageAction extends BasehomeAction {
         $condition['status'] = array('eq', 20);
         $condition['parent_id'] = array('eq', 0);
         $data = $m->field('id,ename')->where($condition)->select();
-        if($data){
+        if ($data) {
             $p = M('Pages');
-            foreach($data as $k=>$v){
-                $condition_page['sort_id'] = array('eq',$v['id']);
+            foreach ($data as $k => $v) {
+                $condition_page['sort_id'] = array('eq', $v['id']);
                 $data[$k]['list'] = $p->field('ename,id,keywords,description,content')->where($condition_page)->select();
-                
             }
         }
         return $data;
-        
     }
 
 }

@@ -56,7 +56,7 @@ class ListAction extends BasehomeAction {
         $this->assign('description', $one_data['description']);
         $this->assign('list', $list);
         $this->assign('page', $show); // 赋值分页输出
-        $this->theme($skin)->display(':'.$template);
+        $this->theme($skin)->display(C('TPL_NAME') . $template);
     }
 
 }

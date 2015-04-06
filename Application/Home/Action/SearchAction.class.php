@@ -14,8 +14,7 @@ namespace Home\Action;
 use Think\Action;
 class SearchAction extends BasehomeAction {
 
-    public function index()
-    {
+    public function index() {
         //分析：根据提供的关键词查询title或者扩展内容表（暂定）,同时需要查询的表有分类表。
         $words = addslashes($_GET['words']);
         if (!$words) {
@@ -51,7 +50,7 @@ class SearchAction extends BasehomeAction {
         $this->assign('title', $one_data['text']);
         $this->assign('keywords', $one_data['keywords']);
         $this->assign('description', $one_data['description']);
-        $this->display(':search');
+        $this->display(C('TPL_NAME') . 'search');
     }
 
 }
