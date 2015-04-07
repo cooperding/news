@@ -43,7 +43,7 @@ class SearchAction extends BasehomeAction {
                 ->join(C('DB_PREFIX') . 'news_sort ns ON ns.id = t.sort_id')
                 ->where($condition)->limit($page->firstRow . ',' . $page->listRows)
                 ->select();
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('list', $list); // 赋值数据集
         $this->assign('words', $words);
         $this->assign('page', $show); // 赋值分页输出

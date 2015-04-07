@@ -39,21 +39,6 @@ class BaseuserAction extends BasehomeAction {
         return $count;
     }
 
-    /*
-     * getSkin
-     * 获取站点设置的主题名称
-     * @todo 使用程序读取主题皮肤名称
-     */
-
-    public function getSkin($str) {
-        $str = $str ? $str : 'cfg_member_skin';
-        $skin = R('Common/System/getCfg', array($str));
-        if (!$skin) {
-            $skin = C('DEFAULT_THEME');
-        }
-        return $skin;
-    }
-
 }
 
 ?>

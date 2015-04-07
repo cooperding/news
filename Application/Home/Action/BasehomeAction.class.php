@@ -11,14 +11,17 @@
  * @package  Controller
  * @todo 完善更多方法
  */
+
 namespace Home\Action;
+
 use Think\Action;
+
 class BasehomeAction extends Action {
 
     //初始化
-    function _initialize()
-    {
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+    function _initialize() {
+        $skin = $this->getSkin('cfg_skin_web'); //获取前台主题皮肤名称
+        $this->skin = $skin;
         $navhead = R('Common/System/getNav', array('header')); //导航菜单
         $navfoot = R('Common/System/getNav', array('footer')); //导航菜单
         $this->assign('navhead', $navhead);
@@ -28,15 +31,15 @@ class BasehomeAction extends Action {
         $this->assign('tpl_header', './Theme' . __MODULE__ . '/' . $skin . '/' . C('TPL_NAME') . '/header.html');
         $this->assign('tpl_footer', './Theme' . __MODULE__ . '/' . $skin . '/' . C('TPL_NAME') . '/footer.html');
     }
+
     /*
      * getSkin
      * 获取站点设置的主题名称
      * @todo 使用程序读取主题皮肤名称
      */
 
-    public function getSkin($str)
-    {
-        $str = $str?$str:'cfg_skin_web';
+    public function getSkin($str) {
+        $str = $str ? $str : 'cfg_skin_web';
         $skin = R('Common/System/getCfg', array($str));
         if (!$skin) {
             $skin = C('DEFAULT_THEME');

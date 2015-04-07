@@ -28,7 +28,7 @@ class PageAction extends BasehomeAction {
         if ($data) {
             $data['content'] = stripslashes($data['content']);
         }
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('data', $data); // 赋值数据集
         $this->assign('data_sort', $this->getSort());
         $this->assign('title', $data['ename']);

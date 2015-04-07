@@ -49,7 +49,7 @@ class ContentAction extends BasehomeAction {
             $condition_sort['id'] = array('eq', $data['sort_id']);
             $tpl_content = M('NewsSort')->where($condition_sort)->getField('template_content');
         }
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('data', $data);
         //$this->assign('list_comment', $comment);
         $this->assign('title', $data['title']);

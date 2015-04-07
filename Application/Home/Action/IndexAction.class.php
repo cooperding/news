@@ -11,8 +11,11 @@
  * @package  Controller
  * @todo 完善更多方法
  */
+
 namespace Home\Action;
+
 use Think\Action;
+
 class IndexAction extends BasehomeAction {
 
     public function index() {
@@ -24,7 +27,7 @@ class IndexAction extends BasehomeAction {
         $data_keywords = $m->where($keywords)->find();
         $data_description = $m->where($description)->find();
 
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', $data_title['sys_value']);
         $this->assign('keywords', $data_keywords['sys_value']);
         $this->assign('description', $data_description['sys_value']);

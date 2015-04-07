@@ -32,7 +32,7 @@ class IndexAction extends BaseuserAction {
         $data['addtime'] = session('LOGIN_M_ADDTIME');
         $data_signature = $m->field('signature')->where($condition)->find();
         $data['signature'] = $data_signature['signature'];
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '会员中心');
         $this->assign('sidebar_active', 'index');
         $this->assign('data', $data);
@@ -51,7 +51,7 @@ class IndexAction extends BaseuserAction {
         $uid = session('LOGIN_M_ID');
         $condition['id'] = array('eq', $uid);
         $data = $m->field('username,sex,signature,birthday')->where($condition)->find();
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '个人资料');
         $this->assign('sidebar_active', 'personal');
         $this->assign('data', $data);
@@ -70,7 +70,7 @@ class IndexAction extends BaseuserAction {
         $uid = session('LOGIN_M_ID');
         $condition['id'] = array('eq', $uid);
         $data = $m->field('email,email_status')->where($condition)->find();
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '邮箱信息');
         $this->assign('sidebar_active', 'email');
         $this->assign('data', $data);
@@ -85,7 +85,7 @@ class IndexAction extends BaseuserAction {
      * @todo 权限验证
      */
     public function changePwd() {
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '修改密码');
         $this->assign('sidebar_active', 'changepwd');
         $this->theme($skin)->display(C('TPL_USER_NAME') . 'changepwd');
@@ -103,7 +103,7 @@ class IndexAction extends BaseuserAction {
         $uid = session('LOGIN_M_ID');
         $condition['members_id'] = array('eq', $uid);
         $data = $m->where($condition)->select();
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '收货地址列表');
         $this->assign('sidebar_active', 'address');
         $this->assign('list', $data);
@@ -143,7 +143,7 @@ class IndexAction extends BaseuserAction {
 //        dump($list);
 //        echo $count;
 //        exit;
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '订单列表');
         $this->assign('page', $show); // 赋值分页输出
         $this->assign('sidebar_active', 'orders');
@@ -159,7 +159,7 @@ class IndexAction extends BaseuserAction {
      * @todo 
      */
     public function addressAdd() {
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '添加收货地址');
         $this->assign('sidebar_active', 'address');
         $this->theme($skin)->display(C('TPL_USER_NAME') . 'address_add');
@@ -178,7 +178,7 @@ class IndexAction extends BaseuserAction {
         $condition['members_id'] = array('eq', $uid);
         $condition['id'] = array('eq', I('get.id'));
         $data = $m->where($condition)->find();
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '修改收货地址');
         $this->assign('sidebar_active', 'changepwd');
         $this->assign('data', $data);
@@ -193,7 +193,7 @@ class IndexAction extends BaseuserAction {
      * @todo 
      */
     public function newsAdd() {
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '我要投稿');
         $this->assign('sidebar_active', 'news_add');
         $this->theme($skin)->display(C('TPL_USER_NAME') . 'news_add');
@@ -215,7 +215,7 @@ class IndexAction extends BaseuserAction {
                         ->field('t.*,c.content')
                         ->join(C('DB_PREFIX') . 'content c ON c.title_id = t.id ')
                         ->where($condition)->find();
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '修改信息');
         $this->assign('sidebar_active', 'news_edit');
         $this->assign('data', $data);
@@ -258,7 +258,7 @@ class IndexAction extends BaseuserAction {
                 $list[$k]['status'] = '待审核';
             }
         }
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '我的信息列表');
         $this->assign('sidebar_active', 'news_list');
         $this->assign('list', $list);
@@ -285,7 +285,7 @@ class IndexAction extends BaseuserAction {
                 $data[$k]['status'] = '禁用';
             }
         }
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', 'API列表');
         $this->assign('sidebar_active', 'apilist');
         $this->assign('list', $data);
@@ -300,7 +300,7 @@ class IndexAction extends BaseuserAction {
      * @todo 
      */
     public function apiListAdd() {
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '添加API信息');
         $this->assign('sidebar_active', 'apilist');
         $this->theme($skin)->display(C('TPL_USER_NAME') . 'api_add');
@@ -319,7 +319,7 @@ class IndexAction extends BaseuserAction {
         $condition['members_id'] = array('eq', $uid);
         $condition['id'] = array('eq', I('get.id'));
         $data = $m->where($condition)->find();
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '修改API信息');
         $this->assign('sidebar_active', 'apilist');
         $this->assign('data', $data);
@@ -616,7 +616,7 @@ class IndexAction extends BaseuserAction {
     public function getArea() {
         $m = D('Area');
         $type = I('post.type');
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         if ($type == 'province') {
             $condition['parent_id'] = array('eq', 0);
             $condition['status'] = array('eq', 20);
@@ -650,7 +650,7 @@ class IndexAction extends BaseuserAction {
     public function getAreaCheck() {
         $m = D('Area');
         $type = I('post.type');
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         if ($type == 'province') {
             $condition['parent_id'] = array('eq', 0);
             $condition['status'] = array('eq', 20);

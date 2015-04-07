@@ -49,7 +49,7 @@ class ListAction extends BasehomeAction {
                 ->order('t.id desc')
                 ->limit($page->firstRow . ',' . $page->listRows)
                 ->select();
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $template = trim($one_data['template_list'])?trim($one_data['template_list']):'list';//获取模板名称
         $this->assign('title', $one_data['text']);
         $this->assign('keywords', $one_data['keywords']);

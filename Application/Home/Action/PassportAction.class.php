@@ -10,9 +10,12 @@
  * @version dogocms 1.0 2012-11-5 11:20
  * @package  Controller
  */
+
 namespace Home\Action;
+
 use Think\Action;
-class PassportAction extends BaseAction {
+
+class PassportAction extends BasehomeAction {
 
 //初始化
     function _initialize() {
@@ -47,7 +50,7 @@ class PassportAction extends BaseAction {
      */
 
     public function login() {
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '会员登录');
         $this->theme($skin)->display(C('TPL_USER_NAME') . 'login');
     }
@@ -66,7 +69,7 @@ class PassportAction extends BaseAction {
             $this->error('暂时关闭注册功能，请稍后访问！');
             exit;
         }//if
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '会员注册');
         $this->theme($skin)->display(C('TPL_USER_NAME') . 'signup');
     }
@@ -80,7 +83,7 @@ class PassportAction extends BaseAction {
      */
 
     public function resetPassword() {
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '重置密码');
         $this->theme($skin)->display(C('TPL_USER_NAME') . 'resetpwd');
     }
@@ -286,21 +289,6 @@ class PassportAction extends BaseAction {
         return $verify->check($code);
     }
 
-    /*
-     * getSkin
-     * 获取站点设置的会员中心主题名称
-     * @todo 使用程序读取主题皮肤名称
-     */
-
-    public function getSkin($str) {
-        $str = $str ? $str : 'cfg_member_skin';
-        $skin = R('Common/System/getCfg', array($str));
-        if (!$skin) {
-            $skin = C('DEFAULT_THEME');
-        }
-        return $skin;
-    }
-
     /**
      * checkEmail
      * 验证邮箱
@@ -339,7 +327,7 @@ class PassportAction extends BaseAction {
         } else {
             $array = array('status' => 1, 'msg' => '验证失败，请重新发送验证邮件！');
         }
-        $skin = $this->getSkin(); //获取前台主题皮肤名称
+        $skin = $this->skin; //获取前台主题皮肤名称
         $this->assign('title', '邮箱验证');
         $this->assign('data', $array);
         $this->theme($skin)->display(C('TPL_USER_NAME') . 'checkemail');
