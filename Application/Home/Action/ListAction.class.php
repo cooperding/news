@@ -50,13 +50,14 @@ class ListAction extends BasehomeAction {
                 ->limit($page->firstRow . ',' . $page->listRows)
                 ->select();
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_home = $this->tpl_home;//获取主题皮肤模板名称
         $template = trim($one_data['template_list'])?trim($one_data['template_list']):'list';//获取模板名称
         $this->assign('title', $one_data['text']);
         $this->assign('keywords', $one_data['keywords']);
         $this->assign('description', $one_data['description']);
         $this->assign('list', $list);
         $this->assign('page', $show); // 赋值分页输出
-        $this->theme($skin)->display(C('TPL_NAME') . $template);
+        $this->theme($skin)->display($tpl_home . $template);
     }
 
 }

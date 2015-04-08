@@ -50,12 +50,13 @@ class ContentAction extends BasehomeAction {
             $tpl_content = M('NewsSort')->where($condition_sort)->getField('template_content');
         }
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_home = $this->tpl_home;//获取主题皮肤模板名称
         $this->assign('data', $data);
         //$this->assign('list_comment', $comment);
         $this->assign('title', $data['title']);
         $this->assign('keywords', $data['keywords']);
         $this->assign('description', $data['description']);
-        $this->theme($skin)->display(C('TPL_NAME') . $tpl_content);
+        $this->theme($skin)->display($tpl_home . $tpl_content);
     }
 
 }

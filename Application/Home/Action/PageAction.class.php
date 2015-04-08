@@ -29,12 +29,13 @@ class PageAction extends BasehomeAction {
             $data['content'] = stripslashes($data['content']);
         }
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_home = $this->tpl_home;//获取主题皮肤模板名称
         $this->assign('data', $data); // 赋值数据集
         $this->assign('data_sort', $this->getSort());
         $this->assign('title', $data['ename']);
         $this->assign('keywords', $data['keywords']);
         $this->assign('description', $data['description']);
-        $this->theme($skin)->display(C('TPL_NAME') . 'page');
+        $this->theme($skin)->display($tpl_home . 'page');
     }
 
     /**

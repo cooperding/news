@@ -22,14 +22,16 @@ class BasehomeAction extends Action {
     function _initialize() {
         $skin = $this->getSkin('cfg_skin_web'); //获取前台主题皮肤名称
         $this->skin = $skin;
+        $tpl_home = $this->tpl_home = C('TPL_HOME');
+        $tpl_user = $this->tpl_user = C('TPL_USER');
         $navhead = R('Common/System/getNav', array('header')); //导航菜单
         $navfoot = R('Common/System/getNav', array('footer')); //导航菜单
         $this->assign('navhead', $navhead);
         $this->assign('navfoot', $navfoot);
         $this->assign('style_common', '/Common');
         $this->assign('style', '/Theme' . __MODULE__ . '/' . $skin . '/style');
-        $this->assign('tpl_header', './Theme' . __MODULE__ . '/' . $skin . '/' . C('TPL_NAME') . '/header.html');
-        $this->assign('tpl_footer', './Theme' . __MODULE__ . '/' . $skin . '/' . C('TPL_NAME') . '/footer.html');
+        $this->assign('tpl_header', './Theme' . __MODULE__ . '/' . $skin . '/' . $tpl_home . '/header.html');
+        $this->assign('tpl_footer', './Theme' . __MODULE__ . '/' . $skin . '/' . $tpl_home . '/footer.html');
     }
 
     /*

@@ -11,8 +11,11 @@
  * @package  Controller
  * @todo 完善更多方法
  */
+
 namespace Home\Action;
+
 use Think\Action;
+
 class IndexAction extends BaseuserAction {
 
     /**
@@ -33,10 +36,11 @@ class IndexAction extends BaseuserAction {
         $data_signature = $m->field('signature')->where($condition)->find();
         $data['signature'] = $data_signature['signature'];
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '会员中心');
         $this->assign('sidebar_active', 'index');
         $this->assign('data', $data);
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'index');
+        $this->theme($skin)->display($tpl_user . 'index');
     }
 
     /**
@@ -52,10 +56,11 @@ class IndexAction extends BaseuserAction {
         $condition['id'] = array('eq', $uid);
         $data = $m->field('username,sex,signature,birthday')->where($condition)->find();
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '个人资料');
         $this->assign('sidebar_active', 'personal');
         $this->assign('data', $data);
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'personal');
+        $this->theme($skin)->display($tpl_user . 'personal');
     }
 
     /**
@@ -71,10 +76,11 @@ class IndexAction extends BaseuserAction {
         $condition['id'] = array('eq', $uid);
         $data = $m->field('email,email_status')->where($condition)->find();
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '邮箱信息');
         $this->assign('sidebar_active', 'email');
         $this->assign('data', $data);
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'email');
+        $this->theme($skin)->display($tpl_user . 'email');
     }
 
     /**
@@ -86,9 +92,10 @@ class IndexAction extends BaseuserAction {
      */
     public function changePwd() {
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '修改密码');
         $this->assign('sidebar_active', 'changepwd');
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'changepwd');
+        $this->theme($skin)->display($tpl_user . 'changepwd');
     }
 
     /**
@@ -104,10 +111,11 @@ class IndexAction extends BaseuserAction {
         $condition['members_id'] = array('eq', $uid);
         $data = $m->where($condition)->select();
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '收货地址列表');
         $this->assign('sidebar_active', 'address');
         $this->assign('list', $data);
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'address_list');
+        $this->theme($skin)->display($tpl_user . 'address_list');
     }
 
     /**
@@ -144,11 +152,12 @@ class IndexAction extends BaseuserAction {
 //        echo $count;
 //        exit;
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '订单列表');
         $this->assign('page', $show); // 赋值分页输出
         $this->assign('sidebar_active', 'orders');
         $this->assign('list', $list);
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'orders_list');
+        $this->theme($skin)->display($tpl_user . 'orders_list');
     }
 
     /**
@@ -160,9 +169,10 @@ class IndexAction extends BaseuserAction {
      */
     public function addressAdd() {
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '添加收货地址');
         $this->assign('sidebar_active', 'address');
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'address_add');
+        $this->theme($skin)->display($tpl_user . 'address_add');
     }
 
     /**
@@ -179,10 +189,11 @@ class IndexAction extends BaseuserAction {
         $condition['id'] = array('eq', I('get.id'));
         $data = $m->where($condition)->find();
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '修改收货地址');
         $this->assign('sidebar_active', 'changepwd');
         $this->assign('data', $data);
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'address_edit');
+        $this->theme($skin)->display($tpl_user . 'address_edit');
     }
 
     /**
@@ -194,9 +205,10 @@ class IndexAction extends BaseuserAction {
      */
     public function newsAdd() {
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '我要投稿');
         $this->assign('sidebar_active', 'news_add');
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'news_add');
+        $this->theme($skin)->display($tpl_user . 'news_add');
     }
 
     /**
@@ -216,10 +228,11 @@ class IndexAction extends BaseuserAction {
                         ->join(C('DB_PREFIX') . 'content c ON c.title_id = t.id ')
                         ->where($condition)->find();
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '修改信息');
         $this->assign('sidebar_active', 'news_edit');
         $this->assign('data', $data);
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'news_edit');
+        $this->theme($skin)->display($tpl_user . 'news_edit');
     }
 
     /**
@@ -259,11 +272,12 @@ class IndexAction extends BaseuserAction {
             }
         }
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '我的信息列表');
         $this->assign('sidebar_active', 'news_list');
         $this->assign('list', $list);
         $this->assign('page', $show); // 赋值分页输出
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'news_list');
+        $this->theme($skin)->display($tpl_user . 'news_list');
     }
 
     /**
@@ -286,10 +300,11 @@ class IndexAction extends BaseuserAction {
             }
         }
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', 'API列表');
         $this->assign('sidebar_active', 'apilist');
         $this->assign('list', $data);
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'api_list');
+        $this->theme($skin)->display($tpl_user . 'api_list');
     }
 
     /**
@@ -301,9 +316,10 @@ class IndexAction extends BaseuserAction {
      */
     public function apiListAdd() {
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '添加API信息');
         $this->assign('sidebar_active', 'apilist');
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'api_add');
+        $this->theme($skin)->display($tpl_user . 'api_add');
     }
 
     /**
@@ -320,10 +336,11 @@ class IndexAction extends BaseuserAction {
         $condition['id'] = array('eq', I('get.id'));
         $data = $m->where($condition)->find();
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '修改API信息');
         $this->assign('sidebar_active', 'apilist');
         $this->assign('data', $data);
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'api_edit');
+        $this->theme($skin)->display($tpl_user . 'api_edit');
     }
 
     /**
@@ -397,7 +414,7 @@ class IndexAction extends BaseuserAction {
         $key = md5($uuid);
         $uid = session('LOGIN_M_ID');
         $domain = $_SERVER['SERVER_NAME'];
-        $url = 'http://' . $domain . '/User/Passport/checkEmail/key/' . $key . '/uid/' . $uid;
+        $url = 'http://' . $domain . '/Passport/checkEmail/key/' . $key . '/uid/' . $uid;
         $condition['id'] = array('eq', $uid);
         $data = $m->where($condition)->field('email')->find();
         $email = $data['email'];
@@ -617,26 +634,27 @@ class IndexAction extends BaseuserAction {
         $m = D('Area');
         $type = I('post.type');
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         if ($type == 'province') {
             $condition['parent_id'] = array('eq', 0);
             $condition['status'] = array('eq', 20);
             $data = $m->field('id,name')->where($condition)->select();
             $this->assign('data', $data);
-            $this->theme($skin)->display(':address_model_province');
+            $this->theme($skin)->display($tpl_user . 'address_model_province');
         } elseif ($type == 'city') {
             $province_id = I('post.province_id');
             $condition['parent_id'] = array('eq', $province_id);
             $condition['status'] = array('eq', 20);
             $data = $m->field('id,name')->where($condition)->select();
             $this->assign('data', $data);
-            $this->theme($skin)->display(':address_model_city');
+            $this->theme($skin)->display($tpl_user . 'address_model_city');
         } elseif ($type == 'county') {
             $city_id = I('post.city_id');
             $condition['parent_id'] = array('eq', $city_id);
             $condition['status'] = array('eq', 20);
             $data = $m->field('id,name')->where($condition)->select();
             $this->assign('data', $data);
-            $this->theme($skin)->display(C('TPL_USER_NAME') . 'address_model_county');
+            $this->theme($skin)->display($tpl_user . 'address_model_county');
         }
     }
 
@@ -651,13 +669,14 @@ class IndexAction extends BaseuserAction {
         $m = D('Area');
         $type = I('post.type');
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         if ($type == 'province') {
             $condition['parent_id'] = array('eq', 0);
             $condition['status'] = array('eq', 20);
             $data = $m->field('id,name')->where($condition)->select();
             $this->assign('check_province_id', I('post.check_province_id'));
             $this->assign('data', $data);
-            $this->theme($skin)->display(':address_model_province');
+            $this->theme($skin)->display($tpl_user . 'address_model_province');
         } elseif ($type == 'city') {
             $province_id = I('post.check_province_id');
             $condition['parent_id'] = array('eq', $province_id);
@@ -665,7 +684,7 @@ class IndexAction extends BaseuserAction {
             $data = $m->field('id,name')->where($condition)->select();
             $this->assign('check_city_id', I('post.check_city_id'));
             $this->assign('data', $data);
-            $this->theme($skin)->display(':address_model_city');
+            $this->theme($skin)->display($tpl_user . 'address_model_city');
         } elseif ($type == 'county') {
             $city_id = I('post.check_city_id');
             $condition['parent_id'] = array('eq', $city_id);
@@ -673,7 +692,7 @@ class IndexAction extends BaseuserAction {
             $data = $m->field('id,name')->where($condition)->select();
             $this->assign('check_county_id', I('post.check_county_id'));
             $this->assign('data', $data);
-            $this->theme($skin)->display(C('TPL_USER_NAME') . 'address_model_county');
+            $this->theme($skin)->display($tpl_user . 'address_model_county');
         }
     }
 

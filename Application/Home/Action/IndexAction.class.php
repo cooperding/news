@@ -28,10 +28,11 @@ class IndexAction extends BasehomeAction {
         $data_description = $m->where($description)->find();
 
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_home = $this->tpl_home; //获取主题皮肤模板名称
         $this->assign('title', $data_title['sys_value']);
         $this->assign('keywords', $data_keywords['sys_value']);
         $this->assign('description', $data_description['sys_value']);
-        $this->theme($skin)->display(C('TPL_NAME') . 'index');
+        $this->theme($skin)->display($tpl_home . 'index');
     }
 
 }

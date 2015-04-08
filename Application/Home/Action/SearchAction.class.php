@@ -44,13 +44,14 @@ class SearchAction extends BasehomeAction {
                 ->where($condition)->limit($page->firstRow . ',' . $page->listRows)
                 ->select();
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_home = $this->tpl_home;//获取主题皮肤模板名称
         $this->assign('list', $list); // 赋值数据集
         $this->assign('words', $words);
         $this->assign('page', $show); // 赋值分页输出
         $this->assign('title', $one_data['text']);
         $this->assign('keywords', $one_data['keywords']);
         $this->assign('description', $one_data['description']);
-        $this->theme($skin)->display(C('TPL_NAME') . 'search');
+        $this->theme($skin)->display($tpl_home . 'search');
     }
 
 }

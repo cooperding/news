@@ -51,8 +51,9 @@ class PassportAction extends BasehomeAction {
 
     public function login() {
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '会员登录');
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'login');
+        $this->theme($skin)->display($tpl_user . 'login');
     }
 
     /*
@@ -70,8 +71,9 @@ class PassportAction extends BasehomeAction {
             exit;
         }//if
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '会员注册');
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'signup');
+        $this->theme($skin)->display($tpl_user . 'signup');
     }
 
     /*
@@ -84,8 +86,9 @@ class PassportAction extends BasehomeAction {
 
     public function resetPassword() {
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '重置密码');
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'resetpwd');
+        $this->theme($skin)->display($tpl_user . 'resetpwd');
     }
 
     /**
@@ -328,9 +331,10 @@ class PassportAction extends BasehomeAction {
             $array = array('status' => 1, 'msg' => '验证失败，请重新发送验证邮件！');
         }
         $skin = $this->skin; //获取前台主题皮肤名称
+        $tpl_user = $this->tpl_user; //获取主题皮肤会员模板名称
         $this->assign('title', '邮箱验证');
         $this->assign('data', $array);
-        $this->theme($skin)->display(C('TPL_USER_NAME') . 'checkemail');
+        $this->theme($skin)->display($tpl_user . 'checkemail');
     }
 
 }
