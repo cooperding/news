@@ -19,7 +19,7 @@ class SearchAction extends BasehomeAction {
 
     public function index() {
         //分析：根据提供的关键词查询title或者扩展内容表（暂定）,同时需要查询的表有分类表。
-        $words = addslashes($_GET['words']);
+        $words = I('get.words');
         /*
           if (!$words) {
           echo '错误'; //跳转到错误页面
