@@ -122,7 +122,7 @@ class MembersAction extends BaseAction {
         if ($rs_email) {
             $this->dmsg('1', '邮箱已经存在！', false, true);
         }
-        $data['password'] = $this->changePassword($user_name, $password);
+        $data['password'] = R('Common/System/getPwd', array($user_name, $password));
         $data['username'] = $user_name;
         $data['email'] = $email;
         $data['sex'] = $_POST['sex'][0];
@@ -174,7 +174,7 @@ class MembersAction extends BaseAction {
             $this->dmsg('1', '邮箱已经存在！', false, true);
         }
         if (!empty($password)) {
-            $data['password'] = $this->changePassword($user_name, $password);
+            $data['password'] = R('Common/System/getPwd', array($user_name, $password));
         } else {
             unset($data['password']);
         }

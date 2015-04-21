@@ -80,11 +80,11 @@ class AccountAction extends BaseAction
         $username = session('LOGIN_NAME');
         $condition['id'] = array('eq',$uid);
         $rs = $m->field('creat_time,password')->where($condition)->find();
-        $password = md5(md5($username) . sha1($oldpwd));
+        $password = R('Common/System/getPwd', array($username, $oldpwd));
         if($password!=$rs['password']){
             $this->dmsg('1', '原密码输入不正确，请确认输入！', false, true);
         }
-        $data['password'] = $this->changePassword($username, $newpwd);
+        $data['password'] = R('Common/System/getPwd', array($username, $newpwd));
         $rs_s = $m->where($condition)->save($data);
         if ($rs_s == true) {
             $this->dmsg('2', '操作成功！', true);

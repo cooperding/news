@@ -95,7 +95,7 @@ class OperatorsAction extends BaseAction {
         $data['creat_time'] = time();
         $data['updatetime'] = time();
         if (!empty($data['password'])) {
-            $data['password'] = $this->changePassword($data['username'], $data['password']);
+            $data['password'] = R('Common/System/getPwd', array($data['username'], $data['password']));
         } else {
             unset($data['password']);
         }
@@ -140,7 +140,7 @@ class OperatorsAction extends BaseAction {
         $data['creat_time'] = time();
         $data['updatetime'] = time();
         if (!empty($data['password'])) {
-            $data['password'] = $this->changePassword($data['username'], $data['password']);
+            $data['password'] = R('Common/System/getPwd', array($data['username'], $data['password']));
         } else {
             unset($data['password']);
         }
