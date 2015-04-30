@@ -16,7 +16,7 @@ namespace Home\Action;
 
 use Think\Action;
 
-class IndexAction extends BaseuserAction {
+class UserAction extends BaseuserAction {
 
     /**
      * index
