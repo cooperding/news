@@ -70,7 +70,7 @@
         });
         var editor = KindEditor.editor({
             allowFileManager: false, //隐藏图片空间按钮
-            uploadJson: '{:U("User/Index/uploadImg")}'
+            uploadJson: '{:U("User/uploadImg")}'
         });
         KindEditor('#image1').click(function() {
             editor.loadPlugin('image', function() {
