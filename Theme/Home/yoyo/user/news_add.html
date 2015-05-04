@@ -14,7 +14,7 @@
                 <div class="dogo-blank"></div>
                 <link rel="stylesheet" type="text/css" href="__PUBLIC__/Kindeditor/themes/default/default.css"/>
                 <link rel="stylesheet" type="text/css" href="__PUBLIC__/Kindeditor/themes/simple/simple.css"/>
-                <form class="form-horizontal " role="form" action="{:U('User/Index/newsInsert')}" method="post">
+                <form class="form-horizontal " role="form" action="{:U('User/newsInsert')}" method="post">
                     <div class="form-group">
                         <label for="inputTitle" class="col-sm-2 control-label">标题：</label>
                         <div class="col-sm-10">
@@ -61,7 +61,7 @@
 
         KindEditor.create('#inputContent', {
             themeType: 'simple',
-            uploadJson: '{:U("User/Index/uploadImg")}',
+            uploadJson: '{:U("UseruploadImg")}',
             items: ["source", "|", "undo", "redo", "|", "preview", "print", "template", "code", "cut", "copy", "paste", "plainpaste", "wordpaste", "|", "justifyleft", "justifycenter", "justifyright", "justifyfull", "insertorderedlist", "insertunorderedlist", "indent", "outdent", "subscript", "superscript", "clearhtml", "quickformat", "selectall", "|", "fullscreen", "/", "formatblock",
                 "fontname", "fontsize", "|", "forecolor", "hilitecolor", "bold", "italic", "underline", "strikethrough", "lineheight", "removeformat", "|", "image", "table", "hr", "emoticons", "baidumap", "pagebreak", "anchor", "link", "unlink", "|", "about"],
             afterBlur: function() {

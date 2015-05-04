@@ -39,7 +39,7 @@
                             <input type="text" name="v_code" class="form-control input-lg" id="v_codeSigup" placeholder="输入右侧验证码" required="required">
                         </div>
                         <span class="dogo-click-yzmurl col-sm-3" style="cursor: pointer;">
-                            <img src="{:U('Home/Passport/verify')}" title="看不清？点击更换另一个验证码。" style="width: 150px;"/>
+                            <img src="{:U('Passport/verify')}" title="看不清？点击更换另一个验证码。" style="width: 150px;"/>
                         </span>
                     </div>
                     <div class="dogo-blank"></div>
@@ -52,8 +52,8 @@
 
                 <div class="dogo-blank"></div>
                 <div class="dogo-box dogo-align-right dogo-mt50">
-                    <a href="{:U('Home/Passport/login')}">登录</a>
-                    <a href="{:U('Home/Passport/resetPassword')}" class="dogo-ml10">忘记密码？</a>
+                    <a href="{:U('Passport/login')}">登录</a>
+                    <a href="{:U('Passport/resetPassword')}" class="dogo-ml10">忘记密码？</a>
                 </div><!--dogo-align-right-->
             </div><!--dogo-member-->
 
@@ -70,7 +70,7 @@
 <script>
     $(function() {
         $('.dogo-click-yzmurl').click(function() {
-            var url = "{:U('Home/Passport/verify')}?tm=" + Math.random();
+            var url = "{:U('Passport/verify')}?tm=" + Math.random();
             $('.dogo-click-yzmurl img').attr('src', url);
         });
     });

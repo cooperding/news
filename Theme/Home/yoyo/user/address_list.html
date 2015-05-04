@@ -13,7 +13,7 @@
                 <h4>我的收货地址</h4>
                 <div class="dogo-blank"></div>
                 <lt name="count_address" value="5">
-                <a href="{:U('User/Index/addressAdd')}"><span class="btn btn-info">添加收货地址</span></a>
+                <a href="{:U('User/addressAdd')}"><span class="btn btn-info">添加收货地址</span></a>
                 </lt>
                 <div class="dogo-blank"></div>
                 <table class="table table-hover table-bordered table-responsive">
@@ -40,8 +40,8 @@
                         </if>
                         </td>
 
-                        <td><a href="{:U('User/Index/addressEdit',array('id'=>$vo['id']))}" title="编辑地址"><span class="glyphicon glyphicon-edit"></span></a> / 
-                            <a href="{:U('User/Index/addressDelete',array('id'=>$vo['id']))}" onclick="return confirm('确认要删除该信息吗？');" title="删除地址"><span class="glyphicon glyphicon-remove-circle"></span></a> </td>
+                        <td><a href="{:U('User/addressEdit',array('id'=>$vo['id']))}" title="编辑地址"><span class="glyphicon glyphicon-edit"></span></a> / 
+                            <a href="{:U('User/addressDelete',array('id'=>$vo['id']))}" onclick="return confirm('确认要删除该信息吗？');" title="删除地址"><span class="glyphicon glyphicon-remove-circle"></span></a> </td>
                         </tr>
                     </foreach>
                     </tbody>
