@@ -10,11 +10,8 @@
  * @version dogocms 1.0 2012-11-5 11:20
  * @package  Controller
  */
-
 namespace Home\Action;
-
 use Think\Action;
-
 class PassportAction extends BasehomeAction {
 
 //初始化
@@ -103,17 +100,17 @@ class PassportAction extends BasehomeAction {
         $ver_code = I('post.v_code');
         $verify_status = $this->check_verify($ver_code);
         if (!$verify_status) {
-            $this->error('验证码输入错误或已过期！');
+            $this->error('验证码输入错误或已过期！', U('Passport/login'));
             exit;
         }
         $email = trim(I('post.email')); //邮箱
         if (empty($email)) {
-            $this->error('用户名或邮箱帐号不能为空！');
+            $this->error('用户名或邮箱帐号不能为空！', U('Passport/login'));
             exit;
         }
         $pwd = trim(I('post.pwd')); //密码
         if (empty($pwd)) {
-            $this->error('密码不能为空！');
+            $this->error('密码不能为空！', U('Passport/login'));
             exit;
         }
         $condition['email|username'] = array('eq', $email);
@@ -134,7 +131,7 @@ class PassportAction extends BasehomeAction {
                     $this->success('登陆成功！', __MODULE__);
                 }
             } else {
-                $this->error('您的输入用户名或者密码错误！');
+                $this->error('您的输入用户名或者密码错误！', U('Passport/login'));
             }
         }
     }

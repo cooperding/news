@@ -13,7 +13,7 @@
                 <h4>添加收货地址</h4>
                 <div class="dogo-blank"></div>
 
-                <form class="form-horizontal " role="form" action="{:U('User/Index/addressInsert')}" method="post">
+                <form class="form-horizontal " role="form" action="{:U('User/addressInsert')}" method="post">
                     <div class="form-group">
                         <label for="inputName" class="col-sm-2 control-label">收货人姓名：</label>
                         <div class="col-sm-10">
@@ -92,7 +92,7 @@
 <script>
     $(function () {
         //获取省份
-        var url = '{:U("User/Index/getArea")}';
+        var url = '{:U("User/getArea")}';
         $.ajax({
             type: "post",
             dataType: 'html',

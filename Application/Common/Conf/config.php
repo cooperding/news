@@ -3,7 +3,7 @@
 return array(
     'DEFAULT_C_LAYER' => 'Action',
     'SESSION_AUTO_START' => true, //是否开启session
-    'LOAD_EXT_CONFIG' => 'db,sso', // 加载扩展配置文件
+    'LOAD_EXT_CONFIG' => 'db', // 加载扩展配置文件
     'MODULE_DENY_LIST' => array('Common', 'Runtime'),
     'MODULE_ALLOW_LIST' => array('Home', 'Admin', 'Api'), // 允许访问的模块列表
     'DEFAULT_MODULE' => 'Home', //默认模块
@@ -24,5 +24,4 @@ return array(
     'HTML_CACHE_ON' => false, // 开启静态缓存
     'HTML_CACHE_TIME' => 60, // 全局静态缓存有效期（秒）
     'HTML_FILE_SUFFIX' => '.html', // 设置静态缓存文件后缀
-    'API_URL_SSO' => 'http://localhost/younuosso/api/', // 请求站点
 );

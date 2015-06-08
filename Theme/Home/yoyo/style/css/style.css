@@ -102,8 +102,19 @@
 .dogo-view-info .dogo-box-header p{color: #999;}
 
 
-.dogo-slide{margin-left: -10px;
-margin-right: -10px;}
+.dogo-slide{margin-left: -10px;margin-right: -10px;}
+
+/*user*/
+
+.dogo-member .btn-default {color: #FFF;background-color: #F60;border-color: #F60;}
+.dogo-member .btn-default:hover {background-color: #FF4D00;}
+
+.dogo-sidebar{}
+.dogo-sidebar .list-group-item.active,.dogo-sidebar .list-group-item.active:hover,.dogo-sidebar .list-group-item.active:focus{background-color: #FF6600;border-color: #FF6600;}
+.dogo-sidebar a:hover{color: #FF6600;}
+.dogo-sidebar .list-group-item{padding: 10px 35px;}
+.dogo-sidebar .dogo-nav-header{padding: 10px 15px;}
+
 /*dogo-footer*/
 /*dogo-footer*/
 .dogo-footer{height: 50px;text-align: center;background: #000;}

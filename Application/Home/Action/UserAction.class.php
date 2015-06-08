@@ -11,11 +11,8 @@
  * @package  Controller
  * @todo 完善更多方法
  */
-
 namespace Home\Action;
-
 use Think\Action;
-
 class UserAction extends BaseuserAction {
 
     /**
@@ -360,7 +357,7 @@ class UserAction extends BaseuserAction {
         $data['signature'] = I('post.signature');
         $rs = $m->where($condition)->save($data);
         if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/personal');
+            $this->success('操作成功', U('personal'));
         } else {
             $this->error('操作失败，请重新操作！');
         }
@@ -395,7 +392,7 @@ class UserAction extends BaseuserAction {
         }
         $rs = $m->where($condition)->save($data);
         if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/email');
+            $this->success('操作成功', U('email'));
         } else {
             $this->error('操作失败，请重新操作！');
         }
@@ -468,7 +465,7 @@ class UserAction extends BaseuserAction {
         $data['updatetime'] = time();
         $rs = $m->where($condition)->save($data);
         if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/changePwd');
+            $this->success('操作成功', U('changePwd'));
         } else {
             $this->error('操作失败，请重新操作！');
         }
@@ -526,7 +523,7 @@ class UserAction extends BaseuserAction {
         $data['updatetime'] = time();
         $rs = $m->data($data)->add();
         if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/addressList');
+            $this->success('操作成功', U('addressList'));
         } else {
             $this->error('操作失败，请重新操作！');
         }
@@ -597,7 +594,7 @@ class UserAction extends BaseuserAction {
         $condition_id['members_id'] = array('eq', $uid);
         $rs = $m->where($condition_id)->save($data);
         if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/addressList');
+            $this->success('操作成功', U('addressList'));
         } else {
             $this->error('操作失败，请重新操作！');
         }
@@ -617,7 +614,7 @@ class UserAction extends BaseuserAction {
         $condition['id'] = array('eq', I('get.id'));
         $rs = $m->where($condition)->delete();
         if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/addressList');
+            $this->success('操作成功', U('addressList'));
         } else {
             $this->error('操作失败，请重新操作！');
         }
@@ -723,7 +720,7 @@ class UserAction extends BaseuserAction {
         $_POST['domain'] = I('post.domain');
         $rs = $m->data($_POST)->add();
         if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/apiList');
+            $this->success('操作成功', U('apiList'));
         } else {
             $this->error('操作失败，请重新操作！');
         }
@@ -745,7 +742,7 @@ class UserAction extends BaseuserAction {
         $_POST['status'] = '10';
         $rs = $m->where($condition)->save($_POST);
         if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/apiList');
+            $this->success('操作成功', U('apiList'));
         } else {
             $this->error('操作失败，请重新操作！');
         }
@@ -765,7 +762,7 @@ class UserAction extends BaseuserAction {
         $condition['id'] = array('eq', I('get.id'));
         $rs = $m->where($condition)->delete();
         if ($rs == true) {
-            $this->success('操作成功', __MODULE__ . '/Index/addressList');
+            $this->success('操作成功', U('apiList'));
         } else {
             $this->error('操作失败，请重新操作！');
         }
@@ -801,7 +798,7 @@ class UserAction extends BaseuserAction {
             $email = R('Common/System/getCfg', array('cfg_email_remind'));
             $time = date('Y-m-d H:i:s', time());
             R('Common/System/sendEmail', array($email, '当真网--会员提交信息提醒-' . $time, $content));
-            $this->success('操作成功', __MODULE__ . '/Index/newsList');
+            $this->success('操作成功', U('newsList'));
         } else {
             $this->error('操作失败，请重新操作！');
         }
