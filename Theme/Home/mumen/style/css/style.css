@@ -54,9 +54,11 @@ background-color: #000;
 .dogo-notice{min-height: 35px;line-height: 35px;}
 
 /*dogo-flash*/
-.dogo-flash{height: auto;}
-.dogo-flash img{height: 300px;}
+.dogo-flash{height: 320px;}
+.dogo-flash img{height: 320px;}
 
+/*dogo-tip*/
+.dogo-tip{text-align: center;}
 /**/
 .dogo-text{}
 .dogo-text ul{}
