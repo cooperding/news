@@ -1,0 +1,139 @@
+* {
+	margin: 0 auto;
+	padding: 0;
+}
+@keyframes cloudLoop {
+	0% {
+		transform: translate3d(0px, 0px, 0px);
+	}
+	100% {
+		transform: translate3d(-50%, 0px, 0px);
+	}
+}
+@-webkit-keyframes cloudLoop {
+	0% {
+		transform: translate3d(0px, 0px, 0px);
+	}
+	100% {
+		transform: translate3d(-50%, 0px, 0px);
+	}
+}
+@keyframes syspic {
+	0% {
+		transform: rotate(0deg);
+		box-shadow: 1px 1px 10px #fff;
+	}
+	25% {
+		transform: rotate(75deg);
+		box-shadow: 1px 1px 10px #70D5CA;
+	}
+	50% {
+		transform: rotate(150deg);
+		box-shadow: 1px 1px 10px #BA78FE;
+	}
+	75% {
+		transform: rotate(225deg);
+		box-shadow: 1px 1px 10px #FE3265;
+	}
+	100% {
+		transform: rotate(360deg);
+		box-shadow: 1px 1px 10px #3E394D;
+	}
+}
+@-webkit-keyframes syspic {
+	0% {
+		transform: rotate(0deg);
+		box-shadow: 1px 1px 10px #fff;
+	}
+	25% {
+		transform: rotate(75deg);
+		box-shadow: 1px 1px 10px #70D5CA;
+	}
+	50% {
+		transform: rotate(150deg);
+		box-shadow: 1px 1px 10px #BA78FE;
+	}
+	75% {
+		transform: rotate(225deg);
+		box-shadow: 1px 1px 10px #FE3265;
+	}
+	100% {
+		transform: rotate(360deg);
+		box-shadow: 1px 1px 10px #3E394D;
+	}
+}
+ 
+.login-bg {
+	background: #252528 url("../images/pic2.jpg") no-repeat scroll center center / cover;
+}
+.hero-image-wrapper {
+	backface-visibility: hidden;
+	overflow: hidden;
+}
+.hero-clouds {	
+	-webkit-animation: 40s linear infinite cloudLoop;
+	animation: 40s linear infinite cloudLoop;
+	height: 43.75em;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 250.625em;
+	z-index: 30;
+}
+.hero-container {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+	padding: 3.125em 0.625em 6.25em;
+	position: relative;
+}
+.from-box {
+	overflow: hidden;
+	width: 505px;
+	margin-top: 10%;
+	padding-top: 50px;
+}
+.from-box label {
+	color: #fff;
+}
+.int-line {
+	float: left;
+	margin-top: 70px;
+	line-height: 30px;
+	border-bottom: 1px solid #999;
+}
+.int-line {
+	color: #ccc;
+}
+.sys-pic {
+	border-radius: 50%;
+	width: 85px;
+	height: 85px;
+	overflow: hidden;
+	box-shadow: 1px 1px 10px #FF9742;
+	position: relative;
+	z-index: 88;
+	transition: 0.5s;
+	-webkit-transition: 1px 1px 10px #FF9742;
+	-moz-transition: 1px 1px 10px #FF9742;
+	-o-transition: 1px 1px 10px #FF9742;
+	-ms-transition: 1px 1px 10px #FF9742;
+	-webkit-animation: 30s linear 0s normal none infinite running syspic;
+	animation: 30s linear 0s normal none infinite running syspic;
+	float: left;
+	margin: 50px 20px;
+}
+.from-box input {
+	background: none;
+	border: none;
+	width: 165px;
+	position: relative;
+	z-index: 55;
+	color: #fff;
+	line-height: 35px;
+	height: 35px;
+	text-indent: 10px;
+}
+.from-box input:focus {
+	outline: none;
+}
