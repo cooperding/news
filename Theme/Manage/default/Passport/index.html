@@ -1,0 +1,31 @@
+<include file="Public:header_login" />
+<body class="login-bg">		
+    <section  class="hero">			
+        <div class="hero-image-wrapper" id="intro">
+            <div class="hero-container">
+                <div class="hero-clouds" style="visibility: inherit; opacity: 1; background: transparent url({$style}/style/images/clouds.png) repeat-x scroll 0px 100%;"></div>
+            </div>
+            <form action="{:U('Manage/Passport/dologin')}" method="post">
+                <div class="from-box">
+                    <div class="int-line">
+                        <i class="fa fa-user fa-lg"></i>
+                        <input type="text" placeholder="请输入用户名" />
+                    </div>
+                    <div class="sys-pic">
+                        <img src="{$style}/style/images/sys-pic.jpg" alt="完蛋.先生" />
+                    </div>	
+                    <div class="int-line">
+                        <i class="fa fa-lock fa-lg"></i>
+                        <input type="password" placeholder="请输入密码"  />
+                    </div>
+                    <input type="submit" style="display: none;"/>
+                </div>
+            </form>
+        </div>				
+    </section>
+
+    <script type="text/javascript">
+        document.getElementById("intro").style.height = document.documentElement.clientHeight + 'px';
+    </script>		
+</body>
+</html>

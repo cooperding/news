@@ -1,33 +1,40 @@
-<footer class="dogo-footer">
-    <div class="container dogo-wp">
-        <div class="row">
-            <div class="col-md-12">
-                <nav>
-                    <volist name="navfoot" id="navlist">
-                    <a href="{$navlist.url}">{$navlist.text}</a>
-                </volist>
-                </nav>
-                <p><dogocms:cfg name="cfg_copyright"/><dogocms:cfg name="cfg_tongji"/></p>
-            </div><!--col-md-->
-        </div><!--row-->
-    </div><!--container-->
-</footer>
+
+<div class="hf_foot">
+    <div class="foot_main">
+        <div class="foot_up">
+            <div class="left">
+                <div class="row">
+                    <div class="col-md-6 email">
+                        邮箱：huafumumen@163.com
+                    </div>
+                    <div class="col-md-6 tele">
+                        电话：400-410-1234
+                    </div>
+                </div>
+                <p>地址：济南市历城区万豪国际国际工业园#1562</p>
+            </div>
+            <div class="right">
+                <volist name="navfoot" id="navlist">
+                        <a href="{$navlist.url}">{$navlist.text}</a>
+                    </volist>
+            </div>
+        </div>
+        <div class="foot_down row">
+            <a class="col-md-4 frist"></a>
+            <a class="col-md-4 second" href="#top"></a>
+            <a class="col-md-4 last"></a>
+        </div>
+        <div class="foot_information"><dogocms:cfg name="cfg_copyright"/><dogocms:cfg name="cfg_tongji"/></div>
+    </div>
+
+</div>
+
+
 
 
 <script type="text/javascript" src="__PUBLIC__{$style_common}/js/jquery-1.11.2.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__{$style_common}/v3.3.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__{$style_common}/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__{$style_common}/v3.3.5/js/bootstrap.min.js"></script>
 <!--[if lte IE 9]>
 <script type="text/javascript" src="__PUBLIC__{$style_common}/js/respond.js"></script>
 <![endif]-->
 
-<script>
-    $(function() {
-        $('img').addClass('img-responsive');
-        $('.bxslider').bxSlider({
-            mode: 'fade',
-            captions: true,
-            auto: true
-        });
-    });
-</script>

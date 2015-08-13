@@ -1,264 +1,104 @@
 <include file="$tpl_header" />
-<div class="container dogo-wp">
-    <div class="row dogo-notice">
-        <dogocms:block typeid="4" limit="4" key="i">
-            <div class="col-md-3">
-                <ul>
-                    <li>
-                    <if condition="$i eq 1"><span class="glyphicon glyphicon-volume-up"></span> </if>
-                    <a href="{$block.url}" target="_blank" title="{$block.title}">{$block.title}</a>
-                    </li>
-                </ul>
-            </div><!--col-md-->
-        </dogocms:block>
-    </div><!--row-->
 
-    <div class="row">
-        <div class="col-md-9">
+<div class="hf_body hf_product">
+    <div class="breadcrumb_bg">
+        <ol class="breadcrumb">
+            <li><a href="index.html">首页</a></li>
 
+            <li class="active">品牌故事</li>
+        </ol>
+    </div>
 
-            <div class="row">
-                <div class="col-md-4">
+    <!--内容开始-->
+    <div class="newslist row story_main">         
+        <div class="left col-md-9 pro_topbox">
+            <!--item开始-->
+            <div class="item">
+                <h2>华府木门端午活动，买木门送粽子！！</h2>
+                <span>2015-6-1 20:28发表</span>
+                <a class="pic" href="news.html"></a>
+                <p>日月忽其不淹兮，春与秋其代序。唯草木之零落兮，恐美人之迟暮。不抚壮而弃秽兮，何不改乎此度?乘骐骥以驰骋兮，来吾道夫先路！昔三后之纯粹兮，固众芳之所在。杂申椒与菌桂兮，岂惟纫夫蕙茞！彼尧、舜之耿介兮，既遵道而得路。何桀纣之猖披兮，夫惟捷径以窘步。惟夫党人之偷乐兮，路幽昧以险隘。
+                </p>
+                <a href="news.html">阅读全文</a>
 
-                    <aside>
-                        <div class="dogo-box">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                                </div>
-                                <div class="panel-body dogo-text">
-                                    <ul>
-                                        <dogocms:article type="all" limit="8">
-                                            <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
-                                        </dogocms:article>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div><!--dogo-box-->
-                    </aside>
-                    <aside>
-                        <div class="dogo-box">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                                </div>
-                                <div class="panel-body dogo-text">
-                                    <ul>
-                                        <dogocms:article type="all" limit="8">
-                                            <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
-                                        </dogocms:article>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div><!--dogo-box-->
-                    </aside>
-                    <aside>
-                        <div class="dogo-box">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                                </div>
-                                <div class="panel-body dogo-text">
-                                    <ul>
-                                        <dogocms:article type="all" limit="8">
-                                            <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
-                                        </dogocms:article>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div><!--dogo-box-->
-                    </aside>
-                    <aside>
-                        <div class="dogo-box">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                                </div>
-                                <div class="panel-body dogo-text">
-                                    <ul>
-                                        <dogocms:article type="all" limit="8">
-                                            <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
-                                        </dogocms:article>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div><!--dogo-box-->
-                    </aside>
-                    <aside>
-                        <div class="dogo-box">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                                </div>
-                                <div class="panel-body dogo-text">
-                                    <ul>
-                                        <dogocms:article type="all" limit="8">
-                                            <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
-                                        </dogocms:article>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div><!--dogo-box-->
-                    </aside>
-                </div><!--col-md-->
-                <div class="col-md-8">
+            </div><!--item结束-->
+            <div class="item">
+                <h2>华府木门端午活动，买木门送粽子！！</h2>
+                <span>2015-6-1 20:28发表</span>
+                <a href="news.html" class="pic"><img src="{$style}/img/new_03.jpg"></a>
+                <p>日月忽其不淹兮，春与秋其代序。唯草木之零落兮，恐美人之迟暮。不抚壮而弃秽兮，何不改乎此度?乘骐骥以驰骋兮，来吾道夫先路！昔三后之纯粹兮，固众芳之所在。杂申椒与菌桂兮，岂惟纫夫蕙茞！彼尧、舜之耿介兮，既遵道而得路。何桀纣之猖披兮，夫惟捷径以窘步。惟夫党人之偷乐兮，路幽昧以险隘。
+                </p>
+                <a href="news.html">阅读全文</a>
 
-                    <aside>
-                        <div class="dogo-box">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                                </div>
-                                <div class="panel-body dogo-list-text">
-                                    <ul>
-                                        <foreach name="list" item="vo">
+            </div><!--item结束-->
+            <div class="item">
+                <h2>华府木门端午活动，买木门送粽子！！</h2>
+                <span>2015-6-1 20:28发表</span>
+                <a class="pic" href="news.html"></a>
+                <p>日月忽其不淹兮，春与秋其代序。唯草木之零落兮，恐美人之迟暮。不抚壮而弃秽兮，何不改乎此度?乘骐骥以驰骋兮，来吾道夫先路！昔三后之纯粹兮，固众芳之所在。杂申椒与菌桂兮，岂惟纫夫蕙茞！彼尧、舜之耿介兮，既遵道而得路。何桀纣之猖披兮，夫惟捷径以窘步。惟夫党人之偷乐兮，路幽昧以险隘。
+                </p>
+                <a href="news.html">阅读全文</a>
 
-                                            <li>
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <a href="{:U('Home/Content/index',array('id'=>$vo['id']))}"><img src="{$vo.titlepic}" class="img-responsive" alt="{$vo.title}" title="{$vo.title}"/></a>
-                                                    </div><!--col-md-->
-                                                    <div class="col-md-8">
-                                                        <h3><a href="{:U('Home/Content/index',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a></h3>
-                                                        <h6>
-                                                            <span class="glyphicon glyphicon-refresh"></span> {$vo.addtime|date="m/d H:i",###}
-                                                            <span class="glyphicon glyphicon-list"></span> <a href="{:U('Home/List/index',array('id'=>$vo['sort_id']))}">{$vo.text}</a>
-                                                            <span class="glyphicon glyphicon-eye-open"></span> {$vo.views}
-                                                        </h6>
-                                                        <p>{$vo.description}</p>
-                                                    </div><!--col-md-->
-                                                </div><!--row-->
-                                            </li>
-                                        </foreach>
-                                    </ul>
-                                </div>
-                            </div><!--panel-->
-                        </div><!--dogo-box-->
-                    </aside>
-                    <ul class="pagination dogo-pagination dogo-pagination-default">
-                        {$page}
-                    </ul>
-                </div><!--col-md-->
-            </div><!--row-->
+            </div><!--item结束-->
+            <div class="item">
+                <h2>华府木门端午活动，买木门送粽子！！</h2>
+                <span>2015-6-1 20:28发表</span>
+                <a href="news.html" class="pic"><img src="{$style}/img/new_03.jpg"></a>
+                <p>日月忽其不淹兮，春与秋其代序。唯草木之零落兮，恐美人之迟暮。不抚壮而弃秽兮，何不改乎此度?乘骐骥以驰骋兮，来吾道夫先路！昔三后之纯粹兮，固众芳之所在。杂申椒与菌桂兮，岂惟纫夫蕙茞！彼尧、舜之耿介兮，既遵道而得路。何桀纣之猖披兮，夫惟捷径以窘步。惟夫党人之偷乐兮，路幽昧以险隘。
+                </p>
+                <a href="news.html">阅读全文</a>
 
+            </div><!--item结束-->
+            <div class="item">
+                <h2>华府木门端午活动，买木门送粽子！！</h2>
+                <span>2015-6-1 20:28发表</span>
+                <a class="pic" href="news.html"></a>
+                <p>日月忽其不淹兮，春与秋其代序。唯草木之零落兮，恐美人之迟暮。不抚壮而弃秽兮，何不改乎此度?乘骐骥以驰骋兮，来吾道夫先路！昔三后之纯粹兮，固众芳之所在。杂申椒与菌桂兮，岂惟纫夫蕙茞！彼尧、舜之耿介兮，既遵道而得路。何桀纣之猖披兮，夫惟捷径以窘步。惟夫党人之偷乐兮，路幽昧以险隘。
+                </p>
+                <a href="news.html">阅读全文</a>
 
-        </div><!--col-md-->
+            </div><!--item结束-->
+            <div class="item">
+                <h2>华府木门端午活动，买木门送粽子！！</h2>
+                <span>2015-6-1 20:28发表</span>
+                <a class="pic" href="news.html"></a>
+                <p>日月忽其不淹兮，春与秋其代序。唯草木之零落兮，恐美人之迟暮。不抚壮而弃秽兮，何不改乎此度?乘骐骥以驰骋兮，来吾道夫先路！昔三后之纯粹兮，固众芳之所在。杂申椒与菌桂兮，岂惟纫夫蕙茞！彼尧、舜之耿介兮，既遵道而得路。何桀纣之猖披兮，夫惟捷径以窘步。惟夫党人之偷乐兮，路幽昧以险隘。
+                </p>
+                <a href="news.html">阅读全文</a>
 
-        <div class="col-md-3">
-            <aside>
-                <div class="dogo-box">
-                    <div class="panel panel-default">
-                        <div class="panel-body dogo-text">
-                            <ul>
-                                <dogocms:article type="all" limit="8">
-                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
-                                </dogocms:article>
-                            </ul>
-                        </div>
-                    </div>
-                </div><!--dogo-box-->
-            </aside>
-            <aside>
-                <div class="dogo-box">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                        </div>
-                        <div class="panel-body dogo-text">
-                            <ul>
-                                <dogocms:article type="all" limit="8">
-                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
-                                </dogocms:article>
-                            </ul>
-                        </div>
-                    </div>
-                </div><!--dogo-box-->
-            </aside>
+            </div><!--item结束-->
+            <div class="item last">
+                <h2>华府木门端午活动，买木门送粽子！！</h2>
+                <span>2015-6-1 20:28发表</span>
+                <a class="pic" href="news.html"></a>
+                <p>日月忽其不淹兮，春与秋其代序。唯草木之零落兮，恐美人之迟暮。不抚壮而弃秽兮，何不改乎此度?乘骐骥以驰骋兮，来吾道夫先路！昔三后之纯粹兮，固众芳之所在。杂申椒与菌桂兮，岂惟纫夫蕙茞！彼尧、舜之耿介兮，既遵道而得路。何桀纣之猖披兮，夫惟捷径以窘步。惟夫党人之偷乐兮，路幽昧以险隘。
+                </p>
+                <a href="news.html">阅读全文</a>
 
-            <aside>
+            </div><!--item结束-->
+        </div>
 
-                <dogocms:ads typeid="1" limit="1">
-                    <a href="" title="{$ads.name}"><img src="{$ads.pic}" class="img-responsive" alt="{$ads.name}" title="{$ads.name}"/></a>
-                </dogocms:ads>
+        <div class="list-group right col-md-3 pro_topbox">
+            <a href="#" class="list-group-item active">
+                全部
+            </a>
+            <a href="#" class="list-group-item">2015年05月</a>
+            <a href="#" class="list-group-item">2015年04月</a>
+            <a href="#" class="list-group-item">2015年03月</a>
+            <a href="#" class="list-group-item">2015年02月</a>
+            <a href="#" class="list-group-item">2015年01月</a>
+            <a href="#" class="list-group-item">2014年12月</a>
+            <a href="#" class="list-group-item">2014年11月</a>
+            <a href="#" class="list-group-item">2014年10月</a>
+            <a href="#" class="list-group-item">2014年09月</a>
+            <a href="#" class="list-group-item">2014年08月</a>
 
-            </aside>
-            <div class="dogo-blank"></div>
-            <aside>
-                <div class="dogo-box">
-                    <div class="panel dogo-panel-purpleone">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                        </div>
-                        <div class="panel-body dogo-text">
-                            <ul>
-                                <dogocms:article type="all" limit="8">
-                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
-                                </dogocms:article>
-                            </ul>
-                        </div>
-                    </div>
-                </div><!--dogo-box-->
-            </aside>
-
-
-            <aside>
-                <div class="dogo-box">
-                    <div class="panel dogo-panel-pinkone">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                        </div>
-                        <div class="panel-body dogo-text">
-                            <ul>
-                                <dogocms:article type="all" limit="8">
-                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
-                                </dogocms:article>
-                            </ul>
-                        </div>
-                    </div>
-                </div><!--dogo-box-->
-            </aside>
-            <aside>
-                <div class="dogo-box">
-                    <div class="panel dogo-panel-yellowone">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                        </div>
-                        <div class="panel-body dogo-text">
-                            <ul>
-                                <dogocms:article type="all" limit="8">
-                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
-                                </dogocms:article>
-                            </ul>
-                        </div>
-                    </div>
-                </div><!--dogo-box-->
-            </aside>
-            <aside>
-                <div class="dogo-box">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                        </div>
-                        <div class="panel-body dogo-text">
-                            <ul>
-                                <dogocms:article type="all" limit="8">
-                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
-                                </dogocms:article>
-                            </ul>
-                        </div>
-                    </div>
-                </div><!--dogo-box-->
-            </aside>
-
-
-        </div><!--col-md-->
-
-    </div><!--row-->
+        </div>
+    </div>
+</div> <!--内容结束-->
 
 
 
-
-</div><!--container-->
 <include file="$tpl_footer" />
 </div><!--dogo-page-->
 </body>
