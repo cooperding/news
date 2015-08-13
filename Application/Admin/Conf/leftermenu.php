@@ -47,6 +47,15 @@ $array = array(
                     array('label' => L('menu_sort_list'), 'type' => 'sort_list', 'link' => __MODULE__ . '/NewsSort/index'),
                     array('label' => L('menu_sort_add'), 'type' => 'newssort', 'rel' => 'dialog', 'link' => __MODULE__ . '/NewsSort/add')
                 )),
+        array('label' => L('menu_doc_name'), 'type' => 'news_name', 'items' => array(
+                    array('label' => L('menu_doc_list'), 'type' => 'news_list', 'link' => __MODULE__ . '/News/index'),
+                    array('label' => L('menu_doc_list_suoyin'), 'type' => 'news_list_add', 'rel' => 'dialog', 'link' => __MODULE__ . '/News/add'),
+                    array('label' => L('menu_doc_recycle'), 'type' => 'news_recycle', 'link' => __MODULE__ . '/News/recycle')
+                )),
+            array('label' => L('menu_doc_sort_name'), 'type' => 'sort_name', 'items' => array(
+                    array('label' => L('menu_doc_sort_list'), 'type' => 'sort_list', 'link' => __MODULE__ . '/NewsSort/index'),
+                    array('label' => L('menu_doc_sort_add'), 'type' => 'newssort', 'rel' => 'dialog', 'link' => __MODULE__ . '/NewsSort/add')
+                )),
             array('label' => L('menu_message_name'), 'type' => 'message_name', 'items' => array(
                     array('label' => L('menu_message_list'), 'type' => 'message_list', 'link' => __MODULE__ . '/Message/index'),
                     array('label' => L('menu_message_sort'), 'type' => 'message_setting', 'link' => __MODULE__ . '/Message/sort')
