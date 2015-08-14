@@ -1,74 +1,44 @@
 <include file="$tpl_header" />
+<div class="hf_body hf_product">
+    <div class="breadcrumb_bg">
+        <ol class="breadcrumb">
+            <li><a href="index.html">首页</a></li>
 
-<div class="container dogo-wp">
-    <div class="row dogo-notice">
-        <dogocms:block typeid="4" limit="4" key="i">
-            <div class="col-md-3">
-                <ul>
-                    <li>
-                    <if condition="$i eq 1"><span class="glyphicon glyphicon-volume-up"></span> </if>
-                    <a href="{$block.url}" target="_blank" title="{$block.title}">{$block.title}</a>
-                    </li>
-                </ul>
-            </div><!--col-md-->
-        </dogocms:block>
-    </div><!--row-->
-    <div class="row ">
-        
-        <div class="col-md-9">
+            <li class="active">{$data.title}</li>
+        </ol>
+    </div>
+    <!--内容开始-->
+    <div class="newslist row story_main">         
+        <div class="left col-md-9 pro_topbox">
+            <!--item开始-->
+            <div class="item">
+                <h2>{$data.title}</h2>
+                <span>2015-6-1 20:28发表</span>
+                <a class="pic" href="news.html"></a>
+                {$data.content}
 
+            </div><!--item结束-->
+            
+        </div>
 
+        <div class="list-group right col-md-3 pro_topbox">
+            <a href="#" class="list-group-item active">
+                全部
+            </a>
+            <a href="#" class="list-group-item">2015年05月</a>
+            <a href="#" class="list-group-item">2015年04月</a>
+            <a href="#" class="list-group-item">2015年03月</a>
+            <a href="#" class="list-group-item">2015年02月</a>
+            <a href="#" class="list-group-item">2015年01月</a>
+            <a href="#" class="list-group-item">2014年12月</a>
+            <a href="#" class="list-group-item">2014年11月</a>
+            <a href="#" class="list-group-item">2014年10月</a>
+            <a href="#" class="list-group-item">2014年09月</a>
+            <a href="#" class="list-group-item">2014年08月</a>
 
-            <div class="dogo-box dogo-view-info dogo-border-all dogo-pd1015">
-                <div class="dogo-box-header">
-                    <h1>{$data.title}</h1>
-                    <p><span class="glyphicon glyphicon-refresh"></span>  {$data.addtime|date="Y-m-d H:i:s",###}
-                        <span class="glyphicon glyphicon-eye-open"></span> {$data.views}</p>
-                </div>
-                <div class="dogo-box-content">
-                    <p>{$data.content}</p>
-                </div>
-                <div class="dogo-box-footer">
-                </div>
-            </div><!--dogo-box-->
-
-        </div><!--col-md-->
-		<div class="col-md-3">
-            <aside>
-                <div class="dogo-box">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                        </div>
-                        <div class="panel-body dogo-text">
-                            <ul>
-                                <dogocms:article type="all" limit="8">
-                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
-                                </dogocms:article>
-                            </ul>
-                        </div>
-                    </div>
-                </div><!--dogo-box-->
-            </aside>
-            <aside>
-                <div class="dogo-box">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                        </div>
-                        <div class="panel-body dogo-text">
-                            <ul>
-                                <dogocms:article type="all" limit="8">
-                                    <li>·<a href="{:U('Home/Content/index',array('id'=>$article['id']))}" title="{$article.title}">{$article.title}</a></li>
-                                </dogocms:article>
-                            </ul>
-                        </div>
-                    </div>
-                </div><!--dogo-box-->
-            </aside>
-        </div><!--col-md-3-->
-    </div><!--row-->
-</div><!--container-->
+        </div>
+    </div>
+</div> <!--内容结束-->
 <include file="$tpl_footer" />
 
 </div><!--dogo-page-->

@@ -1,78 +1,73 @@
 <include file="$tpl_header" />
 
-<div class="container dogo-wp">
-    <div class="row dogo-notice">
-        <div class="col-md-3">
-            <ul>
 
-                <li><span class="glyphicon glyphicon-volume-up"></span> <a href="#">[7-30]帐号注册协议公告</a></li>
-            </ul>
-        </div><!--col-md-->
-        <div class="col-md-3">
-            <ul>
-                <li><a href="#">帐号注册协议公告</a></li>
-            </ul>
-        </div><!--col-md-->
-        <div class="col-md-3">
-            <ul>
-                <li><a href="#">帐号注册协议公告</a></li>
-            </ul>
-        </div><!--col-md-->
-        <div class="col-md-3">
-            <ul>
-                <li><a href="#">帐号注册协议公告</a></li>
-            </ul>
-        </div><!--col-md-->
-    </div><!--row-->
-    <div class="dogo-blank"></div>
-    <div class="row ">
-        <div class="col-md-3">
-            <aside>
-                <div class="dogo-box">
-                    <div class="panel dogo-panel-redone">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                        </div>
-                        <div class="panel-body dogo-text">
-                            <ul>
-                                <li><a href="#">苹果也太粗心了！安全认证忘了更新</a></li>
-                                <li><a href="#">解决Win8.1兼容性 Sandboxie 4.10更新</a></li>
-                                <li><a href="#">苹果收购Beats波澜：消息泄露或致交易延期</a></li>
-                                <li><a href="#">苹果周边产品 带动创见策略性产品营收创新高</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div><!--dogo-box-->
-            </aside>
-            <aside>
-                <div class="dogo-box">
-                    <div class="panel dogo-panel-redone">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><a href="#">全部分类</a></h3>
-                        </div>
-                        <div class="panel-body">
-                            Panel content
-                        </div>
-                    </div>
-                </div><!--dogo-box-->
-            </aside>
-        </div><!--col-md-3-->
-        <div class="col-md-9">
-            <div class="dogo-box dogo-view-info dogo-border-all dogo-pd1015">
-                <div class="dogo-box-header">
-                    <h1>{$data.ename}</h1>
-                    
-                </div>
-                <div class="dogo-box-content">
-                    <p>{$data.content}</p>
-                </div>
-                <div class="dogo-box-footer">
-                </div>
-            </div><!--dogo-box-->
 
-        </div><!--col-md-->
-    </div><!--row-->
-</div><!--container-->
+<div class="hf_body">
+    <div class="breadcrumb_bg">
+        <ol class="breadcrumb">
+            <li><a href="/">首页</a></li>
+
+            <li class="active">{$data.ename}</li>
+        </ol>
+    </div>
+
+    <!--内容开始-->
+    <div class="storybox">
+        <h2>{$data.ename}</h2>
+        <div class="toppic row">
+            <div class="col-md-3"><img src="{$style}/img/story_01.jpg"></div>
+            <div class="col-md-3"><img src="{$style}/img/story_02.jpg"></div>
+            <div class="col-md-3"><img src="{$style}/img/story_03.jpg"></div>
+            <div class="col-md-3"><img src="{$style}/img/story_04.jpg"></div>
+        </div>    
+        <div class="story_main row">
+            <div class="left col-md-9">
+                <h3>{$data.ename}</h3>
+                <div>
+                    {$data.content}
+                </div>
+
+            </div>
+            <div class="right wk_contact col-md-3">
+                <h3>联系我们</h3>
+                <div class="map"></div>
+                <div class="text">
+                    <div>
+                        <p>公司地址：济南市历城区工业南路50号 </p>
+                        <p>邮编：252100</p>
+                    </div>
+                    <div>
+                        <p>客服电话：400-123-1234</p>
+                        <p>公司邮箱：<a href="#">1213145423@qq.com</a></p>
+                    </div>
+                    <div>
+                        <p>淘宝网店：<a href="www.taobao.com">华府木门</a></p>
+                        <p>微信公众号：<a href="#">huafumumen</a></p>
+                        <p><img src="{$style}/images/weixin.jpg"></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+</div> <!--内容结束-->
+
+
+
+
+
+
+
+
+
+
 <include file="$tpl_footer" />
 
 </div><!--dogo-page-->
