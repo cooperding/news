@@ -25,6 +25,17 @@ class DocumentAction extends BaseAction {
     {
         $this->display();
     }
+    /**
+     * index
+     * 头部导航列表页
+     * @access public
+     * @return array
+     * @version dogocms 1.0
+     */
+    public function sortList()
+    {
+        $this->display('sort_list');
+    }
 
     /**
      * add
@@ -33,14 +44,14 @@ class DocumentAction extends BaseAction {
      * @return array
      * @version dogocms 1.0
      */
-    public function add()
+    public function addSort()
     {
         $status = array(
             '20' => '启用',
             '10' => '禁用'
         );
         $this->assign('status', $status);
-        $this->display();
+        $this->display('sort_add');
     }
 
     /**
@@ -50,9 +61,9 @@ class DocumentAction extends BaseAction {
      * @return array
      * @version dogocms 1.0
      */
-    public function edit()
+    public function editSort()
     {
-        $m = D('NavHead');
+        $m = D('DocumentSort');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
@@ -63,7 +74,7 @@ class DocumentAction extends BaseAction {
         $this->assign('status', $status);
         $this->assign('v_status', $data['status']);
         $this->assign('data', $data);
-        $this->display();
+        $this->display('sort_edit');
     }
 
     /**
@@ -73,10 +84,10 @@ class DocumentAction extends BaseAction {
      * @return boolean
      * @version dogocms 1.0
      */
-    public function insert()
+    public function insertSort()
     {
         //添加功能还需要验证数据不能为空的字段
-        $m = D('NavHead');
+        $m = D('DocumentSort');
         $parent_id = I('post.parent_id');
         $text = I('post.text');
         if (empty($text)) {
@@ -114,16 +125,16 @@ class DocumentAction extends BaseAction {
      * @return boolean
      * @version dogocms 1.0
      */
-    public function update()
+    public function updateSort()
     {
-        $m = D('NavHead');
+        $m = D('DocumentSort');
         $id = I('post.id');
         $parent_id = I('post.parent_id');
         $text = I('post.text');
         if (empty($text)) {
             $this->dmsg('1', '分类名不能为空！', false, true);
         }
-        $tbname = 'NavHead';
+        $tbname = 'DocumentSort';
         if ($parent_id != 0) {//不为0时判断是否为子分类
             if ($id == $parent_id) {
                 $this->dmsg('1', '不能选择自身分类为父级分类！', false, true);
@@ -173,9 +184,9 @@ class DocumentAction extends BaseAction {
      * @return boolean
      * @version dogocms 1.0
      */
-    public function delete()
+    public function deleteSort()
     {
-        $m = D('NavHead');
+        $m = D('DocumentSort');
         $id = I('post.id');
         if (empty($id)) {
             $this->dmsg('1', '未有id值，操作失败！', false, true);
@@ -201,9 +212,9 @@ class DocumentAction extends BaseAction {
      * @return array
      * @version dogocms 1.0
      */
-    public function json()
+    public function jsonSort()
     {
-        $m = D('NavHead');
+        $m = D('DocumentSort');
         $list = $m->field('id,parent_id,text,status')->select();
         $navcatCount = $m->count("id");
         $a = array();
@@ -231,10 +242,10 @@ class DocumentAction extends BaseAction {
      * @return array
      * @version dogocms 1.0
      */
-    public function jsonTree()
+    public function jsonSortTree()
     {
         $qiuyun = new \Org\Util\Qiuyun;
-        $m = D('NavHead');
+        $m = D('DocumentSort');
         $tree = $m->field('id,parent_id,text')->select();
         $tree = $qiuyun->list_to_tree($tree, 'id', 'parent_id', 'children');
         $tree = array_merge(array(array('id' => 0, 'text' => L('sort_root_name'))), $tree);
