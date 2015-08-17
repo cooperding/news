@@ -1,34 +1,60 @@
-<table id="treegrid_navhead">
 
-</table>
+<div class="easyui-layout layout_documentlist">
+    <div data-options="region:'west',split:true" title="文档分类" style="width:150px;">
+        <ul class="easyui-tree tree_documentlist" data-options="url:'{:U('Admin/Document/jsonSortTree',array('type'=>'true'))}'" style="padding: 10px 5px;">
 
-<script>
-    function testclick(id) {
-        alert(id);
-    }
-    $(function() {
-        var classId = 'navhead';
-        var urljson = '{:U("Admin/NavHead/json")}';
-        var hrefadd = '{:U("Admin/NavHead/add")}';
-        var hrefedit = '{:U("Admin/NavHead/edit")}';
-        var hrefcancel = '{:U("Admin/NavHead/delete")}';
-        openTreeGrid(classId, urljson, hrefadd, hrefedit, hrefcancel);
-        $('#treegrid_' + classId).treegrid({
-            columns: [[
-                    {field: 'id', title: 'ID', width: 50, align: 'center'},
-                    {field: 'text', title: '导航名称', width: 200},
-                    {field: 'status', title: '状态', width: 50},
-                    //{field:'parent_id',title:'parent_id',width:200},
-                    {
-                        field: 'action',
-                        title: '操作',
-                        width: 50,
-                        formatter: function(value, row, index) {
-                            return '<img class="btn_do" src="__PUBLIC__/Easyui/themes/icons/pencil.png" onclick="ding_edit(\'' + hrefedit + '?id=' + row.id + '\',\'' + classId + '\')"  title="编辑"/>&nbsp;\n\
-<img class="btn_do" src="__PUBLIC__/Easyui/themes/icons/cancel.png" onclick="ding_cancel(\'' + row.id + '\',\'' + hrefcancel + '\',\'' + classId + '\')" title=" 删除"/>&nbsp;';
+        </ul>
+    </div>
+
+    <div data-options="region:'center'" style="">
+
+        <!--            <div class="pagecontent_search" style="height:200px"></div>-->
+        <div id="tabs_documentlist" class="easyui-tabs"  fit="true" border="false">
+
+        </div>
+
+
+
+        <script>
+            $(function () {
+                var height = $('.indexcenter').height();
+                var classId = 'documentlist';
+                $('.layout_' + classId).css('height', height - 50);
+
+                $('.tree_' + classId).tree({
+                    onClick: function () {
+                        var node = $('.tree_' + classId).tree('getSelected');
+                        var nid = node.id;
+                        //var clickclass = $('.tree_'+classId+' .tree-node-selected a');
+                        var url = '__MODULE__/Document/newslist/sort_id/' + nid;
+                        //var classId = 'modelsortlist';
+                        var subtitle = node.text + '(sid' + nid + ')';
+                        if (!$('#tabs_' + classId).tabs('exists', subtitle)) {
+                            $('#tabs_' + classId).tabs('add', {
+                                title: subtitle,
+                                content: subtitle,
+                                closable: true,
+                                href: url,
+                                tools: [{
+                                        iconCls: 'icon-mini-refresh',
+                                        handler: function () {
+                                            updateTab(classId, url, subtitle);
+                                        }
+                                    }]
+                            });
+                            return false;
+                        } else {
+                            $('#tabs_' + classId).tabs('select', subtitle);
+                            return false;
                         }
-                    }
-                ]]
-        });
-    });
-</script>
+
+                    }//onclick
+                });
+
+            })
+        </script>
+
+
+
+    </div>
+</div>
