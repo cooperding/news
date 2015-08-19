@@ -19,6 +19,17 @@ use Think\Action;
 class IndexAction extends BasedocAction {
 
     public function index() {
+        header("Content-type:text/html;charset=utf-8");
+        $m = M('DocumentList');
+        $id = intval(trim(I('get.id')));
+        if(!empty($id)){//文档id不为空
+            
+        }
+        $sort_id = intval(trim(I('get.sort_id')));
+        $sort_id = 7;
+        $condition['sort_id'] = array('eq',$sort_id);
+        $condition['status'] = array('eq','20');
+        $list = $m->where($condition)->select();
         
         $skin = $this->skin; //获取前台主题皮肤名称
         $tpl_home = $this->tpl_home; //获取主题皮肤模板名称
