@@ -44,7 +44,7 @@ class IndexAction extends BasedocAction {
         }
         $list = $this->getSortList($sortid);
         $this->assign('data', $data);
-        $this->assign('list', $list);
+        $this->assign('menu', $list);
         $this->assign('title', $data['text']);
         $skin = $this->skin; //获取前台主题皮肤名称
         $tpl_home = $this->tpl_home; //获取主题皮肤模板名称
@@ -68,8 +68,31 @@ class IndexAction extends BasedocAction {
             $m = M('DocumentSort');
             $condition['status'] = array('eq', '20');
         }
-        $list = $m->where($condition)->select();
-        return $list;
+        $qiuyun = new \Org\Util\Qiuyun;
+//        $m = D('DocumentList');
+//        $condition['sort_id'] = array('eq',7);
+        $tree = $m->field('id,parent_id,text')->where($condition)->select();
+        $tree = $qiuyun->list_to_tree($tree, 'id', 'parent_id', 'children');
+        
+        $menu = $this->getHtmlList($tree);
+//        $list = $m->where($condition)->select();
+        return $menu;
+    }
+    public function getHtmlList($data){
+        if(is_array($data)){
+            foreach ($data as $k=>$v){
+                if(isset($v['children'])){
+                    $str .= '<li class="active"><a href="'.$v['id'].'"><i class="fa fa-circle-o"></i> '.$v['text'].'<i class="fa fa-angle-left pull-right"></i></a>';
+                    $str .= '<ul class="treeview-menu">';
+                    $str .= $this->getHtmlList($v['children']);
+                    $str .= '</ul>';
+                }  else {
+                    $str .= '<li><a href="'.$v['id'].'"><i class="fa fa-circle-o"></i> '.$v['text'].'</a>';
+                }
+                $str .= '</li>';
+            }//foreach
+        }//if
+        return $str;
     }
 
 }
