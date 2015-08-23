@@ -63,31 +63,40 @@ class IndexAction extends BasedocAction {
             $m = M('DocumentList');
             $condition['sort_id'] = array('eq', $sid);
             $condition['status'] = array('eq', '20');
-            
         } else {//不存在，获取所有分类信息
             $m = M('DocumentSort');
             $condition['status'] = array('eq', '20');
+            $type = 'sort';
         }
         $qiuyun = new \Org\Util\Qiuyun;
-//        $m = D('DocumentList');
-//        $condition['sort_id'] = array('eq',7);
         $tree = $m->field('id,parent_id,text')->where($condition)->select();
         $tree = $qiuyun->list_to_tree($tree, 'id', 'parent_id', 'children');
-        
-        $menu = $this->getHtmlList($tree);
-//        $list = $m->where($condition)->select();
+        $menu = $this->getHtmlList($tree, $type);
         return $menu;
     }
-    public function getHtmlList($data){
-        if(is_array($data)){
-            foreach ($data as $k=>$v){
-                if(isset($v['children'])){
-                    $str .= '<li class="active"><a href="'.$v['id'].'"><i class="fa fa-circle-o"></i> '.$v['text'].'<i class="fa fa-angle-left pull-right"></i></a>';
+
+    /*
+     * getHtmlList
+     * 处理html数据
+     * $data array 要处理的原数据
+     * return html;
+     */
+
+    public function getHtmlList($data, $type) {
+        if (is_array($data)) {
+            foreach ($data as $k => $v) {
+                if ($type == 'sort') {
+                    $url = $v['id'];
+                } else {
+                    $url = $v['id'];
+                }
+                if (isset($v['children'])) {
+                    $str .= '<li class="active"><a href="' . $url . '"><i class="fa fa-circle-o"></i> ' . $v['text'] . '<i class="fa fa-angle-left pull-right"></i></a>';
                     $str .= '<ul class="treeview-menu">';
                     $str .= $this->getHtmlList($v['children']);
                     $str .= '</ul>';
-                }  else {
-                    $str .= '<li><a href="'.$v['id'].'"><i class="fa fa-circle-o"></i> '.$v['text'].'</a>';
+                } else {
+                    $str .= '<li><a href="' . $url . '"><i class="fa fa-circle-o"></i> ' . $v['text'] . '</a>';
                 }
                 $str .= '</li>';
             }//foreach
