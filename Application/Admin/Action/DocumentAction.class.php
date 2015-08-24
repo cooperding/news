@@ -213,7 +213,7 @@ class DocumentAction extends BaseAction {
      * @version dogocms 1.0
      */
     public function editSort() {
-        $m = D('DocumentList');
+        $m = D('DocumentSort');
         $id = I('get.id');
         $condition['id'] = array('eq', $id);
         $data = $m->where($condition)->find();
