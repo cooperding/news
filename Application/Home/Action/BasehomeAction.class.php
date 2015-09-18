@@ -11,11 +11,8 @@
  * @package  Controller
  * @todo 完善更多方法
  */
-
 namespace Home\Action;
-
 use Think\Action;
-
 class BasehomeAction extends Action {
 
     //初始化
@@ -29,10 +26,10 @@ class BasehomeAction extends Action {
         $this->assign('navhead', $navhead);
         $this->assign('navfoot', $navfoot);
         $this->assign('style_common', '/Common');
-        $this->assign('style', '/Theme' . __MODULE__ . '/' . $skin . '/style');
-        $this->assign('tpl_header', './Theme' . __MODULE__ . '/' . $skin . '/' . $tpl_home . 'header.html');
-        $this->assign('tpl_footer', './Theme' . __MODULE__ . '/' . $skin . '/' . $tpl_home . 'footer.html');
-        $this->assign('tpl_sidebar', './Theme' . __MODULE__ . '/' . $skin . '/' . $tpl_user . 'sidebar.html');
+        $this->assign('style', __ROOT__ . '/Theme/' . MODULE_NAME . '/' . $skin . '/style');
+        $this->assign('tpl_header', './Theme/' . MODULE_NAME . '/' . $skin . '/' . $tpl_home . 'header.html');
+        $this->assign('tpl_footer', './Theme/' . MODULE_NAME . '/' . $skin . '/' . $tpl_home . 'footer.html');
+        $this->assign('tpl_sidebar', './Theme/' . MODULE_NAME . '/' . $skin . '/' . $tpl_user . 'sidebar.html');
     }
 
     /*
