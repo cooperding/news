@@ -21,6 +21,9 @@ $array = array(
                     array('label' => '日志记录', 'type' => 'list', 'link' => __MODULE__ . '/Logs/index'),
                     array('label' => '日志设置', 'type' => 'navhead', 'link' => __MODULE__ . '/Logsinfo/index')
                 )),
+            array('label' => 'Api管理', 'type' => 'flash', 'items' => array(
+                    array('label' => 'Api列表', 'type' => 'list', 'link' => __MODULE__ . '/Api/index')
+                )),
             array('label' => '广告管理', 'type' => 'flash', 'items' => array(
                     array('label' => '广告列表', 'type' => 'advertising', 'link' => __MODULE__ . '/Ads/index'),
                     array('label' => '广告分类', 'type' => 'advertising', 'link' => __MODULE__ . '/Ads/sort')
