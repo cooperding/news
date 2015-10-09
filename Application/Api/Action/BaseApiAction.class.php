@@ -23,6 +23,7 @@ class BaseApiAction extends Action {
      * @return boolean
      */
     function _initialize() {
+        /*
         $key = trim(I('post.key'));
         $token = trim(I('post.token'));
         $api_data = $this->getSecret($key);
@@ -46,6 +47,8 @@ class BaseApiAction extends Action {
             echo json_encode($array);
             exit;
         }
+         * 
+         */
     }
 
     /**

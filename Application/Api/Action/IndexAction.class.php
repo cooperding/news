@@ -31,20 +31,87 @@ class IndexAction extends BaseApiAction {
     }
 
     /**
+     * getSearchList
+     * 获取搜索列表 
+     * @access public
+     * @param string $token token
+     * @param string $key apikey
+     * @param string $wd wd
+     * @return json
+     * api/index/getSearchList/token/70be83b9cbdd84cb5d5642aa0ab601c0/key/19d68892443dcb5e25abb0dc56f27133/id//flag/h/limitrow/6/pagerow/0/
+     */
+    public function getSearchList() {
+        $t = D('Title');
+        $wd = I('post.id'); //搜索关键词
+        $totalrow = I('post.pagerow'); //pagerow 当前页面数据总条数
+        $loadtype = I('post.loadtype'); //加载状态；load普通加载；loadup上拉加载更多，refresh刷新加载
+        $condition['title'] = array('like', '%' . $wd . '%');
+        $condition['status'] = array('eq', '12');
+        $count = $t->where($condition)->count();
+        $pagerow = 10; //每页调用条数
+            if ($loadtype == 'load') {//普通加载页面0，$totalrow总条数
+                if (!empty($totalrow)) {
+                    $limit = '0,' . $totalrow;
+                } else {
+                    $limit = '0,' . $pagerow;
+                }
+            } elseif ($loadtype == 'loadup') {
+                $num = $count - $totalrow;
+                if ($num <= 0) {
+                    $array['error'] = 200; //成功
+                    $array['msg'] = '数据已全部加载';
+                    echo json_encode($array);
+                    exit;
+                }
+                if ($num <= $pagerow) {
+                    $pagerow = $num;
+                }
+                $limit = $totalrow . ',' . $pagerow;
+            }//if
+        
+        // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
+        $list = $t->where($condition)
+                ->field('*')
+                ->order('id desc')
+                ->limit($limit)
+                ->select();
+        $siteurl = R('Common/System/getCfg', array('cfg_siteurl'));
+        foreach ($list as $k => $v) {
+            $list[$k]['titlepic'] = $siteurl . $v['titlepic'];
+        }
+        $array['list'] = $list;
+        $array['pagetotal'] = $totalrow;//当前页面条数
+        $array['totalcount'] = $count;//总条数
+        $array['pagerow'] = $pagerow;
+        $array['error'] = 0; //成功
+        $array['msg'] = '成功';
+        echo json_encode($array);
+    }
+
+    /**
      * getDataList
      * 获取列表数据 
      * @access public
      * @param string $token token
-     * @param string $key apikey
+     * @param string $flag flag
      * @param string $id id
+     * @param string $pagerow pagerow
+     * @param string $limitrow limitrow
      * @return json
      * /api/index/getDataList/token/4c5d9364d77af738be03491570c42839/key/19d68892443dcb5e25abb0dc56f27133/id/1
      */
     public function getDataList() {
-        $id = I('post.id');//id为空不存在
-        $flag = I('post.flag');//flag 属性
-        $pagerow = I('post.pagerow');//pagerow 当前页面数据总条数
-        $limitrow = I('post.limitrow');//limitrow 调用条数
+        $id = I('post.id'); //id为空不存在
+        $flag = I('post.flag'); //flag 属性
+        $totalrow = I('post.pagerow'); //pagerow 当前页面数据总条数
+        $limitrow = I('post.limitrow'); //limitrow 调用条数
+        $loadtype = I('post.loadtype'); //加载状态；load普通加载；loadup上拉加载更多，refresh刷新加载
+//        $id = 0; //id为空不存在
+//        $flag = ''; //flag 属性
+//        $totalrow = 0; //pagerow 当前页面数据总条数
+//        $limitrow = 0; //limitrow 调用条数
+//        $loadtype = 'loadup'; //加载状态；load普通加载；loadup上拉加载更多，refresh刷新加载
+
         $t = D('Title');
         //id为空不存在
         if (!empty($id)) {
@@ -60,38 +127,56 @@ class IndexAction extends BaseApiAction {
             $condition['t.sort_id'] = array('in', $sort_id);
         }
         //flag 属性
-        if(!empty($flag)){
-            $condition['t.flag'] = array('like',$flag);
+        if (!empty($flag)) {
+            $condition['t.flag'] = array('like', '%' . $flag . '%');
         }
-        //pagerow 当前页面数据总条数
-        if(!empty($pagerow)){
-            
-        }
-        
         $condition['t.status'] = array('eq', '12');
         $count = $t->Table(C('DB_PREFIX') . 'title t')
                         ->where($condition)->count();
-        //limitrow 调用条数
-        if(empty($limitrow)){
-           $limitrow = 8; 
+        $pagerow = 10; //每页调用条数
+        if ($limitrow) {//存在限制条数
+            $limit = '0,' . $limitrow;
+        } else {
+            if ($loadtype == 'refresh') {//刷新页面0，$totalrow总条数
+                $limit = '0,' . $totalrow;
+            } elseif ($loadtype == 'load') {//普通加载页面0，$totalrow总条数
+                if (!empty($totalrow)) {
+                    $limit = '0,' . $totalrow;
+                } else {
+                    $limit = '0,' . $pagerow;
+                }
+            } elseif ($loadtype == 'loadup') {
+                $num = $count - $totalrow;
+                if ($num <= 0) {
+                    $array['error'] = 200; //成功
+                    $array['msg'] = '数据已全部加载';
+                    echo json_encode($array);
+                    exit;
+                }
+                if ($num <= $pagerow) {
+                    $pagerow = $num;
+                }
+                $limit = $totalrow . ',' . $pagerow;
+            }//if
         }
-        $page = new \Org\Util\QiuyunPage($count, $limitrow); // 实例化分页类 传入总记录数和每页显示的记录数
+        //echo '<br/>';
         // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
         $list = $t->Table(C('DB_PREFIX') . 'title t')
                 ->join(C('DB_PREFIX') . 'news_sort ns ON ns.id = t.sort_id ')
                 ->where($condition)
                 ->field('t.*,ns.text')
                 ->order('t.id desc')
-                ->limit($page->firstRow . ',' . $page->listRows)
+                ->limit($limit)
                 ->select();
         $siteurl = R('Common/System/getCfg', array('cfg_siteurl'));
-        foreach ($list as $k=>$v){
-            $list[$k]['titlepic'] =  $siteurl. $v['titlepic'];
+        foreach ($list as $k => $v) {
+            $list[$k]['titlepic'] = $siteurl . $v['titlepic'];
         }
         $array['list'] = $list;
-        $array['total'] = $count;
-        $array['pagerow'] = 8;
-        $array['error'] = 0;//成功
+        $array['pagetotal'] = $totalrow;//当前页面条数
+        $array['totalcount'] = $count;//总条数
+        $array['pagerow'] = $pagerow;
+        $array['error'] = 0; //成功
         $array['msg'] = '成功';
         echo json_encode($array);
     }

@@ -40,6 +40,7 @@ class SearchAction extends BasehomeAction {
         $list = $t
                 ->field(array('t.id,t.sort_id,t.title,t.subtitle,t.titlepic,t.views,t.keywords,t.description,t.addtime,t.updatetime,t.num_top,t.num_beat,t.num_comment,ns.text'))
                 ->Table(C('DB_PREFIX') . 'title t')
+                ->order('t.id desc')
                 ->join(C('DB_PREFIX') . 'news_sort ns ON ns.id = t.sort_id')
                 ->where($condition)->limit($page->firstRow . ',' . $page->listRows)
                 ->select();
