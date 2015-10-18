@@ -305,7 +305,7 @@ class LinksAction extends BaseAction {
     public function sortJson()
     {
         $m = M('LinksSort');
-        $list = $m->select();
+        $list = $m->order('id desc')->select();
         $count = $m->count("id");
         $a = array();
         $array = array();

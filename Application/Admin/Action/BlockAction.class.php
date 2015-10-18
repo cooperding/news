@@ -294,7 +294,7 @@ class BlockAction extends BaseAction {
     public function sortDelete()
     {
         $m = M('BlockSort');
-        $l = M('Block');
+        $l = M('BlockList');
         $id = I('post.id');
         $condition_sort['sort_id'] = array('eq', $id);
         if ($l->field('id')->where($condition_sort)->find()) {

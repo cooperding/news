@@ -184,14 +184,14 @@ class NewsSortAction extends BaseAction {
         $m = M('NewsSort');
         $id = I('post.id');
         $condition_path['path'] = array('like', '%,' . $id . ',%');
-        $data = $m->field('id')->where($condition_path)->select();
-        if (is_array($data)) {
+        $data = $m->field('id')->where($condition_path)->count();
+        if (!empty($data)) {
             $this->dmsg('1', '该分类下还有子级分类，无法删除！', false, true);
         }
         $t = M('Title');
         $condition_sort['sort_id'] = array('eq', $id);
-        $t_data = $t->field('sort_id')->where($condition_sort)->find();
-        if (is_array($t_data)) {
+        $t_data = $t->field('sort_id')->where($condition_sort)->count();
+        if (!empty($t_data)) {
             $this->dmsg('1', '该分类下还有文档信息，无法删除！', false, true);
         }
         $condition_id['id'] = array('eq', $id);

@@ -181,8 +181,8 @@ class NavHeadAction extends BaseAction {
             $this->dmsg('1', '未有id值，操作失败！', false, true);
         }
         $condition_path['path'] = array('like', '%,' . $id . ',%');
-        $data = $m->field('id')->where($condition_path)->select();
-        if (is_array($data)) {
+        $count = $m->where($condition_path)->count();
+        if (!empty($count)) {
             $this->dmsg('1', '该分类下还有子级分类，操作失败！', false, true);
         }
         $condition_id['id'] = array('eq', $id);

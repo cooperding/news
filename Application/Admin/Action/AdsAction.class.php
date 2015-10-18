@@ -319,7 +319,7 @@ class AdsAction extends BaseAction {
     public function sortJson()
     {
         $m = M('AdsSort');
-        $list = $m->select();
+        $list = $m->order('id desc')->select();
         $count = $m->count("id");
         $a = array();
         $array = array();
