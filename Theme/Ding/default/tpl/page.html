@@ -1,0 +1,75 @@
+<include file="$tpl_header" />
+
+
+
+<div class="hf_body">
+    <div class="breadcrumb_bg">
+        <ol class="breadcrumb">
+            <li><a href="/">首页</a></li>
+
+            <li class="active">{$data.ename}</li>
+        </ol>
+    </div>
+
+    <!--内容开始-->
+    <div class="storybox">
+        <h2>{$data.ename}</h2>
+        <div class="toppic row">
+            <div class="col-md-3"><img src="{$style}/img/story_01.jpg"></div>
+            <div class="col-md-3"><img src="{$style}/img/story_02.jpg"></div>
+            <div class="col-md-3"><img src="{$style}/img/story_03.jpg"></div>
+            <div class="col-md-3"><img src="{$style}/img/story_04.jpg"></div>
+        </div>    
+        <div class="story_main row">
+            <div class="left col-md-9">
+                <h3>{$data.ename}</h3>
+                <div>
+                    {$data.content}
+                </div>
+
+            </div>
+            <div class="right wk_contact col-md-3">
+                <h3>联系我们</h3>
+                <div class="map"></div>
+                <div class="text">
+                    <div>
+                        <p>公司地址：济南市历城区工业南路50号 </p>
+                        <p>邮编：252100</p>
+                    </div>
+                    <div>
+                        <p>客服电话：400-123-1234</p>
+                        <p>公司邮箱：<a href="#">1213145423@qq.com</a></p>
+                    </div>
+                    <div>
+                        <p>淘宝网店：<a href="www.taobao.com">华府木门</a></p>
+                        <p>微信公众号：<a href="#">huafumumen</a></p>
+                        <p><img src="{$style}/images/weixin.jpg"></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+</div> <!--内容结束-->
+
+
+
+
+
+
+
+
+
+
+<include file="$tpl_footer" />
+
+</div><!--dogo-page-->
+</body>
+</html>
