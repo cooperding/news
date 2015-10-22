@@ -193,7 +193,7 @@ class BlockAction extends BaseAction {
             '10' => ' 禁用 '
         );
         $this->assign('status', $status);
-        $this->display();
+        $this->display('sortadd');
     }
 
     /**
@@ -216,7 +216,7 @@ class BlockAction extends BaseAction {
         $this->assign('status', $status);
         $this->assign('v_status', $data['status']);
         $this->assign('data', $data);
-        $this->display();
+        $this->display('sortedit');
     }
 
     /**
