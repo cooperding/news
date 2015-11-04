@@ -16,6 +16,9 @@ function submitForm(classId) {
             //$('#dialog').dialog('close');
         },
         success: function(msg) {
+            //屏蔽迅雷插件的影响
+            var index = msg.indexOf('<div');
+            if(index > 0) msg = msg.substring(0, index);
             var data = $.parseJSON(msg);
             //alert(data.msg+'=======dede====');
             //return false;
